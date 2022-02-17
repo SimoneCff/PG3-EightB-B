@@ -1,7 +1,7 @@
 package it.EightBB.Client;
 
-import it.EightBB.Client.SwingBB.Frame;
 
+import it.EightBB.Client.SwingBB.Form;
 
 public abstract interface AbstractFactory{
 
@@ -9,7 +9,7 @@ public abstract interface AbstractFactory{
     public AbstractFactory getInstance();
 
     //Make
-    public Frame makeFrame(String type);
+    public Form makeFrame(String type);
 
 }
 

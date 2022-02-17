@@ -1,12 +1,10 @@
 package it.EightBB.Client.Authentication;
 import it.EightBB.Client.AbstractFactory;
-import it.EightBB.Client.SwingBB.Frame;
-
-import javax.swing.*;
+import it.EightBB.Client.SwingBB.Form;
 
 public class AuthFactory implements AbstractFactory {
     private AuthFactory Instance;
-    private static Frame ft = null;
+    private static Form ft = null;
 
     @Override
     public AuthFactory getInstance() {
@@ -17,7 +15,7 @@ public class AuthFactory implements AbstractFactory {
     }
 
     @Override
-    public Frame makeFrame(String Type) {
+    public Form makeFrame(String Type) {
         if (Type.equals("Login")){
             ft = new Login();
         }
