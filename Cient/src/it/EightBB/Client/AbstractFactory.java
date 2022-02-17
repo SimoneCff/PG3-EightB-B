@@ -3,13 +3,17 @@ package it.EightBB.Client;
 
 import it.EightBB.Client.SwingBB.Form;
 
+import javax.swing.*;
+
 public abstract interface AbstractFactory{
 
     //Instance
     public AbstractFactory getInstance();
 
     //Make
-    public Form makeFrame(String type);
+    public Form makeForm(String type);
+
+    public JFrame makeFrame(String type);
 
 }
 
