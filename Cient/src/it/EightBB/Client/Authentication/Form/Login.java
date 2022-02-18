@@ -21,7 +21,7 @@ public class Login implements Form {
 
         //set Fields:
         Us.setBounds(50,100,200,30);
-        Ps.setBounds(50,150,200,30);
+        Ps.setBounds(50,160,200,30);
 
         //set Label:
 
