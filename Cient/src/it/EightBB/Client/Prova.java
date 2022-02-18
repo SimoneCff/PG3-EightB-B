@@ -9,6 +9,7 @@ public class Prova {
     public static void main(String[] args){
        AbstractFactory at = FactoryMaker.getFactory("auth");
        at.getInstance();
+
        //make frame
        JFrame F = new JFrame("EightBB");
 
@@ -17,13 +18,13 @@ public class Prova {
        Button Log = at.makeButton("Login");
 
        //Setting Frame and Form for the login:
-       F.setSize(400,400);
        Login.setForm();
        Log.setButton();
        Login.InitialiateFormIntoFrame(F);
        Log.InitialiteButtonIntoFrame(F);
 
        //Initialize Frame and Form
+       F.setSize(400,400);
        F.setLayout(null);
        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        F.setVisible(true);

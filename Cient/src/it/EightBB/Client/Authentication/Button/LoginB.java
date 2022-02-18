@@ -11,8 +11,9 @@ public class LoginB  implements Button {
         //set button
         LogBt = new JButton("Login");
 
+
         //set pos
-        LogBt.setBounds(50,400,200,30);
+        LogBt.setBounds(50,230,200,30);
 
     }
 
