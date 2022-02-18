@@ -1,7 +1,6 @@
 package it.EightBB.Client;
 
 import it.EightBB.Client.SwingBB.Form;
-import it.EightBB.Client.SwingBB.Frame;
 
 import javax.swing.*;
 
@@ -10,16 +9,19 @@ public class Prova {
        AbstractFactory at = FactoryMaker.getFactory("auth");
        at.getInstance();
        //make frame
-       Frame LoginF = at.makeFrame("Login");
+       JFrame F = new JFrame("EightBB");
+
        // make and implement login into the main frame
        Form Login = at.makeForm("Login");
 
        //Setting Frame and Form for the login:
+       F.setSize(400,400);
        Login.setForm();
-       Login.InitialiateFormIntoFrame(LoginF.getFrame());
+       Login.InitialiateFormIntoFrame(F);
 
        //Initialize Frame and Form
-       LoginF.setFrame();
-       LoginF.InitializeFrm();
+       F.setVisible(true);
+       F.setLayout(null);
+       F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
    }
 }
