@@ -25,11 +25,11 @@ public class Prova {
        Log.InitialiteButtonIntoFrame(F);
 
        //Initialize Frame and Form
-       F.setSize(320,330);
        F.setLayout(null);
        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        F.getContentPane().setBackground(new Color(225,204,204));
        F.setVisible(true);
+
    }
 }
 
