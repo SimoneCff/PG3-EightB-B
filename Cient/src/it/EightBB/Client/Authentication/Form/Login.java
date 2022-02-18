@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication;
+package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.SwingBB.Form;
 import javax.swing.*;
