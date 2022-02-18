@@ -11,11 +11,15 @@ public class Prova {
        at.getInstance();
        //make frame
        Frame LoginF = at.makeFrame("Login");
-       LoginF.setFrame();
        // make and implement login into the main frame
        Form Login = at.makeForm("Login");
-       Login.Submit(LoginF.getFrame());
-       //Initialize Frame
-       LoginF.InitializeFrm(LoginF.getFrame());
+
+       //Setting Frame and Form for the login:
+       LoginF.setFrame();
+       Login.setForm();
+
+       //Initialize Frame and Form
+       Login.InitialiateFormIntoFrame(LoginF.getFrame());
+       LoginF.InitializeFrm();
    }
 }

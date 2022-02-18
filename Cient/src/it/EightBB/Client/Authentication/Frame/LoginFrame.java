@@ -18,8 +18,7 @@ public class LoginFrame implements Frame {
     }
 
     @Override
-    public void InitializeFrm(JFrame F) {
-
+    public void InitializeFrm() {
         F.setVisible(true);
         F.setLayout(null);
     }
