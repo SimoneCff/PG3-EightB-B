@@ -21,5 +21,6 @@ public class LoginFrame implements Frame {
     public void InitializeFrm() {
         F.setVisible(true);
         F.setLayout(null);
+        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }

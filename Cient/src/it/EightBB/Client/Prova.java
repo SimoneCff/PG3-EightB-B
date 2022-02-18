@@ -15,11 +15,11 @@ public class Prova {
        Form Login = at.makeForm("Login");
 
        //Setting Frame and Form for the login:
-       LoginF.setFrame();
        Login.setForm();
+       Login.InitialiateFormIntoFrame(LoginF.getFrame());
 
        //Initialize Frame and Form
-       Login.InitialiateFormIntoFrame(LoginF.getFrame());
+       LoginF.setFrame();
        LoginF.InitializeFrm();
    }
 }
