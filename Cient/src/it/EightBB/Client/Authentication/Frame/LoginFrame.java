@@ -8,13 +8,18 @@ public class LoginFrame implements Frame {
     private final JFrame F = new JFrame();
 
     @Override
-    public JFrame submit() {
+    public JFrame getFrame() {
         return F;
     }
 
     @Override
-    public void InitializeFrm(JFrame F) {
+    public void setFrame(){
         F.setSize(400,400);
+    }
+
+    @Override
+    public void InitializeFrm(JFrame F) {
+
         F.setVisible(true);
         F.setLayout(null);
     }
