@@ -4,6 +4,7 @@ import it.EightBB.Client.SwingBB.Button;
 import it.EightBB.Client.SwingBB.Form;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Prova {
     public static void main(String[] args){
@@ -24,9 +25,21 @@ public class Prova {
        Log.InitialiteButtonIntoFrame(F);
 
        //Initialize Frame and Form
-       F.setSize(400,400);
+       F.setSize(320,330);
        F.setLayout(null);
        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+       F.getContentPane().setBackground(new Color(225,204,204));
        F.setVisible(true);
+   }
+}
+
+class FactoryMaker {
+   private static AbstractFactory fc = null;
+   static AbstractFactory getFactory(String Choise) {
+      if (Choise.equals("auth")) {
+         fc = new AuthFactory();
+      }
+      if (Choise.equals("bo")){ fc = null;}
+      return fc;
    }
 }
