@@ -1,5 +1,6 @@
 package it.EightBB.Client;
 
+import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Client.SwingBB.Button;
 import it.EightBB.Client.SwingBB.Form;
 
