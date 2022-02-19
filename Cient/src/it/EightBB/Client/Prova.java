@@ -43,3 +43,14 @@ class FactoryMaker {
       return fc;
    }
 }
+
+class Client_Server {
+   public static void main(String[] args) {
+      SocketProxy Proxy = new SocketProxy("192.168.1.118",5432);
+         Proxy.write("WeWe Server");
+         System.out.println(Proxy.read());
+         Proxy.close();
+
+   }
+
+}

@@ -1,30 +1,27 @@
 package it.EightBB.Client;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.net.ConnectException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public interface SocketInterface {
     String read();
-    void write(String str);
+    void write(String str) throws IOException;
     void close();
 }
 
 class SocketProxy implements SocketInterface {
     private Socket socket;
-    private BufferedReader in;
-    private PrintWriter out;
+    private DataInputStream in;
+    private DataOutputStream out;
 
-    public SocketProxy (String IP, int port, boolean wait)  {
+    public SocketProxy (String IP, int port)  {
         try {
-            if (wait) {
-                ServerSocket server = new ServerSocket(port);
-                socket = server.accept();
-            } else {
-                socket = new Socket(IP, port);
-            }
+            socket = new Socket(IP,port);
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+
         } catch(IOException e){
             e.printStackTrace();
         }
@@ -34,7 +31,8 @@ class SocketProxy implements SocketInterface {
     public String read() {
         String s = null;
         try{
-            s = in.readLine();
+            s = in.readUTF();
+
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -42,14 +40,19 @@ class SocketProxy implements SocketInterface {
     }
 
     @Override
-    public void write(String str) {
-        out.println(str);
-
+    public void write(String str)  {
+        try {
+            out.writeUTF(str);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void close() {
         try {
+            in.close();
+            out.close();
             socket.close();
         } catch (IOException e){
             e.printStackTrace();
