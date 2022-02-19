@@ -1,13 +1,16 @@
 package it.EightBB.Server;
 import java.sql.*;
+import java.util.ArrayList;
 
 public interface DatabaseConnect {
+    //
     public void connect();
+    public ArrayList<String> getQuery(String table, String attributes);
 }
 
 class DatabaseProxy implements DatabaseConnect{
-    private String url = "jdbc:mysql://eightbbsql.cjppfpusn6kv.eu-central-1.rds.amazonaws.com:3306/eughtBBSQL";
-    private String user = "eightbb";
+    private String url = "jdbc:mysql://:3306/eightbb";
+    private String user = "root";
     private String password = "Programmazione3?";
     private Connection connect = null;
 
@@ -22,4 +25,36 @@ class DatabaseProxy implements DatabaseConnect{
             throwables.printStackTrace();
         }
     }
+
+    @Override
+    public ArrayList<String> getQuery(String table, String attributes){
+        ArrayList <String> Query = new ArrayList<>();
+        try {
+            Statement state = connect.createStatement();
+            ResultSet result = null;
+            ResultSetMetaData rr;
+            if (attributes==null){
+                result = state.executeQuery("select * from "+ table);
+            }
+            else {
+                String query = "select" + attributes + "from" + table;
+                result = state.executeQuery(query);
+
+            }
+            rr = result.getMetaData();
+
+            while (result.next()){
+                for (int i = 1; i<=rr.getColumnCount(); i++) {
+                    Query.add(rr.getColumnName(i));
+                    Query.add(result.getString(i));
+                }
+                Query.add("end");
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return Query;
+    }
+
 }

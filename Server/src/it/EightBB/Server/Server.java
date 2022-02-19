@@ -16,5 +16,6 @@ class Db  {
     public static void main(String[] args){
         DatabaseProxy database = new DatabaseProxy();
         database.connect();
+        System.out.println(database.getQuery("user",null));
     }
 }
