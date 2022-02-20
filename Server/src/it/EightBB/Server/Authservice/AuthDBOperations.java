@@ -1,9 +1,7 @@
 package it.EightBB.Server.Authservice;
 
 import it.EightBB.Server.Database.DatabaseOperations;
-import it.EightBB.Server.DatabaseProxy;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,7 +28,7 @@ public abstract class AuthDBOperations  implements DatabaseOperations {
     }
 
     @Override
-    public boolean AddQuery(String table, HashMap<String, String> data) {
+    public boolean AddQuery(Connection db,String table, HashMap<String, String> data) {
         return false;
     }
 

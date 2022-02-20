@@ -9,7 +9,6 @@ public class AuthenticationChandler extends Handler {
         if (request.getSubSys().equals("Auth")){
             if (request.getRequest().equals("Login")){
 
-
             } else if (request.getRequest().equals()){
 
             }
