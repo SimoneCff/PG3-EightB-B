@@ -1,5 +1,6 @@
 package it.EightBB.Server;
 
+import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Server.Database.DatabaseConnect;
 
 import java.sql.*;
@@ -9,6 +10,7 @@ public class DatabaseProxy implements DatabaseConnect {
     protected String user = "root";
     protected String password = "Programmazione3?";
     private Connection connect = null;
+    private DatabaseConnect Instance;
 
     @Override
 
@@ -34,6 +36,14 @@ public class DatabaseProxy implements DatabaseConnect {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    @Override
+    public DatabaseConnect getInstance() {
+        if (Instance == null) {
+            Instance = new DatabaseProxy();
+        }
+        return Instance;
     }
 
 

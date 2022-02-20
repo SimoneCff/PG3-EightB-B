@@ -7,5 +7,6 @@ public interface DatabaseConnect {
     public void connect();
     public Connection getConnect();
     public void close();
+    public DatabaseConnect getInstance();
 }
 
