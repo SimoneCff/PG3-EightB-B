@@ -1,11 +1,13 @@
 package it.EightBB.Server.HandlingSubSystem;
 
+import java.util.ArrayList;
+
 public class Request {
     private String R_SubSyst;
     private String R_Request;
+    private String data;
 
     public Request(String subsystem, String request){
-        this.R_Request = request;
         this.R_SubSyst = subsystem;
     }
 
@@ -17,4 +19,7 @@ public class Request {
         return this.R_Request;
     }
 
+    public String getData() {
+        return this.data;
+    }
 }

@@ -10,4 +10,5 @@ public interface DatabaseOperations {
     public boolean deleteQueryFromTable (String table, String id);
     public boolean modifyQueryFromTable (String table, String id, String Attribute_N, String Attribute_V);
     public boolean checkInsideDB (Connection db, String table, ArrayList<String> query);
+    public DatabaseOperations getInstance();
 }

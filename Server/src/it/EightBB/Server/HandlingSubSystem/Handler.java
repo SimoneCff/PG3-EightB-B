@@ -1,5 +1,7 @@
 package it.EightBB.Server.HandlingSubSystem;
 
+import it.EightBB.Server.SocketInitialService;
+
 public abstract class Handler {
     protected Handler successor;
 
@@ -7,5 +9,5 @@ public abstract class Handler {
         this.successor = successor;
     }
 
-    public abstract void handlerRequest(Request request);
+    public abstract void handlerRequest(Request request, SocketInitialService socket);
 }
