@@ -1,4 +1,4 @@
-package it.EightBB.Client;
+package it.EightBB.Client.Factory;
 
 
 import it.EightBB.Client.SwingBB.Button;

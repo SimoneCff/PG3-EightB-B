@@ -1,19 +1,19 @@
-package it.EightBB.Client;
+package it.EightBB.Client.Factory;
 
 import it.EightBB.Client.Authentication.AuthFactory;
 
 public class FactoryMaker {
     private static AbstractFactory fc = null;
-    private FactoryMaker Instance;
+    private static FactoryMaker Instance = null;
 
-    public FactoryMaker getInstance() {
+    public static FactoryMaker getInstance() {
         if (Instance == null) {
             Instance = new FactoryMaker();
         }
         return Instance;
     }
 
-    static AbstractFactory getFactory(String Choise) {
+   public AbstractFactory getFactory(String Choise) {
         if (Choise.equals("auth")) {
             fc = new AuthFactory();
         }
