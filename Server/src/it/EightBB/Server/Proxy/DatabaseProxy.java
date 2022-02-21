@@ -1,6 +1,5 @@
-package it.EightBB.Server;
+package it.EightBB.Server.Proxy;
 
-import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Server.Database.DatabaseConnect;
 
 import java.sql.*;

@@ -2,10 +2,10 @@ package it.EightBB.Server;
 
 import it.EightBB.Server.Authservice.AuthenticationChandler;
 import it.EightBB.Server.HandlingSubSystem.Request;
+import it.EightBB.Server.Proxy.DatabaseProxy;
+import it.EightBB.Server.Proxy.SocketInitial;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Server  {

@@ -1,7 +1,6 @@
 package it.EightBB.Server.Authservice;
 
 import it.EightBB.Server.Database.DatabaseOperations;
-import it.EightBB.Server.DatabaseProxy;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

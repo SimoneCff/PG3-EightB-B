@@ -1,12 +1,11 @@
 package it.EightBB.Server.Authservice;
 
-import it.EightBB.Server.DatabaseProxy;
+import it.EightBB.Server.Proxy.DatabaseProxy;
 import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.SocketInitialService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AuthenticationChandler extends Handler {
