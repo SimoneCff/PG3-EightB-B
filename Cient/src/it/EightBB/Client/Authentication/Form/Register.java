@@ -56,6 +56,8 @@ public class Register implements Form{
         //add pass Form
         F.add(Pss);
         F.add(Ps);
+
+        F.add(Reg);
     }
 
 }
