@@ -40,17 +40,6 @@ public class Prova {
    }
 }
 
-class FactoryMaker {
-   private static AbstractFactory fc = null;
-   static AbstractFactory getFactory(String Choise) {
-      if (Choise.equals("auth")) {
-         fc = new AuthFactory();
-      }
-      if (Choise.equals("bo")){ fc = null;}
-      return fc;
-   }
-}
-
 class Client_Server {
    public static void main(String[] args) {
       SocketProxy Proxy = new SocketProxy("192.168.1.118",5432);
