@@ -32,7 +32,6 @@ public class SocketProxy implements SocketInterface {
         }
     }
 
-
     @Override
     public String read() {
         String s = null;
