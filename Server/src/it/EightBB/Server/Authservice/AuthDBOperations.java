@@ -44,7 +44,7 @@ public class AuthDBOperations implements DatabaseOperations {
     public boolean checkInsideDB (Connection db, String table, ArrayList<String> query){
         boolean ck = false;
         try {
-            Statement qy = db.createStatement();
+            Statement qy =  db.createStatement();
             //Check query;
             String qr = "select * from" + table + "where"+query.get(3)+"="+query.get(4)+"AND"+query.get(5)+"="+query.get(6);
             ResultSet check = qy.executeQuery(qr);

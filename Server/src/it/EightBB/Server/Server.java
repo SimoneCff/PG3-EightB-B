@@ -10,20 +10,29 @@ import java.util.List;
 
 public class Server  {
     public static void main(String[] args){
-        System.out.println("Initialized Server");
-        SocketInitial ProxyServer = new SocketInitial(5432);
-        System.out.println("Socket Creation: Success");
+        int x = 0;
+        System.out.println("Initialize DB");
         DatabaseProxy database = new DatabaseProxy();
         database.connect();
-        boolean x = true;
         System.out.println("Connection to Database: Success");
+
         //Set Hanlder
         AuthenticationChandler Auth = new AuthenticationChandler();
-        //
-            System.out.println("Waiting connections...");
+
+        //Set Connection
+        System.out.println("Initialized Server");
+        SocketInitial ProxyServer = new SocketInitial(5432);
+
+        while (true) {
+            x++;
+            System.out.println(ProxyServer.read());
             ArrayList<String> req = new ArrayList<String>(List.of(ProxyServer.read()));
-            Auth.handlerRequest(new Request(req.get(1),req.get(2),req.get(3)),ProxyServer);
-            ProxyServer.end();
-            System.out.println("Server Shutdown");
+            Auth.handlerRequest(new Request(req.get(1), req.get(2), req.get(3)), ProxyServer);
+            if (x == 5){
+                ProxyServer.end();
+                System.out.println("Server Shutdown");
+            }
+        }
+
     }
 }

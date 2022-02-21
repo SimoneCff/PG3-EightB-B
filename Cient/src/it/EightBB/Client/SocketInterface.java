@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public interface SocketInterface {
-    String read();
+    String read() throws IOException;
     void write(String str) throws IOException;
     void close();
 }
@@ -28,11 +28,10 @@ class SocketProxy implements SocketInterface {
     }
 
     @Override
-    public String read() {
+    public String read()  {
         String s = null;
         try{
             s = in.readUTF();
-
         } catch (IOException e){
             e.printStackTrace();
         }
