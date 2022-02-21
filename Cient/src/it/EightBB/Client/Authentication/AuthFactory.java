@@ -1,7 +1,6 @@
 package it.EightBB.Client.Authentication;
 
 import it.EightBB.Client.Factory.AbstractFactory;
-import it.EightBB.Client.Authentication.Button.LoginB;
 import it.EightBB.Client.Authentication.Button.RegConfirm;
 import it.EightBB.Client.Authentication.Button.RegistrationB;
 import it.EightBB.Client.Authentication.Form.Login;
@@ -38,7 +37,6 @@ public class AuthFactory implements AbstractFactory {
     public Button makeButton(String Type) {
 
         Button bt = switch (Type) {
-            case "Login" -> new LoginB();
             case "Registration" -> new RegistrationB();
             case "RegConfirm" -> new RegConfirm();
             default -> null;

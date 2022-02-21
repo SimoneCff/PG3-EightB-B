@@ -33,20 +33,16 @@ public class AuthInit implements Init {
     }
 
 
-
     void Login(){
         //Setting Button & Form
-       Button B = AF.makeButton("Login");
        Button Bf = AF.makeButton("Registration");
        Form Ff = AF.makeForm("Login");
 
        //Setting Up
-        B.setButton();
         Bf.setButton();
         Ff.setForm();
 
         //Setting Frame
-        B.InitialiteButtonIntoFrame(F);
         Bf.InitialiteButtonIntoFrame(F);
         Ff.InitialiateFormIntoFrame(F);
 

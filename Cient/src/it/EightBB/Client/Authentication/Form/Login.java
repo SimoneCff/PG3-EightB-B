@@ -1,21 +1,32 @@
 package it.EightBB.Client.Authentication.Form;
 
+import it.EightBB.Client.Handler.Action.Concrete.ConcreteHanlderOne;
+import it.EightBB.Client.Proxy.SocketInterface;
+import it.EightBB.Client.Proxy.SocketProxy;
 import it.EightBB.Client.SwingBB.Form;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.Arrays;
 
 
 public class Login implements Form {
-    private JTextField Us = null;
-    private JPasswordField Ps = null;
+    private static String us;
+    private static JTextField Us = null;
+    private static JPasswordField Ps = null;
     private JLabel Uss, Pss, Log = null;
-    private JSeparator Sep = null;
+    private JButton LogBt = null;
+
 
     @Override
     public void setForm(){
         //Fields:
         Us = new JTextField();
         Ps = new JPasswordField();
+
+        //Button
+        LogBt = new JButton("Login");
 
         //Label:
         Uss = new JLabel("Username");
@@ -33,6 +44,13 @@ public class Login implements Form {
         Uss.setBounds(50,70,200,30);
         Pss.setBounds(50,130,200,30);
 
+
+        //set pos
+        LogBt.setBounds(50,230,200,30);
+
+        LogBt.setActionCommand("Auth-BP-L");
+        LogBt.addActionListener(new ConcreteHanlderOne());
+
     }
 
     @Override
@@ -44,6 +62,25 @@ public class Login implements Form {
         F.add(Log);
         F.add(Pss);
         F.add(Ps);
+        //Add Button
+        F.add(LogBt);
     }
+
+    public static void getTextAndSendToDB() {
+       SocketInterface SP = SocketProxy.getIstance();
+       try {
+           String req = "AuthDB," + Us.getText() + ",password," + Arrays.toString(Ps.getPassword());
+           SP.write(req);
+           String Result = SP.read();
+           System.out.println(Result);
+           if (Result.equals("False")) {
+               JOptionPane.showMessageDialog(new JFrame(), "Error, User or Password Not Found", "Error", JOptionPane.ERROR_MESSAGE);
+           }
+       } catch (IOException e) {
+           JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+           System.exit(0);
+       }
+    }
+
 
 }
