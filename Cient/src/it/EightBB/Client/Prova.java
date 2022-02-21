@@ -13,13 +13,15 @@ public class Prova {
        AbstractFactory at = FactoryMaker.getFactory("auth");
        at.getInstance();
 
-       //make frame
+       //make login frame
        JFrame F = new JFrame("EightBB");
+
 
        // make and implement login into the main frame
        Form Login = at.makeForm("Login");
        Button Log = at.makeButton("Login");
        Button Reg = at.makeButton("Registration");
+
 
        //Setting Frame and Form for the login:
        Login.setForm();
@@ -29,12 +31,11 @@ public class Prova {
        Log.InitialiteButtonIntoFrame(F);
        Reg.InitialiteButtonIntoFrame(F);
 
-       //Initialize Frame and Form
+       //Initialize Frame and Form Login
        F.setLayout(null);
        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        F.getContentPane().setBackground(new Color(225,204,204));
        F.setVisible(true);
-
    }
 }
 

@@ -25,7 +25,7 @@ public class AuthFactory implements AbstractFactory {
         Form ft = null;
         if (Type.equals("Login")) {
             ft = new Login();
-        }
+        } else if (Type.equals("Register"))
         return ft;
     }
 
