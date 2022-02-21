@@ -1,5 +1,7 @@
 package it.EightBB.Client.Proxy;
 
+import com.mysql.cj.callback.MysqlCallbackHandler;
+
 import java.io.*;
 import java.net.Socket;
 import javax.swing.*;
@@ -8,9 +10,9 @@ import javax.swing.*;
 public class SocketProxy implements SocketInterface {
     private static SocketProxy Instance;
     private Socket socket;
-    private InputStream in;
-    private OutputStream out;
-    private PrintWriter pw;
+    private DataInputStream in;
+    private DataOutputStream out;
+
 
     public static SocketProxy getIstance(){
         if(Instance == null){
@@ -25,6 +27,8 @@ public class SocketProxy implements SocketInterface {
     public void settingUP(String IP, int port) {
         try {
             socket = new Socket(IP, port);
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
 
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -34,23 +38,22 @@ public class SocketProxy implements SocketInterface {
 
     @Override
     public String read() {
-        String s = null;
+        String str = null;
         try {
-            in = socket.getInputStream();
-            s = new DataInputStream(in).readUTF();
+            str =  in.readUTF();
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
-        return s;
+        return str;
     }
+
 
     @Override
     public void write(String str) {
         try {
-            out = socket.getOutputStream();
-            pw = new PrintWriter(new OutputStreamWriter(out),true);
-            pw.println(str);
+           out.writeUTF(str);
+           out.flush();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
             System.exit(0);

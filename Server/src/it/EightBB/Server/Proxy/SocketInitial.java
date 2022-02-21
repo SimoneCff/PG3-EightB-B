@@ -9,14 +9,16 @@ import java.net.Socket;
 public class SocketInitial implements SocketInitialService {
     private ServerSocket Ssocket;
     private Socket socket;
-    private InputStream in;
-    private OutputStream out;
-    private PrintWriter pw ;
+    private DataInputStream in;
+    private DataOutputStream out;
 
     public SocketInitial(int port) {
         try {
             Ssocket = new ServerSocket(port);
             socket = Ssocket.accept();
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -27,9 +29,7 @@ public class SocketInitial implements SocketInitialService {
     public String read() {
         String s = null;
         try {
-            in = socket.getInputStream();
-            DataInputStream din = new DataInputStream(in);
-            s = din.readUTF();
+            s = in.readUTF();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,8 +39,8 @@ public class SocketInitial implements SocketInitialService {
     @Override
     public void Write(String str) {
         try {
-            out = socket.getOutputStream();
-            pw = new PrintWriter(new OutputStreamWriter(out),true);
+            out.writeUTF(str);
+            out.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
