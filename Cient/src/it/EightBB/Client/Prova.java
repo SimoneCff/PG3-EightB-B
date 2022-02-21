@@ -33,6 +33,7 @@ public class Prova {
 
        //Initialize Frame and Form Login
        F.setLayout(null);
+       F.setSize(400, 400);
        F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        F.getContentPane().setBackground(new Color(225,204,204));
        F.setVisible(true);
@@ -58,4 +59,32 @@ class Client_Server {
       Proxy.close();
    }
 
+}
+
+class Register{
+   public static void main(String[] args) {
+      AbstractFactory at = FactoryMaker.getFactory("auth");
+      at.getInstance();
+
+      //make login frame
+      JFrame F = new JFrame("EightBB");
+
+      Form Register = at.makeForm("Register");
+      Form RegisterO = at.makeForm("RegisterO");
+
+      Register.setForm();
+      Register.InitialiateFormIntoFrame(F);
+
+      RegisterO.setForm();
+      RegisterO.InitialiateFormIntoFrame(F);
+
+      //Initialize Frame and Form Login
+      F.setLayout(null);
+      F.setSize(1366, 768);
+      F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+      F.getContentPane().setBackground(new Color(225,204,204));
+      F.setVisible(true);
+
+
+   }
 }

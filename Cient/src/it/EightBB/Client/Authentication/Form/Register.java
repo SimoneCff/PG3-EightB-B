@@ -3,14 +3,12 @@ package it.EightBB.Client.Authentication.Form;
 import it.EightBB.Client.SwingBB.Form;
 import javax.swing.*;
 import java.awt.*;
-import java.text.SimpleDateFormat;
+import java.lang.annotation.Inherited;
 
 public class Register implements Form{
-    private JTextField Name, Sur, Cf, Us, Piva = null;
+    private JTextField Name, Sur, Us = null;
     private JPasswordField Ps = null;
-    private JLabel Namee, Surr, Cff, Uss, Pivaa, Pss, Reg = null;
-    private JSeparator Sep = null;
-    //private SimpleDateFormat Data = new SimpleDateFormat("dd/MM/yyyy"); //da far controllare a Simone
+    private JLabel Namee, Surr, Uss, Pss, Reg = null;
 
 
     @Override
@@ -18,61 +16,47 @@ public class Register implements Form{
         //Fields
         Name = new JTextField();
         Sur = new JTextField();
-        Cf = new JTextField();
         Us = new JTextField();
-        Piva = new JTextField();
         Ps = new JPasswordField();
-        //capire come inserire la data
 
         //Label:
         Namee = new JLabel("Nome");
         Surr = new JLabel("Cognome");
-        Cff = new JLabel("Codice Fiscale");
         Uss = new JLabel("Mail");
-        Pivaa = new JLabel("P.iva");
         Pss = new JLabel("Password");
-        //Capire come fare il Jlabel della data
+        Reg = new JLabel("Registrazione");
 
         //Set Fields:
         Name.setBounds(50,100,200,30);
         Sur.setBounds(50,160,200,30);
-        Cf.setBounds(50,220,200,30);
-        Us.setBounds(50,280,200,30);
-        Piva.setBounds(50,340,200,30);
-        Ps.setBounds(50,400,200,30);
-        //Capire prima come fare il bottone e poi capire la forma e posizionamento
+        Us.setBounds(50,240,200,30);
+        Ps.setBounds(50,300,200,30);
 
         //Set Label:
         Reg.setBounds(50,15,200,40);
         Reg.setFont(new Font("Arial", Font.PLAIN, 30));
 
-        Namee.setBounds(50,100,200,30);
-        Surr.setBounds(50,160,200,30);
-        Cff.setBounds(50,220,200,30);
-        Uss.setBounds(50,280,200,30);
-        Pivaa.setBounds(50,340,200,30);
-        Pss.setBounds(50,400,200,30);
+        Namee.setBounds(50,70,200,30);
+        Surr.setBounds(50,130,200,30);
+        Uss.setBounds(50,210,200,30);
+        Pss.setBounds(50,270,200,30);
     }
 
     @Override
-    public void InitialateFormIntoFrame(JFrame D){;
+    public void InitialiateFormIntoFrame(JFrame F) {
         //add Name Form
-        D.add(Namee);
-        D.add(Name);
+        F.add(Namee);
+        F.add(Name);
         //add Surname Form
-        D.add(Surr);
-        D.add(Sur);
-        //add Cf Form
-        D.add(Cff);
-        D.add(Cf);
+        F.add(Surr);
+        F.add(Sur);
         //add User Form
-        D.add(Uss);
-        D.add(Us);
-        //add Piva Form
-        D.add(Pivaa);
-        D.add(Piva);
+        F.add(Uss);
+        F.add(Us);
         //add pass Form
-        D.add(Pss);
-        D.add(Ps);
+        F.add(Pss);
+        F.add(Ps);
     }
+
 }
+
