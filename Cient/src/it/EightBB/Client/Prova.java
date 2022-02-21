@@ -48,7 +48,7 @@ class FactoryMaker {
 class Client_Server {
    public static void main(String[] args) {
       SocketProxy Proxy = new SocketProxy("192.168.1.118",5432);
-         Proxy.write("WeWe Server");
+         Proxy.write("Auth,Login,null");
          System.out.println(Proxy.read());
          Proxy.close();
 

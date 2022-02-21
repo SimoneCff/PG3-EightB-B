@@ -5,7 +5,7 @@ import it.EightBB.Server.Database.DatabaseConnect;
 import java.sql.*;
 
 public class DatabaseProxy implements DatabaseConnect {
-    protected String url = "jdbc:mysql://:3306/eightbb";
+    protected String url = "jdbc:mysql://localhost:3306/eightbb";
     protected String user = "root";
     protected String password = "Programmazione3?";
     private Connection connect = null;
