@@ -69,11 +69,7 @@ class Register{
       //make login frame
       JFrame F = new JFrame("EightBB");
 
-      Form Register = at.makeForm("Register");
       Form RegisterO = at.makeForm("RegisterO");
-
-      Register.setForm();
-      Register.InitialiateFormIntoFrame(F);
 
       RegisterO.setForm();
       RegisterO.InitialiateFormIntoFrame(F);

@@ -8,6 +8,7 @@ public class RegisterO extends Register {
 
     @Override
     public void setForm() {
+        super.setForm();
         //Fields
         Cf = new JTextField();
         Piva = new JTextField();
@@ -29,12 +30,16 @@ public class RegisterO extends Register {
         Pivaa.setBounds(50, 320, 200, 30);
     }
 
-    public void InitialateFormIntoFrame(JFrame F) {
+    @Override
+    public void InitialiateFormIntoFrame(JFrame F) {
+        super.InitialiateFormIntoFrame(F);
         //add Cf Form
         F.add(Cff);
         F.add(Cf);
         //add Piva Form
         F.add(Pivaa);
         F.add(Piva);
+
     }
 }
+
