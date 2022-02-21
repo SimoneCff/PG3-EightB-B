@@ -19,12 +19,15 @@ public class Prova {
        // make and implement login into the main frame
        Form Login = at.makeForm("Login");
        Button Log = at.makeButton("Login");
+       Button Reg = at.makeButton("Registration");
 
        //Setting Frame and Form for the login:
        Login.setForm();
        Log.setButton();
+       Reg.setButton();
        Login.InitialiateFormIntoFrame(F);
        Log.InitialiteButtonIntoFrame(F);
+       Reg.InitialiteButtonIntoFrame(F);
 
        //Initialize Frame and Form
        F.setLayout(null);
