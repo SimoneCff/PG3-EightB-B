@@ -22,13 +22,11 @@ public class Server  {
         //Set Connection
         System.out.println("Initialized Server");
         SocketInitial ProxyServer = new SocketInitial(5432);
- while (true){
-            System.out.println(ProxyServer.read());
-            ArrayList<String> req = new ArrayList<String>(List.of(ProxyServer.read()));
-            ProxyServer.Write("False");
 
-} //ProxyServer.end();
-        //System.out.println("Server Shutdown");
+            System.out.println(ProxyServer.read());
+            ProxyServer.Write("False");
+            ProxyServer.end();
+            System.out.println("Server Shutdown");
 
     }
 }

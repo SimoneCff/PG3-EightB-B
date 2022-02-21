@@ -16,11 +16,7 @@ public class Client {
         FactoryMaker FM = FactoryMaker.getInstance();
         Init IZ;
 
-        Proxy.write("Ao");
-        System.out.println(Proxy.read());
-
         //Set ActionHandler
-
 
         //Setting Login Frame (Default Frame);
         JFrame Frame = new JFrame("EightBB");
