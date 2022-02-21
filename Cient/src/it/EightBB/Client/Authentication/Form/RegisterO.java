@@ -20,14 +20,13 @@ public class RegisterO extends Register {
         //Capire come fare il Jlabel della data
 
         //Set Fields:
-
-        Cf.setBounds(50, 220, 200, 30);
-        Piva.setBounds(50, 340, 200, 30);
+        Cf.setBounds(350,100,200,30);
+        Piva.setBounds(350,160,200,30);
         //Capire prima come fare il bottone e poi capire la forma e posizionamento
 
 
-        Cff.setBounds(50, 190, 200, 30);
-        Pivaa.setBounds(50, 320, 200, 30);
+        Cff.setBounds(350,70,200,30);
+        Pivaa.setBounds(350,130,200,30);
     }
 
     @Override

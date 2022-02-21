@@ -59,13 +59,17 @@ class Register{
       JFrame F = new JFrame("EightBB");
 
       Form RegisterO = at.makeForm("RegisterO");
+      Button RegConfirm = at.makeButton("RegConfirm");
 
+      RegConfirm.setButton();
       RegisterO.setForm();
       RegisterO.InitialiateFormIntoFrame(F);
+      RegConfirm.InitialiteButtonIntoFrame(F);
+
 
       //Initialize Frame and Form Login
       F.setLayout(null);
-      F.setSize(1366, 768);
+      F.setSize(800, 500);
       F.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
       F.getContentPane().setBackground(new Color(225,204,204));
       F.setVisible(true);
