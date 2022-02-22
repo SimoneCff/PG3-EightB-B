@@ -8,6 +8,7 @@ import it.EightBB.Client.SwingBB.Button;
 import it.EightBB.Client.SwingBB.TextGroup;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Prova {
 /**
@@ -42,9 +43,15 @@ public class Prova {
             modifica.setButton();
             modifica.InitialiteButtonIntoFrame(Frameprivatearea);
 
+            JLabel immagine = new JLabel();
+            immagine.setIcon(new ImageIcon("C:\\Users\\Giuse\\IdeaProjects\\PG3-EightB-B\\foto.jpg"));
+            immagine.setBounds(945,100,200 ,200);
+            immagine.setVisible(true);
+
             Frameprivatearea.setLayout(null);
             Frameprivatearea.setVisible(true);
             Frameprivatearea.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            Frameprivatearea.add(immagine);
 
         }
 }
