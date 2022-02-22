@@ -17,6 +17,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="jcalendar-1.4" level="project" />
+    <orderEntry type="library" name="jcalendar-1.4" level="project" />
   </component>
 </module>
