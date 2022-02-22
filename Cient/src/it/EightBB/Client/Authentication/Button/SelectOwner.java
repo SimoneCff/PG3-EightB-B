@@ -11,7 +11,7 @@ public class SelectOwner implements Button {
         //set button
         SelectOwner = new JButton("Proprietario");
         //set position
-        SelectOwner.setBounds(50,100,70,20);
+        SelectOwner.setBounds(200,100,100,20);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(SelectOwner);

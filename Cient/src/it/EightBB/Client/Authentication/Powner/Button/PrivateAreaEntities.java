@@ -6,8 +6,8 @@ import javax.swing.*;
 public class PrivateAreaEntities implements Button{
     private JButton PrivateEntities=null;
     public void setButton(){
-        PrivateEntities=new JButton("Area Privata Enti Nazionali");
-        PrivateEntities.setBounds(50,100,70,20);
+        PrivateEntities=new JButton("<html>Area privata<br />Enti nazionali</html>");
+        PrivateEntities.setBounds(20,280,150,60);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(PrivateEntities);

@@ -7,8 +7,8 @@ import javax.swing.*;
 public class ClientRegistration implements Button{
     private JButton ClientRegister=null;
     public void setButton(){
-        ClientRegister=new JButton("Registrazione Cliente");
-        ClientRegister.setBounds(50,100,70,20);
+        ClientRegister=new JButton("<html>Registrazione<br />Cliente</html>");
+        ClientRegister.setBounds(20,160,150,60);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(ClientRegister);
