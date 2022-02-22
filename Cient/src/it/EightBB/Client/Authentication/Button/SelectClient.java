@@ -11,7 +11,7 @@ public class SelectClient implements Button {
         //set button
         SelectClient = new JButton("Cliente");
         //set position
-        SelectClient.setBounds(50,100,70,20);
+        SelectClient.setBounds(50,100,100,20);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(SelectClient);

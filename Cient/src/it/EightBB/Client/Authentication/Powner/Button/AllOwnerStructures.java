@@ -8,7 +8,7 @@ public class AllOwnerStructures implements Button{
     private JButton AllStructures=null;
     public void setButton(){
         AllStructures=new JButton("Strutture Registrate");
-        AllStructures.setBounds(50,100,70,20);
+        AllStructures.setBounds(20,100,150,60);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(AllStructures);

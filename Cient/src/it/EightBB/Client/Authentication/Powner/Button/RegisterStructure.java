@@ -8,7 +8,7 @@ public class RegisterStructure implements Button{
     private JButton RegisterStruct=null;
     public void setButton(){
         RegisterStruct=new JButton("Registra struttura");
-        RegisterStruct.setBounds(50,100,70,20);
+        RegisterStruct.setBounds(20,340,150,60);
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(RegisterStruct);

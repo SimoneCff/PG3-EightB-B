@@ -3,7 +3,6 @@ package it.EightBB.Client.Authentication.Pclient.TextArea;
 import it.EightBB.Client.SwingBB.TextGroup;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class PrivateClient implements TextGroup {
     private JLabel Name, Surname, BirthDate, Mail, Pass = null;
