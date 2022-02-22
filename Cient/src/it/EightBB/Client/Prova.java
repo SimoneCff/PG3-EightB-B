@@ -1,6 +1,5 @@
 package it.EightBB.Client;
 
-
 import it.EightBB.Client.Authentication.Pclient.Button.ExitC;
 import it.EightBB.Client.Authentication.Pclient.Button.ModifyProfileC;
 import it.EightBB.Client.Authentication.Pclient.TextArea.PrivateClient;
@@ -11,23 +10,26 @@ import it.EightBB.Client.SwingBB.TextGroup;
 import javax.swing.*;
 
 public class Prova {
-/**    public static void main(String[] args){
-        JFrame pippo = new JFrame();
+/**
+ * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
+ *
+ * public static void main(String[] args){
+        JFrame prenotation = new JFrame();
 
-        Form pippoform = new PrenotationOne();
+        Form prenotationForm = new PrenotationOne();
 
-        pippoform.setForm();
-        pippoform.InitialiateFormIntoFrame(pippo);
+      prenotationForm.setForm();
+      prenotationForm.InitialiateFormIntoFrame(prenotation);
 
-        pippo.setLayout(null);
-        pippo.setVisible(true);
-        pippo.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        prenotation.setLayout(null);
+        prenotation.setVisible(true);
+        prenotation.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     } */
 
-        public static void main(String[] args){
+       public static void main(String[] args){
             JFrame Frameprivatearea = new JFrame();
-            TextGroup Frameprivateareatext = new PrivateOwner();
+            TextGroup Frameprivateareatext = new PrivateClient();
 
             Button uscita = new ExitC();
             Button modifica = new ModifyProfileC();
@@ -43,9 +45,6 @@ public class Prova {
             Frameprivatearea.setLayout(null);
             Frameprivatearea.setVisible(true);
             Frameprivatearea.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-
-
 
         }
 }
