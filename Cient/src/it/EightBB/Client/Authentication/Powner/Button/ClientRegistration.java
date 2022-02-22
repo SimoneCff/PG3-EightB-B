@@ -1,7 +1,7 @@
 /** La classe ClientRegistration serve a specificare il bottone che riguarda la sezione della registrazione del cliente
  * nella struttura */
 
-package it.EightBB.Client.Authentication.Button;
+package it.EightBB.Client.Authentication.Powner.Button;
 import it.EightBB.Client.SwingBB.Button;
 import javax.swing.*;
 public class ClientRegistration implements Button{
