@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication.Form;
+package it.EightBB.Client.Authentication.Pclient.Form;
 
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
@@ -7,12 +7,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.lang.annotation.Inherited;
 
-public class PrenotationOne {
+public class PrenotationOne implements Form{
     private JTextField research, n_adults, n_childrens = null;
     private JCheckBox animals = null;
     private JDateChooser StartDate = null;
     private JDateChooser EndDate = null;
     private JLabel researchh, n_adultss, n_childrenss, animalss, StartDatee, EndDatee = null;
+    private JButton ConfBt = null;
 
 
     public void setForm(){
@@ -25,6 +26,8 @@ public class PrenotationOne {
         EndDate = new JDateChooser();
         //Check box
         animals = new JCheckBox();
+        //Confirm button
+        ConfBt = new JButton("Conferma");
 
         //Labels
         researchh = new JLabel("ricerca luogo");
@@ -42,13 +45,40 @@ public class PrenotationOne {
         StartDatee.setBounds(50,190,200,30);
         EndDatee.setBounds(300,190,200,30);
 
+
         research.setBounds(50,100,200,30);
         n_adults.setBounds(50,160,200,30);
         n_childrens.setBounds(300,160,200,30);
-        animals.setBounds(300,160,200,30);
+        animals.setBounds(600,160,30,30);
         StartDate.setBounds(50,220,200,30);
         EndDate.setBounds(300,220,200,30);
+        ConfBt.setBounds(50,280,200,30);
     }
+    @Override
+    public void InitialiateFormIntoFrame(JFrame F)
+    {
+        //add User Form
+        F.add(research);
+        F.add(researchh);
+        //add pass Form
+        F.add(n_adults);
+        F.add(n_adultss);
+        //Add Button
+        F.add(n_childrens);
+        F.add(n_childrenss);
 
+        F.add(animals);
+        F.add(animalss);
+
+        F.add(StartDate);
+        F.add(StartDatee);
+
+        F.add(EndDate);
+        F.add(EndDatee);
+
+        F.add(ConfBt);
+        F.setSize(1366, 768);
+        F.getContentPane().setBackground(new Color(225,204,204));
+    }
 
 }

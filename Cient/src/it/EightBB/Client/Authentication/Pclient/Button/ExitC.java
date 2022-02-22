@@ -1,14 +1,14 @@
-package it.EightBB.Client.Authentication.Button;
+package it.EightBB.Client.Authentication.Pclient.Button;
 
 import it.EightBB.Client.SwingBB.Button;
 
 import javax.swing.*;
 
-public class Exit {
+public class ExitC implements Button{
     private JButton Exit=null;
         public void setButton(){
-            Exit=new JButton("Strutture Registrate");
-            Exit.setBounds(50,100,70,20);
+            Exit=new JButton("Esci");
+            Exit.setBounds(1000,25,70,25);
         }
         public void InitialiteButtonIntoFrame(JFrame F){
             F.add(Exit);
