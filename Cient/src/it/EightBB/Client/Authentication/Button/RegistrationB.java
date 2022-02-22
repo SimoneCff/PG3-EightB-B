@@ -11,7 +11,7 @@ public class RegistrationB implements Button {
     public void setButton() {
         //set button
         RegBt = new JButton("Registrati");
-        RegNew = new JLabel("Nuovo Utente ?");
+        RegNew = new JLabel("Nuovo Utente?");
 
 
         //set pos
