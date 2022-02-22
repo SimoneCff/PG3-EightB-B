@@ -9,7 +9,7 @@ public class BookedStructures implements Button{
     @Override
     public void setButton() {
         //set button
-        Bookedstr = new JButton("Prenotazioni Efettuate");
+        Bookedstr = new JButton("Prenotazioni Effettuate");
 
         //set pos
         Bookedstr.setBounds(50,195,100,30);
