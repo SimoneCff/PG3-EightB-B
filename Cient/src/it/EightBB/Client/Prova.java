@@ -1,6 +1,13 @@
 package it.EightBB.Client;
 
 
+import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Powner.Button.GoBackO;
+import it.EightBB.Client.Powner.Form.RegisterNewStructure;
+
+import javax.swing.*;
+
 public class Prova {
 /**
  * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
@@ -124,14 +131,15 @@ public static void main(String[] args){
         selectionTypeReg.setVisible(true);
         selectionTypeReg.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }*/
-    /**
 
-     AREA PER LA RICERCA DEL B&B
-
+/**
+ * RICERCA LUOGO, DOPO AVER CERCATO SI VISUALIZZA LA LISTA DEI RISULTATI (ANCORA DA IMPLEMENTARE) E CI SI PUÒ CLICCARE SOPRA
+ *
+ *
     public static void main(String[] args){
         JFrame AreaRicerca = new JFrame();
        Form ricerca = new RicercaLuogo();
-       Button BenvenutoUser = new WelcomeUser();
+     //  Button BenvenutoUser =new WelcomeUser(); DA IMPLEMENTARE
 
        JLabel immagine = new JLabel();
         immagine.setIcon(new ImageIcon("C:\\Users\\Giuse\\IdeaProjects\\PG3-EightB-B\\foto_80x80.jpeg"));
@@ -139,8 +147,8 @@ public static void main(String[] args){
         immagine.setVisible(true);
 
 
-       BenvenutoUser.setButton();
-       BenvenutoUser.InitialiteButtonIntoFrame(AreaRicerca);
+     //  BenvenutoUser.setButton();
+     //  BenvenutoUser.InitialiteButtonIntoFrame(AreaRicerca);
 
 
        ricerca.setForm();
@@ -151,7 +159,33 @@ public static void main(String[] args){
        AreaRicerca.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        AreaRicerca.add(immagine);
     }*/
-}
+
+/**
+ * CODICE UTILIZZABILE SIA PER IL FORM DI AGGIUNTA STRUTTURA CHE MODIFICA STRUTTURA, IMPLEMENTATO TASTO INDIETRO(GOBACK) PER ANNULLARE
+ *
+ *
+public static void main(String[] args){
+    //JFrame ModifyStr = new JFrame()
+    JFrame RegisterStr = new JFrame();
+    //Form ModifyStrForm = new ModifyRegisteredStructure();
+    Form RegisterStrForm = new RegisterNewStructure();
+    Button Annulla = new GoBackO();
+
+    Annulla.setButton();
+    Annulla.InitialiteButtonIntoFrame(RegisterStr);
+
+    //ModifyStrForm.setForm();
+    //ModifyStrForm.InitialiateFormIntoFrame(ModifyStr);
+    RegisterStrForm.setForm();
+    RegisterStrForm.InitialiateFormIntoFrame(RegisterStr);
+
+    RegisterStr.setLayout(null);
+    RegisterStr.setVisible(true);
+    RegisterStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    }
+}*/
+
 
 
 
