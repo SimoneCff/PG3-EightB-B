@@ -1,24 +1,8 @@
 package it.EightBB.Client;
 
-import it.EightBB.Client.Authentication.Pclient.Button.WelcomeUser;
-import it.EightBB.Client.Pclient.TextArea.RicercaLuogo;
 import it.EightBB.Client.SwingBB.Form;
 import it.EightBB.Client.SwingBB.TextGroup;
 import it.EightBB.Client.SwingBB.Button;
-import it.EightBB.Client.Pclient.Form.PrenotationOne;
-import it.EightBB.Client.Pclient.Button.ExitC;
-import it.EightBB.Client.Pclient.Button.ModifyProfileC;
-import it.EightBB.Client.Powner.Button.AllOwnerStructures;
-import it.EightBB.Client.Powner.Button.ClientRegistration;
-import it.EightBB.Client.Powner.Button.EconomicManagement;
-import it.EightBB.Client.Powner.Button.ExitO;
-import it.EightBB.Client.Powner.Button.ModifyProfileO;
-import it.EightBB.Client.Powner.Button.PrivateAreaEntities;
-import it.EightBB.Client.Powner.Button.RegisterStructure;
-import it.EightBB.Client.Powner.TextArea.PrivateOwner;
-import it.EightBB.Client.Powner.PownerFactory;
-
-import javax.swing.*;
 
 
 public class Prova {
