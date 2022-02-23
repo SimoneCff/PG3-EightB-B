@@ -1,5 +1,5 @@
 package it.EightBB.Client.Authentication.Button;
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 
@@ -18,4 +18,6 @@ public class RegConfirm implements Button {
     public void InitialiteButtonIntoFrame(JFrame F) {
         F.add(RegConfBt);
     }
+
+
 }

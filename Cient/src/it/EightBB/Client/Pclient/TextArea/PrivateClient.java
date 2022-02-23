@@ -1,6 +1,6 @@
 package it.EightBB.Client.Pclient.TextArea;
 
-import it.EightBB.Client.Interface.SwingInt.TextGroup;
+import it.EightBB.Client.Interface.Template.TextGroup;
 import javax.swing.*;
 import java.awt.*;
 

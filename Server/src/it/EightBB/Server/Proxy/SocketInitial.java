@@ -5,6 +5,7 @@ import it.EightBB.Server.SocketInitialService;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class SocketInitial implements SocketInitialService {
     private ServerSocket Ssocket;
@@ -15,11 +16,7 @@ public class SocketInitial implements SocketInitialService {
     public SocketInitial(int port) {
         try {
             Ssocket = new ServerSocket(port);
-            socket = Ssocket.accept();
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
-
-
+            Ssocket.setReuseAddress(true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -30,8 +27,12 @@ public class SocketInitial implements SocketInitialService {
         String s = null;
         try {
             s = in.readUTF();
-        } catch (IOException e) {
+        } catch (SocketException ex){
+            Thread.currentThread().interrupt();
+        }
+        catch (IOException e) {
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
         return s;
     }
@@ -42,20 +43,47 @@ public class SocketInitial implements SocketInitialService {
             out.writeUTF(str);
             out.flush();
 
-        } catch (IOException e) {
+        } catch (SocketException ex){
+            Thread.currentThread().interrupt();
+        }catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
     @Override
-    public void end() {
+    public void endRequest() {
         try {
-            socket.close();
-            in.close();
-            Ssocket.close();
+           socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void accept() {
+        try {
+            socket = Ssocket.accept();
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+            System.out.println("New Client Connection from :"+ socket.getInetAddress().getHostAddress());
+        } catch (IOException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    @Override
+    public void Close() {
+        try{
+            out.close();
+            in.close();
+            Ssocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+
+        }
+    }
+
 }

@@ -1,20 +1,5 @@
 package it.EightBB.Client.Authentication.Button;
 
-import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.Pclient.Button.ExitC;
-import it.EightBB.Client.Pclient.Button.ModifyProfileC;
-import it.EightBB.Client.Pclient.TextArea.PrivateClient;
-import it.EightBB.Client.Powner.Button.AllOwnerStructures;
-import it.EightBB.Client.Powner.Button.ClientRegistration;
-import it.EightBB.Client.Powner.Button.EconomicManagement;
-import it.EightBB.Client.Powner.Button.PrivateAreaEntities;
-import it.EightBB.Client.Powner.Button.RegisterStructure;
-
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class WelcomeUser  { /* implements Button
     private JButton Welcome = null;
 

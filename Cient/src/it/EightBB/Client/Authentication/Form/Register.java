@@ -1,10 +1,10 @@
 package it.EightBB.Client.Authentication.Form;
 
-import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 
-public class Register implements Form{
+public class Register implements Form, Cloneable{
     private JTextField Name, Sur, Us = null;
     private JPasswordField Ps = null;
     private JLabel Namee, Surr, Uss, Pss, Reg = null;
@@ -57,6 +57,15 @@ public class Register implements Form{
         F.add(Ps);
 
         F.add(Reg);
+    }
+
+    public Object clone(){
+        try {
+            return (Form) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

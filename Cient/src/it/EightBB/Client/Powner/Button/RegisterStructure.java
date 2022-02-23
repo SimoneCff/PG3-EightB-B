@@ -2,7 +2,7 @@
  * struttura */
 
 package it.EightBB.Client.Powner.Button;
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 public class RegisterStructure implements Button{
     private JButton RegisterStruct=null;
@@ -12,5 +12,14 @@ public class RegisterStructure implements Button{
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(RegisterStruct);
+    }
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

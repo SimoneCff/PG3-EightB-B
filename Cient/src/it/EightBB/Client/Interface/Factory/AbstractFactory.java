@@ -1,9 +1,9 @@
 package it.EightBB.Client.Interface.Factory;
 
 
-import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.Interface.SwingInt.Form;
-import it.EightBB.Client.Interface.SwingInt.TextGroup;
+import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Interface.Template.TextGroup;
 
 public abstract interface AbstractFactory{
 

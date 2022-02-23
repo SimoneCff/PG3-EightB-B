@@ -8,6 +8,8 @@ import java.net.Socket;
 public abstract interface SocketInitialService {
     String read();
     void Write(String str);
-    void end();
+    void endRequest();
+    void Close();
+    void accept();
 }
 

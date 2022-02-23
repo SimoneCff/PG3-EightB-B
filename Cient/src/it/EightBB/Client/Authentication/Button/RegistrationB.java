@@ -1,6 +1,6 @@
 package it.EightBB.Client.Authentication.Button;
 
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 
@@ -25,4 +25,6 @@ public class RegistrationB implements Button {
         F.add(RegNew);
         F.add(RegBt);
     }
+
+
 }

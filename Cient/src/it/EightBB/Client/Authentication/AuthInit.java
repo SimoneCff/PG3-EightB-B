@@ -3,8 +3,8 @@ package it.EightBB.Client.Authentication;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.Init;
-import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Interface.Template.Form;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,7 @@
 package it.EightBB.Client.Pclient.Form;
 
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
-import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 

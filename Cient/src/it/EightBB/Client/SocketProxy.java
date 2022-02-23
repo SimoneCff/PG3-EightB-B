@@ -6,6 +6,7 @@ import it.EightBB.Client.Interface.SocketInterface;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Arrays;
 import javax.swing.*;
 
 
@@ -29,8 +30,6 @@ public class SocketProxy implements SocketInterface {
     public void settingUP(String IP, int port) {
         try {
             socket = new Socket(IP, port);
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
 
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -42,6 +41,7 @@ public class SocketProxy implements SocketInterface {
     public String read() {
         String str = null;
         try {
+            in = new DataInputStream(socket.getInputStream());
             str =  in.readUTF();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -52,9 +52,10 @@ public class SocketProxy implements SocketInterface {
 
 
     @Override
-    public void write(String str) {
+    public void write(String[] str) {
         try {
-           out.writeUTF(str);
+            out = new DataOutputStream(socket.getOutputStream());
+           out.writeUTF(Arrays.toString(str));
            out.flush();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -65,8 +66,6 @@ public class SocketProxy implements SocketInterface {
     @Override
     public void close() {
         try {
-            in.close();
-            out.close();
             socket.close();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);

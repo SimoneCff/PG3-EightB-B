@@ -1,10 +1,9 @@
 package it.EightBB.Client.Powner;
 
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
-import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.Interface.SwingInt.Form;
-import it.EightBB.Client.Interface.SwingInt.TextGroup;
-import it.EightBB.Client.Pclient.TextArea.PrivateClient;
+import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Interface.Template.TextGroup;
 import it.EightBB.Client.Powner.Button.*;
 import it.EightBB.Client.Powner.TextArea.PrivateOwner;
 

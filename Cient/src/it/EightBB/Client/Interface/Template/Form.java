@@ -1,8 +1,8 @@
-package it.EightBB.Client.Interface.SwingInt;
+package it.EightBB.Client.Interface.Template;
 
 import javax.swing.*;
 
-public abstract interface Form {
+public interface Form {
     public void setForm();
 
 

@@ -2,18 +2,21 @@
 
 package it.EightBB.Client.Authentication.Button;
 
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
 public class SelectOwner implements Button {
-    private JButton SelectOwner=null;
+    private JButton SelectOwner = null;
+
     public void setButton() {
         //set button
         SelectOwner = new JButton("Proprietario");
         //set position
-        SelectOwner.setBounds(200,100,100,20);
+        SelectOwner.setBounds(200, 100, 100, 20);
     }
-    public void InitialiteButtonIntoFrame(JFrame F){
+
+    public void InitialiteButtonIntoFrame(JFrame F) {
         F.add(SelectOwner);
     }
 }
+

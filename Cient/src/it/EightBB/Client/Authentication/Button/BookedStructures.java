@@ -1,6 +1,6 @@
 /** Bottone per visualizzare le prenotazioni effettuate dal cliente*/
 package it.EightBB.Client.Authentication.Button;
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 public class BookedStructures implements Button{
@@ -20,4 +20,6 @@ public class BookedStructures implements Button{
         F.add(Bookedstr);
 
     }
+
+
 }

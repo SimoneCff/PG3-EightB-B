@@ -1,6 +1,6 @@
 package it.EightBB.Client.Pclient.Button;
 
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 
@@ -13,5 +13,15 @@ public class ExitC implements Button{
         public void InitialiteButtonIntoFrame(JFrame F){
             F.add(Exit);
         }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     }
 

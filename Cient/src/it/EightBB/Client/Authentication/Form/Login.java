@@ -3,11 +3,10 @@ package it.EightBB.Client.Authentication.Form;
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.SocketProxy;
-import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.util.Arrays;
 
 
 public class Login implements Form {
@@ -68,7 +67,7 @@ public class Login implements Form {
     public static void getTextAndSendToDB() {
        SocketInterface SP = SocketProxy.getIstance();
        try {
-           String req = "AuthDB," + Us.getText() + ",password," + Arrays.toString(Ps.getPassword());
+           String[] req = {"AuthDBL",Us.getText(), "password",new String(Ps.getPassword())};
            SP.write(req);
            String Result = SP.read();
            System.out.println(Result);
