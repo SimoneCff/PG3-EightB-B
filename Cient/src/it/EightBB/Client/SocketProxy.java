@@ -1,6 +1,8 @@
-package it.EightBB.Client.Proxy;
+package it.EightBB.Client;
 
 //import com.mysql.cj.callback.MysqlCallbackHandler;
+
+import it.EightBB.Client.Interface.SocketInterface;
 
 import java.io.*;
 import java.net.Socket;

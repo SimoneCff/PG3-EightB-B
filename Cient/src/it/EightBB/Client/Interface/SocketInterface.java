@@ -1,7 +1,6 @@
-package it.EightBB.Client.Proxy;
+package it.EightBB.Client.Interface;
 
 import java.io.*;
-import java.net.Socket;
 
 public interface SocketInterface {
     public static SocketInterface getIstance() {

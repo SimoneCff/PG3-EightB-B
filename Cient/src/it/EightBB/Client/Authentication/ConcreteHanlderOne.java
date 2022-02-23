@@ -1,9 +1,8 @@
-package it.EightBB.Client.Handler.Action.Concrete;
+package it.EightBB.Client.Authentication;
 
 import it.EightBB.Client.Authentication.Form.Login;
-import it.EightBB.Client.Handler.Action.ActionHandler;
+import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class ConcreteHanlderOne extends ActionHandler {

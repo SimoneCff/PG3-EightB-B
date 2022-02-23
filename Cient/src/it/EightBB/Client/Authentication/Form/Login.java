@@ -1,12 +1,11 @@
 package it.EightBB.Client.Authentication.Form;
 
-import it.EightBB.Client.Handler.Action.Concrete.ConcreteHanlderOne;
-import it.EightBB.Client.Proxy.SocketInterface;
-import it.EightBB.Client.Proxy.SocketProxy;
-import it.EightBB.Client.SwingBB.Form;
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.Interface.SocketInterface;
+import it.EightBB.Client.SocketProxy;
+import it.EightBB.Client.Interface.SwingInt.Form;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Arrays;
 

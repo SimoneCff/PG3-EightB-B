@@ -1,4 +1,4 @@
-package it.EightBB.Client.SwingBB;
+package it.EightBB.Client.Interface.SwingInt;
 
 import javax.swing.*;
 

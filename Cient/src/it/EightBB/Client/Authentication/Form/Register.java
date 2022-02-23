@@ -1,9 +1,8 @@
 package it.EightBB.Client.Authentication.Form;
 
-import it.EightBB.Client.SwingBB.Form;
+import it.EightBB.Client.Interface.SwingInt.Form;
 import javax.swing.*;
 import java.awt.*;
-import java.lang.annotation.Inherited;
 
 public class Register implements Form{
     private JTextField Name, Sur, Us = null;
