@@ -1,8 +1,12 @@
 package it.EightBB.Client.Authentication.Form;
 
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Register implements Form, Cloneable {
     private JTextField Name, Sur, Us = null;
@@ -44,6 +48,8 @@ public class Register implements Form, Cloneable {
 
         //set Button
         RegConfBt.setBounds(350, 300, 200, 30);
+        RegConfBt.setActionCommand("Auth-BFORM-RC");
+        RegConfBt.addActionListener(new ConcreteHanlderOne());
     }
 
     @Override
@@ -64,6 +70,22 @@ public class Register implements Form, Cloneable {
         F.add(Reg);
         //Add Button
         F.add(RegConfBt);
+    }
+
+    public static void getTextAndSendToDB() {
+        SocketInterface SP = SocketProxy.getIstance();
+        try {
+            String[] req = {"AuthDBRO","Nome",Sur., "password",new String(Ps.getPassword())};
+            SP.write(req);
+            String Result = SP.read();
+            System.out.println(Result);
+            if (Result.equals("False")) {
+                JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
     }
 }
 

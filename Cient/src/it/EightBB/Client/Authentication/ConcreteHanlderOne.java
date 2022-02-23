@@ -10,9 +10,7 @@ public class ConcreteHanlderOne extends ActionHandler {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().contains("Auth")){
             if (e.getActionCommand().contains("BP")){
-                if (e.getActionCommand().contains("L")){
-                    Login.getTextAndSendToDB();
-                } else if (e.getActionCommand().contains("Register")){
+                 if (e.getActionCommand().contains("Register")){
                   AuthFacade.getInstance().Register();
                 } else if (e.getActionCommand().contains("RegC")){
                     AuthFacade.getInstance().RegisterClient();
@@ -20,6 +18,14 @@ public class ConcreteHanlderOne extends ActionHandler {
                     AuthFacade.getInstance().RegisterOwner();
                 } else if (e.getActionCommand().contains("RetGin")){
                     AuthFacade.getInstance().Login();
+                }
+            } else if (e.getActionCommand().contains("BFORM")){
+                if (e.getActionCommand().contains("L")){
+                    Login.getTextAndSendToDB();
+                } else if (e.getActionCommand().contains("RO")){
+
+                } else if (e.getActionCommand().contains("RC")){
+
                 }
             }
         }

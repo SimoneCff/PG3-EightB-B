@@ -1,10 +1,17 @@
 package it.EightBB.Client.Authentication.Form;
 
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.SocketInterface;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class RegisterO extends Register {
     private JTextField Cf, Piva = null;
     private JLabel Cff, Pivaa = null;
+    private JButton RegConfBt = null;
 
     @Override
     public void setForm() {
@@ -27,6 +34,11 @@ public class RegisterO extends Register {
 
         Cff.setBounds(350,70,200,30);
         Pivaa.setBounds(350,130,200,30);
+
+        RegConfBt = new JButton("Registrati!");
+        RegConfBt.setBounds(350, 300, 200, 30);
+        RegConfBt.setActionCommand("Auth-BFORM-RO");
+        RegConfBt.addActionListener(new ConcreteHanlderOne());
     }
 
     @Override
@@ -39,6 +51,22 @@ public class RegisterO extends Register {
         F.add(Pivaa);
         F.add(Piva);
 
+    }
+
+    public static void getTextAndSendToDB() {
+        SocketInterface SP = SocketProxy.getIstance();
+        try {
+            String[] req = {"AuthDBRO","Nome",.getText(), "password",new String(Ps.getPassword())};
+            SP.write(req);
+            String Result = SP.read();
+            System.out.println(Result);
+            if (Result.equals("False")) {
+                JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
     }
 }
 

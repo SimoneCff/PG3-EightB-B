@@ -46,7 +46,7 @@ public class Login implements Form {
         //set pos
         LogBt.setBounds(50,230,200,30);
 
-        LogBt.setActionCommand("Auth-BP-L");
+        LogBt.setActionCommand("Auth-BFORM-L");
         LogBt.addActionListener(new ConcreteHanlderOne());
 
     }
