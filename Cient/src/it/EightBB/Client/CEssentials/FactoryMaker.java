@@ -1,4 +1,4 @@
-package it.EightBB.Client;
+package it.EightBB.Client.CEssentials;
 
 import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;

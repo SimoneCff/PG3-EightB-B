@@ -2,7 +2,7 @@ package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.SocketInterface;
-import it.EightBB.Client.SocketProxy;
+import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;

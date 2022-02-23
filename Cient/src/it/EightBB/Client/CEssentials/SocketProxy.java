@@ -1,4 +1,4 @@
-package it.EightBB.Client;
+package it.EightBB.Client.CEssentials;
 
 //import com.mysql.cj.callback.MysqlCallbackHandler;
 

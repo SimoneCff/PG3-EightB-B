@@ -1,6 +1,6 @@
 package it.EightBB.Client.Powner.Form;
 
-import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.Template.Form;
 
 import javax.swing.*;
 import java.awt.*;

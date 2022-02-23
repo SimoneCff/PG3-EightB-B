@@ -1,7 +1,7 @@
 package it.EightBB.Client.Authentication;
 
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
-import it.EightBB.Client.FactoryMaker;
+import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.Init;
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
