@@ -1,9 +1,5 @@
 package it.EightBB.Client;
 
-import it.EightBB.Client.SwingBB.Form;
-import it.EightBB.Client.SwingBB.TextGroup;
-import it.EightBB.Client.SwingBB.Button;
-
 
 public class Prova {
 /**

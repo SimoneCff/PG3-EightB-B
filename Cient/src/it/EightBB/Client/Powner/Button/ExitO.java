@@ -1,8 +1,10 @@
 package it.EightBB.Client.Powner.Button;
 
+import it.EightBB.Client.Interface.SwingInt.Button;
+
 import javax.swing.*;
 
-public class ExitO {
+public class ExitO implements Button {
     private JButton Exit=null;
         public void setButton(){
             Exit=new JButton("Esci");

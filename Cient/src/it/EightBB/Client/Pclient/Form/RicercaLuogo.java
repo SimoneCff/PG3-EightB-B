@@ -1,8 +1,8 @@
 
-package it.EightBB.Client.Pclient.TextArea;
+package it.EightBB.Client.Pclient.Form;
 
-import it.EightBB.Client.SwingBB.Form;
-import it.EightBB.Client.SwingBB.TextGroup;
+
+import it.EightBB.Client.Interface.SwingInt.Form;
 
 import javax.swing.*;
 import java.awt.*;

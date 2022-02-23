@@ -12,6 +12,7 @@ import java.awt.*;
 public class AuthInit implements Init {
     private static AuthInit Instance;
     private JFrame F;
+    private FactoryMaker FM;
     private AbstractFactory AF;
 
     public static Init getInstance(JFrame F) {
@@ -22,7 +23,9 @@ public class AuthInit implements Init {
 
     public AuthInit(JFrame F){
         this.F=F;
-        this.AF = FactoryMaker.getInstance().getFactory("auth").getInstance();
+        this.FM = FactoryMaker.getInstance();
+        this.AF = FM.getFactory("auth");
+
     }
 
     @Override
@@ -34,6 +37,7 @@ public class AuthInit implements Init {
 
 
     void Login(){
+
         //Setting Button & Form
        Button Bf = AF.makeButton("Registration");
        Form Ff = AF.makeForm("Login");

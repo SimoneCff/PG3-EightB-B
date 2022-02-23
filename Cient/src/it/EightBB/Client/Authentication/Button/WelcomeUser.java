@@ -1,8 +1,6 @@
 package it.EightBB.Client.Authentication.Button;
 
 import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.SwingBB.Button;
-import it.EightBB.Client.SwingBB.TextGroup;
 import it.EightBB.Client.Pclient.Button.ExitC;
 import it.EightBB.Client.Pclient.Button.ModifyProfileC;
 import it.EightBB.Client.Pclient.TextArea.PrivateClient;
@@ -17,7 +15,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WelcomeUser implements Button {
+public class WelcomeUser  { /* implements Button
     private JButton Welcome = null;
 
     public void setButton() {
@@ -81,7 +79,7 @@ public class WelcomeUser implements Button {
 
             }
 
-        });*/
+        });
         F.add(Welcome);
-    }
+    }*/
 }

@@ -15,29 +15,30 @@ public class AuthFactory implements AbstractFactory {
 
     @Override
     public Form makeForm(String Type) {
-        Form ft = switch (Type) {
+        return switch (Type) {
             case "Login" -> new Login();
             case "Register" -> new Register();
             case "RegisterO" -> new RegisterO();
             default -> null;
         };
-        return ft;
     }
 
     @Override
     public Button makeButton(String Type) {
 
-        Button bt = switch (Type) {
+       return switch (Type) {
             case "Registration" -> new RegistrationB();
             case "RegConfirm" -> new RegConfirm();
             default -> null;
         };
-        return bt;
     }
 
     @Override
     public TextGroup makeText(String type) {
-        return new SelectRegistrationType();
+        return switch (type){
+          case "Select" -> new SelectRegistrationType();
+            default -> null;
+        };
     }
 
 
