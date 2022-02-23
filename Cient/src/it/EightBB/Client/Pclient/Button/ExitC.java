@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication.Pclient.Button;
+package it.EightBB.Client.Pclient.Button;
 
 import it.EightBB.Client.SwingBB.Button;
 

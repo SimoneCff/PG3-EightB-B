@@ -1,19 +1,5 @@
 package it.EightBB.Client;
 
-import it.EightBB.Client.Authentication.Button.SelectClient;
-import it.EightBB.Client.Authentication.Button.SelectOwner;
-import it.EightBB.Client.Authentication.Pclient.Button.ExitC;
-import it.EightBB.Client.Authentication.Pclient.Button.ModifyProfileC;
-import it.EightBB.Client.Authentication.Pclient.TextArea.PrivateClient;
-import it.EightBB.Client.Authentication.Powner.Button.*;
-import it.EightBB.Client.Authentication.Powner.TextArea.PrivateOwner;
-import it.EightBB.Client.Authentication.TextArea.SelectRegistrationType;
-import it.EightBB.Client.SwingBB.Button;
-import it.EightBB.Client.SwingBB.TextGroup;
-
-import javax.swing.*;
-import java.awt.*;
-
 public class Prova {
 /**
  * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA

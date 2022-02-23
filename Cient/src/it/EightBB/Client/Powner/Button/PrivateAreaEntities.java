@@ -1,6 +1,6 @@
 /** La classe PrivateAreaEntities serve a specificare il bottone che riguarda la sezione privata degli Enti Nazionali */
 
-package it.EightBB.Client.Authentication.Powner.Button;
+package it.EightBB.Client.Powner.Button;
 import it.EightBB.Client.SwingBB.Button;
 import javax.swing.*;
 public class PrivateAreaEntities implements Button{

@@ -1,11 +1,10 @@
-package it.EightBB.Client.Authentication.Pclient.Form;
+package it.EightBB.Client.Pclient.Form;
 
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import it.EightBB.Client.SwingBB.Form;
 import javax.swing.*;
 import java.awt.*;
-import java.lang.annotation.Inherited;
 
 public class PrenotationOne implements Form{
     private JTextField research, n_adults, n_childrens = null;

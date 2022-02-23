@@ -1,7 +1,7 @@
 /** La classe OwnerAllStructure serve a specificare il bottone che riguarda tutte le strutture registrate dal
  * proprietario */
 
-package it.EightBB.Client.Authentication.Powner.Button;
+package it.EightBB.Client.Powner.Button;
 import it.EightBB.Client.SwingBB.Button;
 import javax.swing.*;
 public class AllOwnerStructures implements Button{

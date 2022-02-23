@@ -1,7 +1,7 @@
 /** La classe RegisterStructure serve a specificare il bottone che riguarda la sezione della registrazione della
  * struttura */
 
-package it.EightBB.Client.Authentication.Powner.Button;
+package it.EightBB.Client.Powner.Button;
 import it.EightBB.Client.SwingBB.Button;
 import javax.swing.*;
 public class RegisterStructure implements Button{

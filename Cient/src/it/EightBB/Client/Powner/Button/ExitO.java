@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication.Powner.Button;
+package it.EightBB.Client.Powner.Button;
 
 import javax.swing.*;
 

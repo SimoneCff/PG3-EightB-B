@@ -1,7 +1,7 @@
 /** La classe EconomicManagement serve a specificare il bottone che riguarda la sezione della gestione economica di
  *  ciascuna struttura. */
 
-package it.EightBB.Client.Authentication.Powner.Button;
+package it.EightBB.Client.Powner.Button;
 import it.EightBB.Client.SwingBB.Button;
 import javax.swing.*;
 public class EconomicManagement implements Button{

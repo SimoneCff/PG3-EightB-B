@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication.Powner.TextArea;
+package it.EightBB.Client.Powner.TextArea;
 
 import it.EightBB.Client.SwingBB.TextGroup;
 

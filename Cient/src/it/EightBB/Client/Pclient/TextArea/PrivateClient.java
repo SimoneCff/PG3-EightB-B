@@ -1,4 +1,4 @@
-package it.EightBB.Client.Authentication.Pclient.TextArea;
+package it.EightBB.Client.Pclient.TextArea;
 
 import it.EightBB.Client.SwingBB.TextGroup;
 import javax.swing.*;
