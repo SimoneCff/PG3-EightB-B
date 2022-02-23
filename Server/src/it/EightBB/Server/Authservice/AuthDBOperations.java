@@ -1,6 +1,7 @@
 package it.EightBB.Server.Authservice;
 
 import it.EightBB.Server.Database.DatabaseOperations;
+import it.EightBB.Server.Database.Query;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class AuthDBOperations implements DatabaseOperations {
     private AuthDBOperations Instance;
@@ -21,12 +23,12 @@ public class AuthDBOperations implements DatabaseOperations {
     }
 
     @Override
-    public ArrayList<String> getQuery(String table, String attributes) {
+    public List<String> getQuery(String table, String attributes) {
         return null;
     }
 
     @Override
-    public boolean AddQuery(Connection db, String table, HashMap<String, String> data) {
+    public boolean AddQuery(Connection db, String table,Query query) {
         return false;
     }
 
