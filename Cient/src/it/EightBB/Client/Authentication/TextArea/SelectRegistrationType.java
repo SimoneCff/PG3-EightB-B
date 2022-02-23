@@ -1,6 +1,6 @@
 package it.EightBB.Client.Authentication.TextArea;
 
-import it.EightBB.Client.SwingBB.TextGroup;
+import it.EightBB.Client.Interface.SwingInt.TextGroup;
 import javax.swing.*;
 import java.awt.*;
 

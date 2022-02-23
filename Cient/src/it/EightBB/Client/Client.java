@@ -1,9 +1,7 @@
 package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthInit;
-import it.EightBB.Client.Factory.FactoryMaker;
-import it.EightBB.Client.Factory.Init;
-import it.EightBB.Client.Proxy.SocketProxy;
+import it.EightBB.Client.Interface.Factory.Init;
 
 import javax.swing.*;
 

@@ -1,6 +1,4 @@
-package it.EightBB.Client.Handler;
-
-import it.EightBB.Server.HandlingSubSystem.Request;
+package it.EightBB.Client.Interface.Handler;
 
 public class request {
     private String m_request;

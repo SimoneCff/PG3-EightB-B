@@ -2,7 +2,7 @@
  *  ciascuna struttura. */
 
 package it.EightBB.Client.Powner.Button;
-import it.EightBB.Client.SwingBB.Button;
+import it.EightBB.Client.Interface.SwingInt.Button;
 import javax.swing.*;
 public class EconomicManagement implements Button{
     private JButton ManageEconomy=null;

@@ -1,7 +1,6 @@
-package it.EightBB.Client.SwingBB;
+package it.EightBB.Client.Interface.SwingInt;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 public interface TextGroup {
     public void setText();

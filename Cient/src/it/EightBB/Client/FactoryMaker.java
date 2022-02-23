@@ -1,6 +1,7 @@
-package it.EightBB.Client.Factory;
+package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthFactory;
+import it.EightBB.Client.Interface.Factory.AbstractFactory;
 
 public class FactoryMaker {
     private static AbstractFactory fc = null;

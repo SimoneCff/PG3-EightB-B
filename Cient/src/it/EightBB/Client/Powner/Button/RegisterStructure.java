@@ -2,7 +2,7 @@
  * struttura */
 
 package it.EightBB.Client.Powner.Button;
-import it.EightBB.Client.SwingBB.Button;
+import it.EightBB.Client.Interface.SwingInt.Button;
 import javax.swing.*;
 public class RegisterStructure implements Button{
     private JButton RegisterStruct=null;

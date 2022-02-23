@@ -1,13 +1,15 @@
 package it.EightBB.Client.Authentication;
 
-import it.EightBB.Client.Factory.AbstractFactory;
+import it.EightBB.Client.Authentication.TextArea.SelectRegistrationType;
+import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Authentication.Button.RegConfirm;
 import it.EightBB.Client.Authentication.Button.RegistrationB;
 import it.EightBB.Client.Authentication.Form.Login;
 import it.EightBB.Client.Authentication.Form.Register;
 import it.EightBB.Client.Authentication.Form.RegisterO;
-import it.EightBB.Client.SwingBB.Button;
-import it.EightBB.Client.SwingBB.Form;
+import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.SwingInt.Form;
+import it.EightBB.Client.Interface.SwingInt.TextGroup;
 
 public class AuthFactory implements AbstractFactory {
     private AuthFactory Instance;
@@ -42,6 +44,11 @@ public class AuthFactory implements AbstractFactory {
             default -> null;
         };
         return bt;
+    }
+
+    @Override
+    public TextGroup makeText(String type) {
+        return new SelectRegistrationType();
     }
 
 

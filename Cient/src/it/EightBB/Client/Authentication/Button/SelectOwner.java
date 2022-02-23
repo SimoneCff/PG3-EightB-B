@@ -2,7 +2,7 @@
 
 package it.EightBB.Client.Authentication.Button;
 
-import it.EightBB.Client.SwingBB.Button;
+import it.EightBB.Client.Interface.SwingInt.Button;
 import javax.swing.*;
 
 public class SelectOwner implements Button {

@@ -1,4 +1,4 @@
-package it.EightBB.Client.Handler.Action;
+package it.EightBB.Client.Interface.Handler.Action;
 
 import java.awt.event.ActionListener;
 

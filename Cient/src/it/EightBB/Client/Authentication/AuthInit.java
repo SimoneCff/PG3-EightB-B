@@ -1,10 +1,10 @@
 package it.EightBB.Client.Authentication;
 
-import it.EightBB.Client.Factory.AbstractFactory;
-import it.EightBB.Client.Factory.FactoryMaker;
-import it.EightBB.Client.Factory.Init;
-import it.EightBB.Client.SwingBB.Button;
-import it.EightBB.Client.SwingBB.Form;
+import it.EightBB.Client.Interface.Factory.AbstractFactory;
+import it.EightBB.Client.FactoryMaker;
+import it.EightBB.Client.Interface.Factory.Init;
+import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.SwingInt.Form;
 
 import javax.swing.*;
 import java.awt.*;

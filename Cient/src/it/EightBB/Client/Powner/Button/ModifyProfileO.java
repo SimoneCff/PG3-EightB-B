@@ -1,6 +1,6 @@
 /** Bottone per Modificare il Profilo Utente*/
 package it.EightBB.Client.Powner.Button;
-import it.EightBB.Client.SwingBB.Button;
+import it.EightBB.Client.Interface.SwingInt.Button;
 
 import javax.swing.*;
 
