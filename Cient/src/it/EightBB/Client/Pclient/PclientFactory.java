@@ -1,11 +1,12 @@
-package it.EightBB.Client.Powner;
+package it.EightBB.Client.Pclient;
 
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Interface.SwingInt.Button;
 import it.EightBB.Client.Interface.SwingInt.Form;
 import it.EightBB.Client.Interface.SwingInt.TextGroup;
 
-public class PownerFactory implements AbstractFactory {
+public class PclientFactory implements AbstractFactory {
+
     @Override
     public Form makeForm(String type) {
         return null;

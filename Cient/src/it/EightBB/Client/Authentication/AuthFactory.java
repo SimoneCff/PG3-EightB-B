@@ -12,17 +12,6 @@ import it.EightBB.Client.Interface.SwingInt.Form;
 import it.EightBB.Client.Interface.SwingInt.TextGroup;
 
 public class AuthFactory implements AbstractFactory {
-    private AuthFactory Instance;
-    private boolean True;
-
-
-    @Override
-    public AuthFactory getInstance() {
-        if (Instance == null) {
-            Instance = new AuthFactory();
-        }
-        return Instance;
-    }
 
     @Override
     public Form makeForm(String Type) {

@@ -8,8 +8,9 @@ import it.EightBB.Client.Interface.SwingInt.TextGroup;
 public abstract interface AbstractFactory{
 
     //Instance
-    public AbstractFactory getInstance();
-
+    public static AbstractFactory getInstance() {
+        return null;
+    }
     //Make
     public Form makeForm(String type);
     public Button makeButton(String type);

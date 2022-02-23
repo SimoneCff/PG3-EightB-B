@@ -2,9 +2,10 @@ package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
+import it.EightBB.Client.Pclient.PclientFactory;
+import it.EightBB.Client.Powner.PownerFactory;
 
 public class FactoryMaker {
-    private static AbstractFactory fc = null;
     private static FactoryMaker Instance = null;
 
     public static FactoryMaker getInstance() {
@@ -15,12 +16,12 @@ public class FactoryMaker {
     }
 
    public AbstractFactory getFactory(String Choise) {
-        if (Choise.equals("auth")) {
-            fc = new AuthFactory();
-        }
-        if (Choise.equals("bo")) {
-            fc = null;
-        }
+        AbstractFactory fc = switch (Choise) {
+            case "auth" -> new AuthFactory();
+            case "pclient" -> new PclientFactory();
+            case "powner" -> new PownerFactory();
+            default -> null;
+        };
         return fc;
     }
 }
