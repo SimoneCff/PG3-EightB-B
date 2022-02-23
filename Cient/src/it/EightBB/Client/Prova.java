@@ -1,10 +1,31 @@
 package it.EightBB.Client;
 
+import it.EightBB.Client.Authentication.Pclient.Button.WelcomeUser;
+import it.EightBB.Client.Pclient.TextArea.RicercaLuogo;
+import it.EightBB.Client.SwingBB.Form;
+import it.EightBB.Client.SwingBB.TextGroup;
+import it.EightBB.Client.SwingBB.Button;
+import it.EightBB.Client.Pclient.Form.PrenotationOne;
+import it.EightBB.Client.Pclient.Button.ExitC;
+import it.EightBB.Client.Pclient.Button.ModifyProfileC;
+import it.EightBB.Client.Powner.Button.AllOwnerStructures;
+import it.EightBB.Client.Powner.Button.ClientRegistration;
+import it.EightBB.Client.Powner.Button.EconomicManagement;
+import it.EightBB.Client.Powner.Button.ExitO;
+import it.EightBB.Client.Powner.Button.ModifyProfileO;
+import it.EightBB.Client.Powner.Button.PrivateAreaEntities;
+import it.EightBB.Client.Powner.Button.RegisterStructure;
+import it.EightBB.Client.Powner.TextArea.PrivateOwner;
+import it.EightBB.Client.Powner.PownerFactory;
+
+import javax.swing.*;
+
+
 public class Prova {
 /**
  * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
  *
- * public static void main(String[] args){
+  public static void main(String[] args){
         JFrame prenotation = new JFrame();
 
         Form prenotationForm = new PrenotationOne();
@@ -16,7 +37,7 @@ public class Prova {
         prenotation.setVisible(true);
         prenotation.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-    } */
+    }*/
 
 /**
  * AREA PRIVATA CLIENTE CON BOTTONI DI MODIFICA E USCITA INCLUSI
@@ -122,6 +143,33 @@ public static void main(String[] args){
         selectionTypeReg.setLayout(null);
         selectionTypeReg.setVisible(true);
         selectionTypeReg.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }*/
+    /**
+
+     AREA PER LA RICERCA DEL B&B
+
+    public static void main(String[] args){
+        JFrame AreaRicerca = new JFrame();
+       Form ricerca = new RicercaLuogo();
+       Button BenvenutoUser = new WelcomeUser();
+
+       JLabel immagine = new JLabel();
+        immagine.setIcon(new ImageIcon("C:\\Users\\Giuse\\IdeaProjects\\PG3-EightB-B\\foto_80x80.jpeg"));
+        immagine.setBounds(1000,18,80 ,80);
+        immagine.setVisible(true);
+
+
+       BenvenutoUser.setButton();
+       BenvenutoUser.InitialiteButtonIntoFrame(AreaRicerca);
+
+
+       ricerca.setForm();
+       ricerca.InitialiateFormIntoFrame(AreaRicerca);
+
+       AreaRicerca.setLayout(null);
+       AreaRicerca.setVisible(true);
+       AreaRicerca.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+       AreaRicerca.add(immagine);
     }*/
 }
 
