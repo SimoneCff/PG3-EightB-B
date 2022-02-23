@@ -2,6 +2,7 @@
 
 package it.EightBB.Client.Authentication.Button;
 
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
@@ -12,6 +13,8 @@ public class SelectClient implements Button {
         SelectClient = new JButton("Cliente");
         //set position
         SelectClient.setBounds(50,100,100,20);
+        SelectClient.setActionCommand("Auth-BP-RegC");
+        SelectClient.addActionListener(new ConcreteHanlderOne());
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(SelectClient);

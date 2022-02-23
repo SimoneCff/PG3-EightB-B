@@ -1,6 +1,6 @@
 package it.EightBB.Client.Powner.Button;
 
-import it.EightBB.Client.Interface.SwingInt.Button;
+import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 

@@ -4,19 +4,21 @@ import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 
-public class Register implements Form, Cloneable{
+public class Register implements Form, Cloneable {
     private JTextField Name, Sur, Us = null;
     private JPasswordField Ps = null;
     private JLabel Namee, Surr, Uss, Pss, Reg = null;
+    private JButton RegConfBt = null;
 
 
     @Override
-    public void setForm(){
+    public void setForm() {
         //Fields
         Name = new JTextField();
         Sur = new JTextField();
         Us = new JTextField();
         Ps = new JPasswordField();
+        RegConfBt = new JButton("Registrati!");
 
         //Label:
         Namee = new JLabel("Nome");
@@ -26,19 +28,22 @@ public class Register implements Form, Cloneable{
         Reg = new JLabel("Registrazione");
 
         //Set Fields:
-        Name.setBounds(50,100,200,30);
-        Sur.setBounds(50,160,200,30);
-        Us.setBounds(50,240,200,30);
-        Ps.setBounds(50,300,200,30);
+        Name.setBounds(50, 100, 200, 30);
+        Sur.setBounds(50, 160, 200, 30);
+        Us.setBounds(50, 240, 200, 30);
+        Ps.setBounds(50, 300, 200, 30);
 
         //Set Label:
-        Reg.setBounds(50,15,200,40);
+        Reg.setBounds(50, 15, 200, 40);
         Reg.setFont(new Font("Arial", Font.PLAIN, 30));
 
-        Namee.setBounds(50,70,200,30);
-        Surr.setBounds(50,130,200,30);
-        Uss.setBounds(50,210,200,30);
-        Pss.setBounds(50,270,200,30);
+        Namee.setBounds(50, 70, 200, 30);
+        Surr.setBounds(50, 130, 200, 30);
+        Uss.setBounds(50, 210, 200, 30);
+        Pss.setBounds(50, 270, 200, 30);
+
+        //set Button
+        RegConfBt.setBounds(350, 300, 200, 30);
     }
 
     @Override
@@ -57,16 +62,8 @@ public class Register implements Form, Cloneable{
         F.add(Ps);
 
         F.add(Reg);
+        //Add Button
+        F.add(RegConfBt);
     }
-
-    public Object clone(){
-        try {
-            return (Form) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
 }
 

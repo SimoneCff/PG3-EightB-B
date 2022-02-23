@@ -1,7 +1,8 @@
 package it.EightBB.Client.Authentication;
 
-import it.EightBB.Client.Authentication.Button.RegConfirm;
 import it.EightBB.Client.Authentication.Button.RegistrationB;
+import it.EightBB.Client.Authentication.Button.SelectClient;
+import it.EightBB.Client.Authentication.Button.SelectOwner;
 import it.EightBB.Client.Authentication.TextArea.SelectRegistrationType;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Authentication.Form.Login;
@@ -28,7 +29,8 @@ public class AuthFactory implements AbstractFactory {
 
        return switch (Type) {
             case "Registration" ->new RegistrationB();
-            case "RegConfirm" -> new RegConfirm();
+            case "SelectC" -> new SelectClient();
+            case "SelectO" -> new SelectOwner();
             default -> null;
         };
     }

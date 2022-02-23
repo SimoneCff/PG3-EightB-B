@@ -8,7 +8,6 @@ public class RegisterO extends Register {
 
     @Override
     public void setForm() {
-        super.clone();
         super.setForm();
         //Fields
         Cf = new JTextField();

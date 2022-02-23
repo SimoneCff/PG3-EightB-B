@@ -12,7 +12,12 @@ public class ConcreteHanlderOne extends ActionHandler {
             if (e.getActionCommand().contains("BP")){
                 if (e.getActionCommand().contains("L")){
                     Login.getTextAndSendToDB();
-
+                } else if (e.getActionCommand().contains("Register")){
+                  AuthFacade.getInstance().Register();
+                } else if (e.getActionCommand().contains("RegC")){
+                    AuthFacade.getInstance().RegisterClient();
+                } else if (e.getActionCommand().contains("RegO")){
+                    AuthFacade.getInstance().RegisterOwner();
                 }
             }
         }

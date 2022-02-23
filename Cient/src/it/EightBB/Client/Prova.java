@@ -1,13 +1,5 @@
 package it.EightBB.Client;
 
-
-import it.EightBB.Client.Interface.SwingInt.Button;
-import it.EightBB.Client.Interface.SwingInt.Form;
-import it.EightBB.Client.Powner.Button.GoBackO;
-import it.EightBB.Client.Powner.Form.RegisterNewStructure;
-
-import javax.swing.*;
-
 public class Prova {
 /**
  * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
@@ -185,7 +177,7 @@ public static void main(String[] args){
 
     }
 }*/
-
+}
 
 
 

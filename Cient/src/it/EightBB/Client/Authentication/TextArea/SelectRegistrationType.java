@@ -5,11 +5,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SelectRegistrationType implements TextGroup {
-    private JTextField TitleRegistration = null;
+    private JLabel TitleRegistration = null;
 
     @Override
     public void setText() {
-        TitleRegistration = new JTextField("Selezionare il tipo di registrazione:");
+        TitleRegistration = new JLabel("Selezionare il tipo di registrazione:");
 
         TitleRegistration.setBounds(77,25,200,30);
 

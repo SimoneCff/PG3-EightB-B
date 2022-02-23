@@ -1,5 +1,5 @@
 /** Bottone per visualizzare le prenotazioni effettuate dal cliente*/
-package it.EightBB.Client.Authentication.Button;
+package it.EightBB.Client.Pclient.Button;
 import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;

@@ -2,6 +2,7 @@
 
 package it.EightBB.Client.Authentication.Button;
 
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
@@ -13,6 +14,8 @@ public class SelectOwner implements Button {
         SelectOwner = new JButton("Proprietario");
         //set position
         SelectOwner.setBounds(200, 100, 100, 20);
+        SelectOwner.setActionCommand("Auth-BP-RegO");
+        SelectOwner.addActionListener(new ConcreteHanlderOne());
     }
 
     public void InitialiteButtonIntoFrame(JFrame F) {
