@@ -18,6 +18,8 @@ public class ConcreteHanlderOne extends ActionHandler {
                     AuthFacade.getInstance().RegisterClient();
                 } else if (e.getActionCommand().contains("RegO")){
                     AuthFacade.getInstance().RegisterOwner();
+                } else if (e.getActionCommand().contains("RetGin")){
+                    AuthFacade.getInstance().Login();
                 }
             }
         }

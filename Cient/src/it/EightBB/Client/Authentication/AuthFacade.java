@@ -65,49 +65,63 @@ public class AuthFacade {
     void Register() {
         F.getContentPane().removeAll();
         F.repaint();
+
         TextGroup selectionTypeRegfinal = AF.makeText("Select");
         Button SelectC = AF.makeButton("SelectC");
         Button SelectO = AF.makeButton("SelectO");
+        Button Return = AF.makeButton("ReturnL");
 
         //SetUp Components
         selectionTypeRegfinal.setText();
         SelectC.setButton();
         SelectO.setButton();
+        Return.setButton();
 
         //SettingUP into Frame
         selectionTypeRegfinal.InitialiteTextIntoFrame(F);
         SelectC.InitialiteButtonIntoFrame(F);
         SelectO.InitialiteButtonIntoFrame(F);
+        Return.InitialiteButtonIntoFrame(F);
 
         F.setSize(400,400);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
     void RegisterOwner() {
-        Register();
+        F.getContentPane().removeAll();
+        F.repaint();
         Form Reg = AF.makeForm("RegisterO");
+        Button ReturnS = AF.makeButton("ReturnS");
 
         //Setting UP
         Reg.setForm();
+        ReturnS.setButton();
 
         //Build-Up
         Reg.InitialiateFormIntoFrame(F);
+        ReturnS.InitialiteButtonIntoFrame(F);
 
-        F.setSize(400,400);
+        F.setSize(600,400);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
     void RegisterClient() {
-        Register();
+        F.getContentPane().removeAll();
+        F.repaint();
         Form Reg = AF.makeForm("Register");
+        Button ReturnS = AF.makeButton("ReturnS");
 
         //Setting UP
         Reg.setForm();
+        ReturnS.setButton();
+
 
         //Build-Up
         Reg.InitialiateFormIntoFrame(F);
+        ReturnS.InitialiteButtonIntoFrame(F);
 
-        F.setSize(400,400);
+
+        F.setSize(600,400);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 }
