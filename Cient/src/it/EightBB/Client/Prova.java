@@ -175,9 +175,9 @@ public static void main(String[] args){
     RegisterStr.setVisible(true);
     RegisterStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-    }
-}*/
+    }*/
 }
+
 
 
 
