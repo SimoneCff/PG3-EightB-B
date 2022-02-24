@@ -28,7 +28,7 @@ public class EchoThread extends Thread {
             }
             QueryAdapter QA = new QueryAdapter();
             String[] rq = x.split(",");
-            Query a = QA.AdaptStringToQuery(String.join(rq[2],rq[rq.length]));
+            Query a = QA.AdaptStringToQuery(String.join(rq[2],rq[rq.length-1]));
             Request req = new Request(rq[0],rq[1],a);
             String result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
             proxy.Write(result);

@@ -28,7 +28,7 @@ public class PclientFacade {
         this.PCF = FM.getFactory("pclient");
     }
 
-    public void setF(JFrame F) { F = f; }
+    public void setF(JFrame F) { this.F = F; }
 
     public void inizialize(String S){
         switch (S){
