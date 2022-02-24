@@ -1,6 +1,12 @@
 package it.EightBB.Server;
 
+import it.EightBB.Server.Authservice.AuthenticationChandler;
+import it.EightBB.Server.Database.Query;
+import it.EightBB.Server.Database.QueryAdapter;
+import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Proxy.SocketInitial;
+
+import java.util.Arrays;
 
 public class EchoThread extends Thread {
     protected SocketInitial proxy;
@@ -20,7 +26,12 @@ public class EchoThread extends Thread {
                 proxy.close();
                 return;
             }
-            proxy.Write("False");
+            QueryAdapter QA = new QueryAdapter();
+            String[] rq = x.split(",");
+            Query a = QA.AdaptStringToQuery(String.join(rq[2],rq[rq.length]));
+            Request req = new Request(rq[0],rq[1],a);
+            String result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
+            proxy.Write(result);
         }
     }
 }

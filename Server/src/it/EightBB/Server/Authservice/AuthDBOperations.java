@@ -2,23 +2,25 @@ package it.EightBB.Server.Authservice;
 
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.Database.Query;
+import it.EightBB.Server.Database.DatabaseProxy;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class AuthDBOperations implements DatabaseOperations {
     private AuthDBOperations Instance;
+    private  DatabaseProxy DB;
 
     @Override
     public AuthDBOperations getInstance(){
         if (Instance == null) {
             Instance = new AuthDBOperations();
+            DB = new DatabaseProxy();
             }
+        DB.connect();
         return Instance;
     }
 
@@ -43,19 +45,26 @@ public class AuthDBOperations implements DatabaseOperations {
     }
 
     @Override
-    public boolean checkInsideDB (Connection db, String table, ArrayList<String> query){
-        boolean ck = false;
-        try {
-            Statement qy =  db.createStatement();
-            //Check query;
-            String qr = "select * from" + table + "where"+query.get(3)+"="+query.get(4)+"AND"+query.get(5)+"="+query.get(6);
-            ResultSet check = qy.executeQuery(qr);
-            ck = check.getBoolean(1);
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return ck;
+    public String checkInsideDB (String table,Query query){
+       Connection Q = DB.getConnect();
+       try {
+           StringBuilder q;
+           q = new StringBuilder("select * from" + table + "where");
+           for (int i =0; i<=query.getAttributes().size(); i++ ){
+               q.append(query.getAttributes().get(i)).append(query.getValues().get(i));
+               if (i<query.getAttributes().size()){
+                   q.append("and");
+               }
+           }
+           Statement statement = Q.createStatement();
+           ResultSet rs = statement.executeQuery(q.toString());
+           if (rs.getString(1)== null){
+               return "False";
+           } else return "True";
+       } catch (SQLException throwables) {
+           throwables.printStackTrace();
+           return null;
+       }
     }
 
 }

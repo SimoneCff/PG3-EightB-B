@@ -1,6 +1,4 @@
-package it.EightBB.Server.Proxy;
-
-import it.EightBB.Server.Database.DatabaseConnect;
+package it.EightBB.Server.Database;
 
 import java.sql.*;
 
