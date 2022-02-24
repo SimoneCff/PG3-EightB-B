@@ -1,14 +1,14 @@
-package it.EightBB.Client.Pclient;
+package it.EightBB.Client.Interface.Pclient;
 
 import it.EightBB.Client.Authentication.TextArea.SelectRegistrationType;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
-import it.EightBB.Client.Pclient.Button.ExitC;
-import it.EightBB.Client.Pclient.Button.ModifyProfileC;
-import it.EightBB.Client.Pclient.Form.PrenotationOne;
-import it.EightBB.Client.Pclient.Form.RicercaLuogo;
+import it.EightBB.Client.Interface.Pclient.Button.ExitC;
+import it.EightBB.Client.Interface.Pclient.Button.ModifyProfileC;
+import it.EightBB.Client.Interface.Pclient.Form.PrenotationOne;
+import it.EightBB.Client.Interface.Pclient.Form.RicercaLuogo;
 
 public class PclientFactory implements AbstractFactory {
 

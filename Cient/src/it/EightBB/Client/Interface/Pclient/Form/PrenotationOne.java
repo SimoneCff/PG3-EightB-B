@@ -1,4 +1,4 @@
-package it.EightBB.Client.Pclient.Form;
+package it.EightBB.Client.Interface.Pclient.Form;
 
 import com.toedter.calendar.JDateChooser;
 import it.EightBB.Client.Interface.Template.Form;

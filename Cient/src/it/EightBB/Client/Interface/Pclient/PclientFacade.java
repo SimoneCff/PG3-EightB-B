@@ -1,13 +1,12 @@
-package it.EightBB.Client.Pclient;
+package it.EightBB.Client.Interface.Pclient;
 
 import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Interface.Template.Form;
-import it.EightBB.Client.Pclient.Form.PrenotationOne;
-import it.EightBB.Client.Pclient.Form.RicercaLuogo;
+import it.EightBB.Client.Interface.Pclient.Form.PrenotationOne;
+import it.EightBB.Client.Interface.Pclient.Form.RicercaLuogo;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class PclientFacade {
     private static PclientFacade Instance;
