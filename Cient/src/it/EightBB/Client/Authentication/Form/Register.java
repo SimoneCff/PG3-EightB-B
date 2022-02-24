@@ -9,8 +9,8 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Register implements Form, Cloneable {
-    private JTextField Name, Sur, Us = null;
-    private JPasswordField Ps = null;
+    private static JTextField Name, Sur, Us = null;
+    private static JPasswordField Ps = null;
     private JLabel Namee, Surr, Uss, Pss, Reg = null;
     private JButton RegConfBt = null;
 
@@ -69,13 +69,19 @@ public class Register implements Form, Cloneable {
 
         F.add(Reg);
         //Add Button
+
         F.add(RegConfBt);
     }
+
+   public static String[] getStringFromForm(){
+       return new String[]{"AuthDBRO","Nome",Name.getText(), "cognome",Sur.getText(),
+               "username",Us.getText(),"password",new String(Ps.getPassword())};
+   }
 
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String[] req = {"AuthDBRO","Nome",Sur., "password",new String(Ps.getPassword())};
+            String[] req = getStringFromForm();
             SP.write(req);
             String Result = SP.read();
             System.out.println(Result);

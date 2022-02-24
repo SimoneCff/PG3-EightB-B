@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class RegisterO extends Register {
-    private JTextField Cf, Piva = null;
+    private static JTextField Cf, Piva = null;
     private JLabel Cff, Pivaa = null;
     private JButton RegConfBt = null;
 
@@ -56,8 +56,12 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String[] req = {"AuthDBRO","Nome",.getText(), "password",new String(Ps.getPassword())};
-            SP.write(req);
+            String[] req =getStringFromForm();
+            String[] al = {"p.iva", Piva.getText(), "Cf", Cf.getText()};
+            String[] ror = new String[req.length+al.length];
+            System.arraycopy(req,0,ror,0,req.length);
+            System.arraycopy(al,0,ror,req.length+1,al.length);
+            SP.write(ror);
             String Result = SP.read();
             System.out.println(Result);
             if (Result.equals("False")) {
