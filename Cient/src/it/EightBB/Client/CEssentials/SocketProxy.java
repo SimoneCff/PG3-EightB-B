@@ -13,8 +13,8 @@ import javax.swing.*;
 public class SocketProxy implements SocketInterface {
     private static SocketProxy Instance;
     private Socket socket;
-    private DataInputStream in;
-    private DataOutputStream out;
+    private BufferedReader in;
+    private PrintWriter out;
 
 
     public static SocketProxy getIstance(){
@@ -30,6 +30,8 @@ public class SocketProxy implements SocketInterface {
     public void settingUP(String IP, int port) {
         try {
             socket = new Socket(IP, port);
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
 
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -41,11 +43,9 @@ public class SocketProxy implements SocketInterface {
     public String read() {
         String str = null;
         try {
-            in = new DataInputStream(socket.getInputStream());
-            str =  in.readUTF();
+            return in.readLine();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
         }
         return str;
     }
@@ -53,14 +53,8 @@ public class SocketProxy implements SocketInterface {
 
     @Override
     public void write(String[] str) {
-        try {
-            out = new DataOutputStream(socket.getOutputStream());
-           out.writeUTF(Arrays.toString(str));
+           out.println(Arrays.toString(str));
            out.flush();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-        }
     }
 
     @Override
