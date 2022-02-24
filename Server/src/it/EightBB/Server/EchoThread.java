@@ -29,14 +29,20 @@ public class EchoThread extends Thread {
                 proxy.close();
                 return;
             }
-            System.out.println(x);
             QueryAdapter QA = new QueryAdapter();
             List<String> list = Arrays.asList(x.split(","));
             ArrayList<String> rq= new ArrayList<String>(list);
+            //
             String sub = rq.get(0);
-            String riq = rq.get(1);
-            rq.remove(0); rq.remove(1);
+            rq.remove(0);
+            String riq = rq.get(0);
+            rq.remove(0);
+            System.out.println(rq);
+            //
+            String table = rq.get(0);
+            rq.remove(0);
             Query a = QA.AdaptStringToQuery(rq);
+            a.setTable(table);
             Request req = new Request(sub,riq,a);
             String result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
             proxy.Write(result);

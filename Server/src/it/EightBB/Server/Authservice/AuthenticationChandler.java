@@ -20,7 +20,7 @@ public class AuthenticationChandler extends Handler {
         if (request.getSubSys().equals("Auth")) {
             DatabaseOperations ADB = new AuthDBOperations();
             if (request.getRequest().equals("Login")) {
-                Req = ADB.checkInsideDB("user", request.getData());
+                Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
             }
         } else {
             Req = successor.handlerRequest(request, socket);

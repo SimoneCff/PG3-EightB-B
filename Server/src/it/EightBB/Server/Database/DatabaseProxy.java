@@ -7,9 +7,7 @@ public class DatabaseProxy implements DatabaseConnect {
     protected String user = "root";
     protected String password = "Programmazione3?";
     private Connection connect = null;
-    private DatabaseConnect Instance;
-
-    @Override
+    private static DatabaseProxy Instance;
 
     public void connect() {
         try {
@@ -35,8 +33,7 @@ public class DatabaseProxy implements DatabaseConnect {
         }
     }
 
-    @Override
-    public DatabaseConnect getInstance() {
+    public static DatabaseProxy getInstance() {
         if (Instance == null) {
             Instance = new DatabaseProxy();
         }

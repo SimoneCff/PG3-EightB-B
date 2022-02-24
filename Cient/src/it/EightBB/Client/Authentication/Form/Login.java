@@ -68,7 +68,15 @@ public class Login implements Form {
        SocketInterface SP = SocketProxy.getIstance();
        try {
            StringBuilder req;
-           req = new StringBuilder( "Auth,Login,user,mail,"+ Us.getText() + ",password," +new String(Ps.getPassword()));
+           String user = Us.getText(); String pass = new String(Ps.getPassword());
+           if (user.equals("")){
+               user = "null";
+           }
+           if (pass.equals("")){
+               pass = "null";
+           }
+
+           req = new StringBuilder( "Auth,Login,user,mail,"+ user + ",pass," +pass);
            SP.write(req.toString());
            String Result = SP.read();
            System.out.println(Result);

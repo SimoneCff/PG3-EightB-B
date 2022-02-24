@@ -1,5 +1,6 @@
 package it.EightBB.Server.Authservice;
 
+import it.EightBB.Server.Database.DatabaseConnect;
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.Database.Query;
 import it.EightBB.Server.Database.DatabaseProxy;
@@ -12,15 +13,12 @@ import java.util.List;
 
 public class AuthDBOperations implements DatabaseOperations {
     private AuthDBOperations Instance;
-    private  DatabaseProxy DB;
 
     @Override
     public AuthDBOperations getInstance(){
         if (Instance == null) {
             Instance = new AuthDBOperations();
-            DB = new DatabaseProxy();
             }
-        DB.connect();
         return Instance;
     }
 
@@ -46,19 +44,22 @@ public class AuthDBOperations implements DatabaseOperations {
 
     @Override
     public String checkInsideDB (String table,Query query){
-       Connection Q = DB.getConnect();
+        Connection Q = DatabaseProxy.getInstance().getConnect();
        try {
            StringBuilder q;
-           q = new StringBuilder("select * from" + table + "where");
-           for (int i =0; i<=query.getAttributes().size(); i++ ){
-               q.append(query.getAttributes().get(i)).append(query.getValues().get(i));
-               if (i<query.getAttributes().size()){
-                   q.append("and");
+           q = new StringBuilder("select * from " + table + " where" + " ");
+           for (int i = 0; i < query.getAttributes().size(); i++) {
+               q.append(query.getAttributes().get(i));
+               q.append(" = ");
+               q.append(query.getValues().get(i));
+               q.append(" ");
+               if (i != query.getAttributes().size() - 1) {
+                   q.append("and ");
                }
            }
            Statement statement = Q.createStatement();
            ResultSet rs = statement.executeQuery(q.toString());
-           if (rs.getString(1)== null){
+           if (rs.getRow() == 0) {
                return "False";
            } else return "True";
        } catch (SQLException throwables) {

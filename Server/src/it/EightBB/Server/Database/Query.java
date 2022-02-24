@@ -1,24 +1,40 @@
 package it.EightBB.Server.Database;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Query {
-    private List<String> attributes;
-    private List<String> values;
+    private String table;
+    private final ArrayList<String> attributes;
+    private final ArrayList<String> values;
 
-    public List<String> getValues() {
+    public Query() {
+        this.attributes = new ArrayList<String>();
+        this.values = new ArrayList<String>();
+    }
+
+    public void setTable(String table){
+        this.table = table;
+    }
+
+    public String getTable() {
+        return table;
+    }
+
+    public ArrayList<String> getValues() {
         return values;
     }
 
-    public void setValues(List<String> values) {
-        this.values = values;
+    public void setValues(String values) {
+        this.values.add(values);
     }
 
-    public void setAttributes(List<String> attributes) {
-        this.attributes = attributes;
+    public void setAttributes(String attributes) {
+        this.attributes.add(attributes);
     }
 
-    public List<String> getAttributes() {
+    public ArrayList<String> getAttributes() {
         return attributes;
     }
 
