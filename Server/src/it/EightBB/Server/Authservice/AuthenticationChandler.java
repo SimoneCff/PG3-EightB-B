@@ -32,6 +32,7 @@ public class AuthenticationChandler extends Handler {
                         e.printStackTrace();
                     }
                     break;
+
                 case "GetCheck":
                     Req = ADB.getQuery(request.getData().getTable(),request.getData());
                     break;

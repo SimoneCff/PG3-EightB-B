@@ -86,7 +86,7 @@ public class AuthDBOperations implements DatabaseOperations {
                 throwables.printStackTrace();
                 Statement statement = Q.createStatement();
                 statement.executeUpdate("DELETE From user where mail = '" + query.getAttributes().get(0) + "'");
-                statement.executeUpdate("DELETE  from client where mail = '"+query.getAttributes().get(0)+ "'");
+                statement.executeUpdate("DELETE  from "+table+" where mail = '"+query.getAttributes().get(0)+ "'");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
