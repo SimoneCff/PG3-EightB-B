@@ -6,12 +6,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public abstract interface SocketInitialService {
-    void SetIO();
-    BufferedReader getIn();
-    PrintWriter getOut();
-    void CloseIn();
-    void CloseOut();
-    void CloseServer();
-    void accept();
+ public void setSocket();
+ public void setIO();
+ public String Read();
+ public void Write(String s);
 }
 

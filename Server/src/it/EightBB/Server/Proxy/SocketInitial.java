@@ -5,79 +5,66 @@ import it.EightBB.Server.SocketInitialService;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
 
 public class SocketInitial implements SocketInitialService {
-    private ServerSocket Ssocket;
-    private Socket socket;
-    private BufferedReader in;
-    private PrintWriter out;
+      private ServerSocket server = null;
+      private Socket socket = null;
+      private InputStream in = null;
+      private BufferedReader brin = null;
+      private DataOutputStream out = null;
 
-    public SocketInitial(int port) {
+      public SocketInitial (int port) {
+          try {
+              this.server = new ServerSocket(port);
+              System.out.println("Setting Up Server Socket");
+          } catch (IOException e){
+              e.printStackTrace();
+          }
+      }
+
+    @Override
+    public void setSocket() {
+          try {
+              socket = server.accept();
+          } catch (IOException e){
+              e.printStackTrace();
+          }
+    }
+
+    @Override
+    public void setIO() {
+          try {
+              in = socket.getInputStream();
+              brin = new BufferedReader(new InputStreamReader(in));
+              out= new DataOutputStream(socket.getOutputStream());
+          } catch (IOException e){
+              e.printStackTrace();
+          }
+    }
+
+    @Override
+    public String Read() {
+          String line;
         try {
-            Ssocket = new ServerSocket(port);
-            Ssocket.setReuseAddress(true);
+            line = brin.readLine();
+            if ((line == null) || line.equalsIgnoreCase("QUIT")) {
+                socket.close();
+                return null;
+            } else return line;
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public ServerSocket getSsocket() {
-        return Ssocket;
-    }
-
-    @Override
-    public void accept() {
-        try {
-            socket = Ssocket.accept();
-            System.out.println("New Client Connection from :"+ socket.getInetAddress().getHostAddress());
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
     }
 
     @Override
-    public void SetIO(){
-        try{
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out = new PrintWriter(socket.getOutputStream(),true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    @Override
-    public void CloseIn() {
-        try{
-            in.close();
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    @Override
-    public void CloseOut(){
-            out.close();
-    }
-
-    @Override
-    public void CloseServer(){
-        try {
-            Ssocket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @Override
-    public BufferedReader getIn(){
-        return in;
-    }
-    @Override
-    public PrintWriter getOut(){
-        return out;
+    public void Write(String s) {
+          try {
+              out.writeUTF(s);
+              out.flush();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
     }
 
 
