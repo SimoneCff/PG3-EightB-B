@@ -15,6 +15,7 @@ public class PownerFactory implements AbstractFactory {
         return switch (type){
             case "ModRegStr" -> new ModifyRegisteredStructure();
             case "RegNewStr" -> new RegisterNewStructure();
+            default -> null;
         };
     }
 

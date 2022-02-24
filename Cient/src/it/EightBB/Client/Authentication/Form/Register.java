@@ -74,13 +74,13 @@ public class Register implements Form, Cloneable {
     }
 
    public static String getStringFromForm(){
-       return "Auth" + "Register" + "Nome" + Name.getText() + "cognome" + Sur.getText() + "username" + Us.getText() + "password" + new String(Ps.getPassword());
+       return  "username" + Us.getText() + "password" + new String(Ps.getPassword()) +  "Nome" + Name.getText() + "cognome" + Sur.getText();
    }
 
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req = getStringFromForm();
+            String req ="Auth" + "Register" + "client" + getStringFromForm();
             SP.write(req);
             String Result = SP.read();
             System.out.println(Result);

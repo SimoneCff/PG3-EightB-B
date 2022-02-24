@@ -28,11 +28,38 @@ public class AuthDBOperations implements DatabaseOperations {
     }
 
     @Override
-    public boolean AddQuery(Connection db, String table,Query query) {
-        return false;
+    public String AddQuery  (String table,Query query) {
+        Connection Q = DatabaseProxy.getInstance().getConnect();
+        try{
+            StringBuilder user, q;
+            user = new StringBuilder( "insert into user values ('" + query.getValues().get(0) +"','" + query.getValues().get(1) + "')");
+            q = new StringBuilder("insert into"+table+"values (");
+            for (int i = 2; i < query.getAttributes().size(); i++){
+                q.append("'");
+                q.append(query.getValues().get(i));
+                q.append("'");
+                q.append(",");
+            }
+            q.append(")");
+            System.out.println("Query : "+q);
+            Statement statement = Q.createStatement();
+            ResultSet rs = statement.executeQuery(user.toString());
+            if (rs.wasNull()){
+                return "False";
+            } else
+            rs = statement.executeQuery(q.toString());
+            if (rs.wasNull()){
+                return "False";
+            } else return "True";
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return "False";
+        }
+
     }
 
-    @Override
+    @Deprecated
     public boolean deleteQueryFromTable(String table, String id) {
         return false;
     }
@@ -49,22 +76,25 @@ public class AuthDBOperations implements DatabaseOperations {
            StringBuilder q;
            q = new StringBuilder("select * from " + table + " where" + " ");
            for (int i = 0; i < query.getAttributes().size(); i++) {
-               q.append(query.getAttributes().get(i));
-               q.append(" = ");
                q.append(query.getValues().get(i));
+               q.append(" = ");
+               q.append("'");
+               q.append(query.getAttributes().get(i));
+               q.append("'");
                q.append(" ");
                if (i != query.getAttributes().size() - 1) {
                    q.append("and ");
                }
            }
+           System.out.println("Query : "+q);
            Statement statement = Q.createStatement();
            ResultSet rs = statement.executeQuery(q.toString());
-           if (rs.getRow() == 0) {
+           if (!rs.next()){
                return "False";
            } else return "True";
        } catch (SQLException throwables) {
            throwables.printStackTrace();
-           return null;
+           return "False";
        }
     }
 

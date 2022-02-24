@@ -21,6 +21,8 @@ public class AuthenticationChandler extends Handler {
             DatabaseOperations ADB = new AuthDBOperations();
             if (request.getRequest().equals("Login")) {
                 Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
+            } else if (request.getRequest().equals("Register")) {
+                Req = ADB.AddQuery(request.getData().getTable(), request.getData());
             }
         } else {
             Req = successor.handlerRequest(request, socket);

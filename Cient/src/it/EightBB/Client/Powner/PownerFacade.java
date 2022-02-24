@@ -39,7 +39,7 @@ public class PownerFacade{
         }
     }
 
-    void RegNewStr(){
+    /*void RegNewStr(){
         JFrame RegisterStr = new JFrame();
         Form RegisterStrForm = new RegisterNewStructure();
         Button Annulla = new GoBackO();
@@ -58,7 +58,7 @@ public class PownerFacade{
     }
 
     void ModRegStr(){
-        JFrame ModifyStr = new JFrame()
+        JFrame ModifyStr = new JFrame();
         Form ModifyStrForm = new ModifyRegisteredStructure();
         Button Annulla = new GoBackO();
 
@@ -72,6 +72,6 @@ public class PownerFacade{
         ModifyStr.setLayout(null);
         ModifyStr.setVisible(true);
         ModifyStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    }
+    }*/
 }
 
