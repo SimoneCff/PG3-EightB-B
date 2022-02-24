@@ -56,12 +56,8 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String[] req =getStringFromForm();
-            String[] al = {"p.iva", Piva.getText(), "Cf", Cf.getText()};
-            String[] ror = new String[req.length+al.length];
-            System.arraycopy(req,0,ror,0,req.length);
-            System.arraycopy(al,0,ror,req.length+1,al.length);
-            SP.write(ror);
+            String req =getStringFromForm();
+            SP.write(req + "p.iva" + Piva.getText() + "Cf" + Cf.getText());
             String Result = SP.read();
             System.out.println(Result);
             if (Result.equals("False")) {

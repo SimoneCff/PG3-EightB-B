@@ -1,21 +1,23 @@
 package it.EightBB.Server.Database;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class QueryAdapter extends Query {
     Query q = new Query();
 
-    public Query AdaptStringToQuery(String s) {
-        List<String> Data = null, Temp;
+    public Query AdaptStringToQuery(ArrayList<String> s) {
+        System.out.println(s);
+        List<String> Data , Temp;
+        Data = Temp = s;
         //Extractor
-        Temp = Arrays.asList(s.split(","));
-        Temp.remove(0);
         //Add datas from temp to other
-        for (int n = 0 ; n< Temp.size(); n=+2) {;
-            Data.add(Temp.get(n));
-            Temp.remove(n);
+        for (int n = 0 ; n< s.size(); n++) {;
+           if (n % 2 == 0){
+               Data.remove(s.get(n));
+           }else Temp.remove(s.get(n));
         }
 
         //Setting Up String to the Query

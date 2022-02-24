@@ -52,8 +52,8 @@ public class SocketProxy implements SocketInterface {
     }
 
     @Override
-    public void write(String[] str) {
-        out.println(Arrays.toString(str));
+    public void write(String str) {
+        out.println(str);
         out.flush();
     }
 

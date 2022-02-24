@@ -67,8 +67,9 @@ public class Login implements Form {
     public static void getTextAndSendToDB() {
        SocketInterface SP = SocketProxy.getIstance();
        try {
-           String[] req = {"Auth","Login","user","mail",Us.getText(), "password",new String(Ps.getPassword())};
-           SP.write(req);
+           StringBuilder req;
+           req = new StringBuilder( "Auth,Login,user,mail,"+ Us.getText() + ",password," +new String(Ps.getPassword()));
+           SP.write(req.toString());
            String Result = SP.read();
            System.out.println(Result);
            if (Result.equals("False")) {

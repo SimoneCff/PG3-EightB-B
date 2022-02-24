@@ -6,7 +6,10 @@ import it.EightBB.Server.Database.QueryAdapter;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Proxy.SocketInitial;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class EchoThread extends Thread {
     protected SocketInitial proxy;
@@ -26,10 +29,15 @@ public class EchoThread extends Thread {
                 proxy.close();
                 return;
             }
+            System.out.println(x);
             QueryAdapter QA = new QueryAdapter();
-            String[] rq = x.split(",");
-            Query a = QA.AdaptStringToQuery(String.join(rq[2],rq[rq.length-1]));
-            Request req = new Request(rq[0],rq[1],a);
+            List<String> list = Arrays.asList(x.split(","));
+            ArrayList<String> rq= new ArrayList<String>(list);
+            String sub = rq.get(0);
+            String riq = rq.get(1);
+            rq.remove(0); rq.remove(1);
+            Query a = QA.AdaptStringToQuery(rq);
+            Request req = new Request(sub,riq,a);
             String result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
             proxy.Write(result);
         }
