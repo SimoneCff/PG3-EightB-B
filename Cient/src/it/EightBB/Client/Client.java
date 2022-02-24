@@ -11,7 +11,7 @@ public class Client {
     public static void main(String[] args){
         //Setting UP
         SocketProxy Proxy = (SocketProxy) SocketProxy.getIstance();
-        Proxy.settingUP("localhost",5432);
+        Proxy.settingUP("87.19.149.155",5432);
         FactoryMaker FM = FactoryMaker.getInstance();
         AuthFacade IZ;
 
