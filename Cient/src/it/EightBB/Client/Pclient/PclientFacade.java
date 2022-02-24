@@ -10,15 +10,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PclientFacade {
-    private static PclientFacade Istance;
+    private static PclientFacade Instance;
     private JFrame F;
     private FactoryMaker FM;
     private AbstractFactory PCF;
 
-    public static PclientFacade getIstance(){
-        if(Istance==null){
-            Istance = new PclientFacade();
-        } return Istance;
+    public static PclientFacade getInstance(){
+        if(Instance==null){
+            Instance = new PclientFacade();
+        } return Instance;
     }
 
     public JFrame getF(){ return F;}
@@ -28,7 +28,7 @@ public class PclientFacade {
         this.PCF = FM.getFactory("pclient");
     }
 
-    public void setF(JFrame F) { F = f; }
+    public void setF(JFrame f) { F = f; }
 
     public void inizialize(String S){
         switch (S){
