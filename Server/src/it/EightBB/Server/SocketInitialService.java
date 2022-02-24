@@ -7,6 +7,7 @@ import java.net.Socket;
 
 public abstract interface SocketInitialService {
     String read();
+    void SetIO();
     void Write(String str);
     void endRequest();
     void Close();

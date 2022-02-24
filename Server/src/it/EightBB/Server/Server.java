@@ -35,7 +35,7 @@ public class Server  {
                 new Thread(new ReqHandler(ProxyServer)).start();
             }
         } finally {
-            if (ProxyServer != null){
+            if (ProxyServer.getSsocket() != null){
                 ProxyServer.Close();
             }
         }
@@ -50,7 +50,7 @@ public class Server  {
        @Override
        public void run() {
            try {
-               boolean x = true;
+               Proxy.setIO();
                while (x) {
                    String st = Proxy.read();
                    if (st == null){

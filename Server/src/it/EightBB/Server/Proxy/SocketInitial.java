@@ -28,11 +28,11 @@ public class SocketInitial implements SocketInitialService {
         try {
             s = in.readUTF();
         } catch (SocketException ex){
-            Thread.currentThread().interrupt();
+
         }
         catch (IOException e) {
             e.printStackTrace();
-            Thread.currentThread().interrupt();
+
         }
         return s;
     }
@@ -43,8 +43,6 @@ public class SocketInitial implements SocketInitialService {
             out.writeUTF(str);
             out.flush();
 
-        } catch (SocketException ex){
-            Thread.currentThread().interrupt();
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,12 +62,19 @@ public class SocketInitial implements SocketInitialService {
     public void accept() {
         try {
             socket = Ssocket.accept();
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
             System.out.println("New Client Connection from :"+ socket.getInetAddress().getHostAddress());
         } catch (IOException e) {
             e.printStackTrace();
-            Thread.currentThread().interrupt();
+        }
+    }
+
+    @Override
+    public void SetIO(){
+        try{
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -81,9 +86,11 @@ public class SocketInitial implements SocketInitialService {
             Ssocket.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Thread.currentThread().interrupt();
 
         }
     }
 
+    public ServerSocket getSsocket() {
+        return Ssocket;
+    }
 }
