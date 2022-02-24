@@ -9,5 +9,5 @@ public abstract class Handler {
         this.successor = successor;
     }
 
-    public abstract void handlerRequest(Request request, SocketInitialService socket);
+    public abstract String handlerRequest(Request request, SocketInitialService socket);
 }
