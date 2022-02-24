@@ -13,7 +13,7 @@ import javax.swing.*;
 public class SocketProxy implements SocketInterface {
     private static SocketProxy Instance;
     private Socket socket;
-    private BufferedReader in;
+    private DataInputStream in;
     private PrintWriter out;
 
 
@@ -30,7 +30,7 @@ public class SocketProxy implements SocketInterface {
     public void settingUP(String IP, int port) {
         try {
             socket = new Socket(IP, port);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            in = new DataInputStream(socket.getInputStream());
             out = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
 
@@ -43,11 +43,11 @@ public class SocketProxy implements SocketInterface {
     public String read() {
         String str = null;
         try {
-            return in.readLine();
+            return in.readUTF();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
         }
-        return str;
     }
 
 
