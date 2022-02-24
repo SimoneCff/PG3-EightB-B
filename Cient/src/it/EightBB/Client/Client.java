@@ -26,7 +26,20 @@ public class Client {
         //Setting Frame
         Frame.setLayout(null);
         Frame.setVisible(true);
-        Frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        Frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                if (JOptionPane.showConfirmDialog(Frame,
+                        "Are you sure you want to close this window?", "Close Window?",
+                        JOptionPane.YES_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                    Proxy.SendEnd();
+                    System.exit(0);
+                }
+            }
+        });
     }
+
+
 
 }

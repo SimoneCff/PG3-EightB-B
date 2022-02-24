@@ -9,5 +9,6 @@ public interface SocketInterface {
     public abstract String read() throws IOException;
     abstract void write(String[] str) throws IOException;
     abstract void close();
+    abstract void SendEnd();
 }
 

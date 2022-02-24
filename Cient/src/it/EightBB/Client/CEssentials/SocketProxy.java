@@ -17,10 +17,11 @@ public class SocketProxy implements SocketInterface {
     private PrintWriter out;
 
 
-    public static SocketProxy getIstance(){
-        if(Instance == null){
+    public static SocketProxy getIstance() {
+        if (Instance == null) {
             Instance = new SocketProxy();
-        }return Instance;
+        }
+        return Instance;
     }
 
     public Socket getSocket() {
@@ -34,7 +35,7 @@ public class SocketProxy implements SocketInterface {
             out = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
 
-            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
     }
@@ -50,11 +51,10 @@ public class SocketProxy implements SocketInterface {
         }
     }
 
-
     @Override
     public void write(String[] str) {
-           out.println(Arrays.toString(str));
-           out.flush();
+        out.println(Arrays.toString(str));
+        out.flush();
     }
 
     @Override
@@ -62,10 +62,15 @@ public class SocketProxy implements SocketInterface {
         try {
             socket.close();
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
 
     }
 
+    @Override
+    public void SendEnd() {
+        out.println("QUIT");
+        out.flush();
+    }
 }

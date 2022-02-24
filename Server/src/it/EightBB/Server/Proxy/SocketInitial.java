@@ -26,6 +26,7 @@ public class SocketInitial implements SocketInitialService {
     public void setSocket() {
           try {
               socket = server.accept();
+              System.out.println("Client connected : "+ socket.getInetAddress());
           } catch (IOException e){
               e.printStackTrace();
           }
@@ -47,10 +48,7 @@ public class SocketInitial implements SocketInitialService {
           String line;
         try {
             line = brin.readLine();
-            if ((line == null) || line.equalsIgnoreCase("QUIT")) {
-                socket.close();
-                return null;
-            } else return line;
+            return line;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -67,5 +65,12 @@ public class SocketInitial implements SocketInitialService {
           }
     }
 
-
-}
+    @Override
+    public void close() {
+          try{
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+     }
+    }

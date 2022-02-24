@@ -10,5 +10,6 @@ public abstract interface SocketInitialService {
  public void setIO();
  public String Read();
  public void Write(String s);
+ public void close();
 }
 
