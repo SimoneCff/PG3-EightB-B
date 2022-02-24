@@ -32,28 +32,32 @@ public class AuthDBOperations implements DatabaseOperations {
         Connection Q = DatabaseProxy.getInstance().getConnect();
         try{
             StringBuilder user, q;
-            user = new StringBuilder( "insert into user values ('" + query.getValues().get(0) +"','" + query.getValues().get(1) + "')");
-            q = new StringBuilder("insert into"+table+"values (");
+            user = new StringBuilder( "insert into user values ('" + query.getAttributes().get(0) +"','" + query.getAttributes().get(1) + "');");
+            q = new StringBuilder("insert into "+table+" values (");
             for (int i = 2; i < query.getAttributes().size(); i++){
                 q.append("'");
-                q.append(query.getValues().get(i));
+                q.append(query.getAttributes().get(i));
                 q.append("'");
-                q.append(",");
+                if(i < query.getAttributes().size()-1){
+                    q.append(",");
+                }
             }
-            q.append(")");
+            q.append(");");
             System.out.println("Query : "+q);
             Statement statement = Q.createStatement();
-            ResultSet rs = statement.executeQuery(user.toString());
-            if (rs.wasNull()){
-                return "False";
-            } else
-            rs = statement.executeQuery(q.toString());
-            if (rs.wasNull()){
-                return "False";
-            } else return "True";
+            statement.executeUpdate(user.toString());
+            statement.executeUpdate(q.toString());
+            return "True";
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            try {
+                throwables.printStackTrace();
+                Statement statement = Q.createStatement();
+                statement.executeUpdate("DELETE From user where mail ="+query.getAttributes().get(0));
+                statement.executeUpdate("DELETE  from client where mailc = "+query.getAttributes().get(0));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             return "False";
         }
 

@@ -1,6 +1,8 @@
 package it.EightBB.Client.Authentication;
 
 import it.EightBB.Client.Authentication.Form.Login;
+import it.EightBB.Client.Authentication.Form.Register;
+import it.EightBB.Client.Authentication.Form.RegisterO;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 
 import java.awt.event.ActionEvent;
@@ -23,9 +25,9 @@ public class ConcreteHanlderOne extends ActionHandler {
                 if (e.getActionCommand().contains("L")){
                     Login.getTextAndSendToDB();
                 } else if (e.getActionCommand().contains("RO")){
-
+                    RegisterO.getTextAndSendToDB();
                 } else if (e.getActionCommand().contains("RC")){
-
+                    Register.getTextAndSendToDB();
                 }
             }
         }
