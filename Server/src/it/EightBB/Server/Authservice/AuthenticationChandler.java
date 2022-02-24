@@ -21,14 +21,20 @@ public class AuthenticationChandler extends Handler {
         String Req = null;
         if (request.getSubSys().equals("Auth")) {
             DatabaseOperations ADB = new AuthDBOperations();
-            if (request.getRequest().equals("Login")) {
-                Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
-            } else if (request.getRequest().equals("Register")) {
-                try {
-                    Req = ADB.AddQuery(request.getData().getTable(), request.getData());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+            switch (request.getRequest()) {
+                case "Login":
+                    Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
+                    break;
+                case "Register":
+                    try {
+                        Req = ADB.AddQuery(request.getData().getTable(), request.getData());
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case "GetCheck":
+                    Req = ADB.getQuery(request.getData().getTable(),request.getData());
+                    break;
             }
         } else {
             Req = successor.handlerRequest(request, socket);

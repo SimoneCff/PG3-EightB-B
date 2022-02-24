@@ -24,7 +24,39 @@ public class AuthDBOperations implements DatabaseOperations {
 
     @Override
     public String getQuery(String table, Query query) {
-        return null;
+        Connection Q = DatabaseProxy.getInstance().getConnect();
+        try {
+            StringBuilder q = new StringBuilder();
+            String fist = "select * from " + table + " where" + " ";
+            for (int i = 0; i < query.getAttributes().size(); i++) {
+                q.append(query.getValues().get(i));
+                q.append(" = ");
+                q.append("'");
+                q.append(query.getAttributes().get(i));
+                q.append("'");
+                q.append(" ");
+                if (i != query.getAttributes().size() - 1) {
+                    q.append("and ");
+                }
+            }
+            System.out.println("Query : "+q);
+            Statement statement = Q.createStatement();
+            ResultSet rs = statement.executeQuery(fist+q.toString());
+            if (!rs.next()){
+                return "False";
+            } else {
+                rs = statement.executeQuery("select * from owner where" + q);
+                if (!rs.next()){
+                 rs =   statement.executeQuery("select * from client where" + q);
+                    return "Client,"+ rs.getString(1) +"," + rs.getString(2) + "," +
+                            rs.getString(3);
+                } else return "Owner,"+ rs.getString(1) +"," +rs.getString(2) + "," +
+                        rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return "False";
+        }
     }
 
     @Override
@@ -54,7 +86,7 @@ public class AuthDBOperations implements DatabaseOperations {
                 throwables.printStackTrace();
                 Statement statement = Q.createStatement();
                 statement.executeUpdate("DELETE From user where mail = '" + query.getAttributes().get(0) + "'");
-                statement.executeUpdate("DELETE  from client where mailc = '"+query.getAttributes().get(0)+ "'");
+                statement.executeUpdate("DELETE  from client where mail = '"+query.getAttributes().get(0)+ "'");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
