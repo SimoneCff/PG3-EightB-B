@@ -52,11 +52,12 @@ public class Server  {
            try {
                Proxy.SetIO();
                String st;
-               while ((st = Proxy.read()) != null){
-                   Proxy.Write("False");
+               while ((st = Proxy.getIn().readLine()) != null){
+                   Proxy.getOut().println("False");
                }
-           }
-           finally {
+           } catch (IOException e) {
+               e.printStackTrace();
+           } finally {
                    if (Proxy.getOut() != null){
                        Proxy.CloseOut();
                    }

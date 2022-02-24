@@ -27,23 +27,6 @@ public class SocketInitial implements SocketInitialService {
     }
 
     @Override
-    public String read() {
-        try {
-            return in.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @Override
-    public void Write(String str) {
-            out.println(str);
-            out.flush();
-    }
-
-
-    @Override
     public void accept() {
         try {
             socket = Ssocket.accept();
