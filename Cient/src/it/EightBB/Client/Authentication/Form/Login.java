@@ -1,12 +1,16 @@
 package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.Interface.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Powner.PownerFacade;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class Login implements Form {
@@ -82,6 +86,20 @@ public class Login implements Form {
            System.out.println(Result);
            if (Result.equals("False")) {
                JOptionPane.showMessageDialog(new JFrame(), "Error, User or Password Not Found", "Error", JOptionPane.ERROR_MESSAGE);
+           } else {
+               SP.write("Auth,GetCheck,user,mail,"+ user + ",pass," +pass);
+               String[] Check = SP.read().split(",");
+               if (Check[0].equals("Owner")){
+                   StringBuilder q = new StringBuilder(Arrays.toString(Check));
+                   q.append(0);
+                   PownerFacade.getInstance().setText(q.toString());
+                   PownerFacade.getInstance().PrivateArea();
+               } else {
+                   StringBuilder q = new StringBuilder(Arrays.toString(Check));
+                   q.append(0);
+                   PclientFacade.getInstance().setText(q.toString());
+                   PclientFacade.getInstance().PrivateArea();
+               }
            }
        } catch (IOException e) {
            JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);

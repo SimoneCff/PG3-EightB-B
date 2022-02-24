@@ -2,7 +2,10 @@ package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.SocketInterface;
+import it.EightBB.Client.Powner.PownerFacade;
+import it.EightBB.Client.Powner.PownerFactory;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -56,16 +59,19 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth" + "RegisterO" + "owner" + getStringFromForm();
-            SP.write(req + "p.iva" + Piva.getText() + "Cf" + Cf.getText());
+            String req ="Auth," + "RegisterO," + "owner," + getStringFromForm();
+            String od="p.iva," + Piva.getText() + ",Cf," + Cf.getText();
+            SP.write(req + od);
             String Result = SP.read();
             System.out.println(Result);
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
+            } else{
+                PownerFacade.getInstance().setText(getStringFromForm()+od);
+                PownerFacade.getInstance().PrivateArea();
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
         }
     }
 }

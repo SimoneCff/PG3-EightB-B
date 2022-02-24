@@ -23,7 +23,7 @@ public class AuthDBOperations implements DatabaseOperations {
     }
 
     @Override
-    public List<String> getQuery(String table, String attributes) {
+    public String getQuery(String table, Query query) {
         return null;
     }
 

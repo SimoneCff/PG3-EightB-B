@@ -10,6 +10,7 @@ import javax.swing.*;
 
 public class PclientFacade {
     private static PclientFacade Instance;
+    private String text;
     private JFrame F;
     private FactoryMaker FM;
     private AbstractFactory PCF;
@@ -74,5 +75,11 @@ public class PclientFacade {
         AreaRicerca.setVisible(true);
         AreaRicerca.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         AreaRicerca.add(immagine);
+    }
+
+    public void setText(String toString) {
+    }
+
+    public void PrivateArea() {
     }
 }
