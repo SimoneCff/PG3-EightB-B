@@ -5,6 +5,8 @@ import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.SocketInitialService;
 
+import java.sql.SQLException;
+
 public class AuthenticationChandler extends Handler {
     private static Handler instance;
 
@@ -22,7 +24,11 @@ public class AuthenticationChandler extends Handler {
             if (request.getRequest().equals("Login")) {
                 Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
             } else if (request.getRequest().equals("Register")) {
-                Req = ADB.AddQuery(request.getData().getTable(), request.getData());
+                try {
+                    Req = ADB.AddQuery(request.getData().getTable(), request.getData());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         } else {
             Req = successor.handlerRequest(request, socket);

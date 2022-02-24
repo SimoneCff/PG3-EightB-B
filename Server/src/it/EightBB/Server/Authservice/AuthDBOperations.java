@@ -33,7 +33,7 @@ public class AuthDBOperations implements DatabaseOperations {
         try{
             StringBuilder user, q;
             user = new StringBuilder( "insert into user values ('" + query.getAttributes().get(0) +"','" + query.getAttributes().get(1) + "');");
-            q = new StringBuilder("insert into "+table+" values (");
+            q = new StringBuilder("insert into "+table+" values ('" +query.getAttributes().get(0)+",");
             for (int i = 2; i < query.getAttributes().size(); i++){
                 q.append("'");
                 q.append(query.getAttributes().get(i));
@@ -53,8 +53,8 @@ public class AuthDBOperations implements DatabaseOperations {
             try {
                 throwables.printStackTrace();
                 Statement statement = Q.createStatement();
-                statement.executeUpdate("DELETE From user where mail ="+query.getAttributes().get(0));
-                statement.executeUpdate("DELETE  from client where mailc = "+query.getAttributes().get(0));
+                statement.executeUpdate("DELETE From user where mail = '" + query.getAttributes().get(0) + "'");
+                statement.executeUpdate("DELETE  from client where mailc = '"+query.getAttributes().get(0)+ "'");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
