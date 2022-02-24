@@ -36,7 +36,7 @@ public class Server  {
             }
         } finally {
             if (ProxyServer.getSsocket() != null){
-                ProxyServer.Close();
+                ProxyServer.CloseServer();
             }
         }
     }
@@ -50,22 +50,19 @@ public class Server  {
        @Override
        public void run() {
            try {
-               Proxy.setIO();
-               while (x) {
-                   String st = Proxy.read();
-                   if (st == null){
-                       x = false;
-                   } else {
-                       System.out.println(st);
-                       Proxy.Write("False");
-                   }
+               Proxy.SetIO();
+               String st;
+               while ((st = Proxy.read()) != null){
+                   Proxy.Write("False");
                }
            }
            finally {
-               if (Proxy != null){
-                   System.out.println("Thread " + Thread.currentThread() + ": Shutdown");
-                   Proxy.endRequest();
-               }
+                   if (Proxy.getOut() != null){
+                       Proxy.CloseOut();
+                   }
+                   if (Proxy.getIn() != null){
+                       Proxy.CloseIn();
+                   }
            }
        }
    }

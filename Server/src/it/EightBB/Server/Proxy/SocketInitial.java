@@ -10,8 +10,8 @@ import java.net.SocketException;
 public class SocketInitial implements SocketInitialService {
     private ServerSocket Ssocket;
     private Socket socket;
-    private DataInputStream in;
-    private DataOutputStream out;
+    private BufferedReader in;
+    private PrintWriter out;
 
     public SocketInitial(int port) {
         try {
@@ -22,41 +22,26 @@ public class SocketInitial implements SocketInitialService {
         }
     }
 
+    public ServerSocket getSsocket() {
+        return Ssocket;
+    }
+
     @Override
     public String read() {
-        String s = null;
         try {
-            s = in.readUTF();
-        } catch (SocketException ex){
-
-        }
-        catch (IOException e) {
+            return in.readLine();
+        } catch (IOException e) {
             e.printStackTrace();
-
+            return null;
         }
-        return s;
     }
 
     @Override
     public void Write(String str) {
-        try {
-            out.writeUTF(str);
+            out.println(str);
             out.flush();
-
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
-    @Override
-    public void endRequest() {
-        try {
-           socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void accept() {
@@ -71,26 +56,46 @@ public class SocketInitial implements SocketInitialService {
     @Override
     public void SetIO(){
         try{
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new PrintWriter(socket.getOutputStream(),true);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void CloseIn() {
+        try{
+            in.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+
         }
     }
 
     @Override
-    public void Close() {
-        try{
+    public void CloseOut(){
             out.close();
-            in.close();
+    }
+
+    @Override
+    public void CloseServer(){
+        try {
             Ssocket.close();
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
-
-    public ServerSocket getSsocket() {
-        return Ssocket;
+    @Override
+    public BufferedReader getIn(){
+        return in;
     }
+    @Override
+    public PrintWriter getOut(){
+        return out;
+    }
+
+
 }

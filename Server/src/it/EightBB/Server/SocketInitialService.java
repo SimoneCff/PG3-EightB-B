@@ -8,9 +8,12 @@ import java.net.Socket;
 public abstract interface SocketInitialService {
     String read();
     void SetIO();
+    BufferedReader getIn();
+    PrintWriter getOut();
     void Write(String str);
-    void endRequest();
-    void Close();
+    void CloseIn();
+    void CloseOut();
+    void CloseServer();
     void accept();
 }
 
