@@ -12,7 +12,6 @@ public class PrivateClient implements TextGroup {
     //Labels
         Name = new JLabel("Nome:");
         Surname = new JLabel("Cognome:");
-        BirthDate = new JLabel("Data di Nascita:");
         Mail = new JLabel("Mail:");
         Pass = new JLabel("Password:");
 
@@ -20,7 +19,6 @@ public class PrivateClient implements TextGroup {
         //Set Labels
         Name.setBounds(200,100,200,30);
         Surname.setBounds(200,160,200,30);
-        BirthDate.setBounds(200,220,200,30);
         Mail.setBounds(200,280,200,30);
         Pass.setBounds(200,340,200,30);
 
@@ -30,7 +28,6 @@ public class PrivateClient implements TextGroup {
     public void InitialiteTextIntoFrame(JFrame F) {
         F.add(Name);
         F.add(Surname);
-        F.add(BirthDate);
         F.add(Mail);
         F.add(Pass);
 

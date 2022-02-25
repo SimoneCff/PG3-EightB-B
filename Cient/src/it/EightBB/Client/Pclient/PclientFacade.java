@@ -101,6 +101,10 @@ public class PclientFacade {
         Mail.setBounds(300,280,200,30);
         Pass.setBounds(300,340,200,30);
 
+        //Frame
+        Frameprivateareatext.setText();
+        Frameprivateareatext.InitialiteTextIntoFrame(F);
+
         //Setting Factory
         Button uscita = PCF.makeButton("Exit");
         Button modifica =  PCF.makeButton("Mod");
@@ -118,6 +122,7 @@ public class PclientFacade {
         modifica.InitialiteButtonIntoFrame(F);
         prenota.InitialiteButtonIntoFrame(F);
         booked.InitialiteButtonIntoFrame(F);
+
 
 
 
