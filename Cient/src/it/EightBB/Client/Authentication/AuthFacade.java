@@ -35,14 +35,8 @@ public class AuthFacade {
         F = f;
     }
 
-    public void Inizialize(String S) {
-        switch (S) {
-            case "Login" -> Login();
-        }
-    }
 
-
-    void Login(){
+    public void Login(){
         F.getContentPane().removeAll();
         F.repaint();
 
@@ -62,7 +56,7 @@ public class AuthFacade {
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
-    void Register() {
+    public void Register() {
         F.getContentPane().removeAll();
         F.repaint();
 
@@ -87,7 +81,7 @@ public class AuthFacade {
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
-    void RegisterOwner() {
+    public void RegisterOwner() {
         F.getContentPane().removeAll();
         F.repaint();
         Form Reg = AF.makeForm("RegisterO");
@@ -105,7 +99,7 @@ public class AuthFacade {
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
-    void RegisterClient() {
+    public void RegisterClient() {
         F.getContentPane().removeAll();
         F.repaint();
         Form Reg = AF.makeForm("Register");
