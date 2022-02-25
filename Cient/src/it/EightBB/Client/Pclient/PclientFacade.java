@@ -119,9 +119,5 @@ public class PclientFacade {
         modifica.InitialiteButtonIntoFrame(F);
         prenota.InitialiteButtonIntoFrame(F);
         booked.InitialiteButtonIntoFrame(F);
-
-
-
-
     }
 }
