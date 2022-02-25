@@ -106,19 +106,16 @@ public class PclientFacade {
         Frameprivateareatext.InitialiteTextIntoFrame(F);
 
         //Setting Factory
-        Button uscita = PCF.makeButton("Exit");
         Button modifica =  PCF.makeButton("Mod");
         Button prenota = PCF.makeButton("Prenota");
         Button booked = PCF.makeButton("Booked");
 
         //Setting Up
-        uscita.setButton();
         modifica.setButton();
         prenota.setButton();
         booked.setButton();
 
         //SetFrame
-        uscita.InitialiteButtonIntoFrame(F);
         modifica.InitialiteButtonIntoFrame(F);
         prenota.InitialiteButtonIntoFrame(F);
         booked.InitialiteButtonIntoFrame(F);

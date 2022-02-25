@@ -4,7 +4,6 @@ package it.EightBB.Client.Powner;
 
 import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
-import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.TextGroup;
 
@@ -63,7 +62,6 @@ public class PownerFacade{
         Mail.setBounds(300,280,200,30);
         Pass.setBounds(300,340,200,30);
 
-        Button uscita = POF.makeButton("Exit");
         Button modifica =  POF.makeButton("Mod");
 
         Button strutture = POF.makeButton("AllOwnStruct");
@@ -91,9 +89,6 @@ public class PownerFacade{
         registrazioneStruttura.setButton();
         registrazioneStruttura.InitialiteButtonIntoFrame(F);
 
-        //Set uscita button
-        uscita.setButton();
-        uscita.InitialiteButtonIntoFrame(F);
         //Set modifica button
         modifica.setButton();
         modifica.InitialiteButtonIntoFrame(F);

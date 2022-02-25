@@ -25,7 +25,6 @@ public class PownerFactory implements AbstractFactory {
             case "AllOwnStruct" -> new AllOwnerStructures();
             case "ClientReg" -> new ClientRegistration();
             case "Econm" -> new EconomicManagement();
-            case "Exit" -> new ExitO();
             case "Mod" -> new ModifyProfileO();
             case "PrivAreaEnt" -> new PrivateAreaEntities();
             case "RegStruct" -> new RegisterStructure();
