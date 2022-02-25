@@ -86,18 +86,16 @@ public class Login implements Form {
            System.out.println(Result);
            if (Result.equals("False")) {
                JOptionPane.showMessageDialog(new JFrame(), "Error, User or Password Not Found", "Error", JOptionPane.ERROR_MESSAGE);
-           } else {
+           } else if (Result.equals(("True"))){
                SP.write("Auth,GetCheck,user,mail,"+ user + ",pass," +pass);
                String[] Check = SP.read().split(",");
                if (Check[0].equals("Owner")){
-                   StringBuilder q = new StringBuilder(Arrays.toString(Check));
-                   q.append(0);
-                   PownerFacade.getInstance().setText(q.toString());
+                   String q = Arrays.toString(Check) + 0;
+                   PownerFacade.getInstance().setText(q);
                    PownerFacade.getInstance().PrivateArea();
                } else {
-                   StringBuilder q = new StringBuilder(Arrays.toString(Check));
-                   q.append(0);
-                   PclientFacade.getInstance().setText(q.toString());
+                   String q = Arrays.toString(Check) + 0;
+                   PclientFacade.getInstance().setText(q);
                    PclientFacade.getInstance().PrivateArea();
                }
            }

@@ -13,6 +13,7 @@ public class Register implements Form, Cloneable {
     private static JPasswordField Ps = null;
     private JLabel Namee, Surr, Uss, Pss, Reg = null;
     private JButton RegConfBt = null;
+    private JFrame Frame;
 
 
     @Override
@@ -54,6 +55,7 @@ public class Register implements Form, Cloneable {
 
     @Override
     public void InitialiateFormIntoFrame(JFrame F) {
+        this.Frame = F;
         //add Name Form
         F.add(Namee);
         F.add(Name);
@@ -87,11 +89,18 @@ public class Register implements Form, Cloneable {
             System.out.println(Result);
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
+            } else{
+
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
     }
+    public JButton returnButton(){
+        return RegConfBt;
+    }
 }
+
+
 
