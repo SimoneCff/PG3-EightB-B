@@ -2,6 +2,7 @@ package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Powner.PownerFacade;
 
@@ -72,9 +73,7 @@ public class RegisterO extends Register {
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{
-                PownerFacade.getInstance().setText(getStringFromForm()+od);
-                PownerFacade.getInstance().setF(Frame);
-                PownerFacade.getInstance().PrivateArea();
+                ClientVisitor.getInstance().visitPowner("PrivateArea",getStringFromForm()+od);
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);

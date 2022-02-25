@@ -2,6 +2,7 @@ package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
@@ -94,7 +95,7 @@ public class Register implements Form, Cloneable {
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{
-
+                ClientVisitor.getInstance().visitPclient("PrivateArea",getStringFromForm()+getUserFromForm());
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
