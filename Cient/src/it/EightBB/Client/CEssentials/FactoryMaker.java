@@ -2,7 +2,7 @@ package it.EightBB.Client.CEssentials;
 
 import it.EightBB.Client.Authentication.AuthFactory;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
-import it.EightBB.Client.Interface.Pclient.PclientFactory;
+import it.EightBB.Client.Pclient.PclientFactory;
 import it.EightBB.Client.Powner.PownerFactory;
 
 public class FactoryMaker {

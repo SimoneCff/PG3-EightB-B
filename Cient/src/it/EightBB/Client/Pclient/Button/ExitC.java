@@ -1,4 +1,4 @@
-package it.EightBB.Client.Interface.Pclient.Button;
+package it.EightBB.Client.Pclient.Button;
 
 import it.EightBB.Client.Interface.Template.Button;
 

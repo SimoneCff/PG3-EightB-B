@@ -1,5 +1,5 @@
 
-package it.EightBB.Client.Interface.Pclient.Form;
+package it.EightBB.Client.Pclient.Form;
 
 
 import it.EightBB.Client.Interface.Template.Form;

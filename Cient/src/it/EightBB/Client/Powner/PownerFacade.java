@@ -46,10 +46,10 @@ public class PownerFacade{
         TextGroup Frameprivateareatext = POF.makeText("Private");
 
         //Set Dynamic Textroup
-        JLabel Name = new JLabel(text[2]);
-        JLabel Surname = new JLabel(text[3]);
-        JLabel Mail = new JLabel(text[0]);
-        JLabel Pass = new JLabel(text[1]);
+        JLabel Name = new JLabel(text[3]);
+        JLabel Surname = new JLabel(text[4]);
+        JLabel Mail = new JLabel(text[1]);
+        JLabel Pass = new JLabel(text[2]);
         //Set Text
         F.add(Name);
         F.add(Surname);
@@ -58,10 +58,10 @@ public class PownerFacade{
 
 
         //Set Labels
-        Name.setBounds(200,100,200,30);
-        Surname.setBounds(200,160,200,30);
-        Mail.setBounds(200,280,200,30);
-        Pass.setBounds(200,340,200,30);
+        Name.setBounds(300,100,200,30);
+        Surname.setBounds(300,160,200,30);
+        Mail.setBounds(300,280,200,30);
+        Pass.setBounds(300,340,200,30);
 
         Button uscita = POF.makeButton("Exit");
         Button modifica =  POF.makeButton("Mod");

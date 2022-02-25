@@ -44,15 +44,16 @@ public class AuthDBOperations implements DatabaseOperations {
             if (!bs.next()){
                 return "False";
             } else {
+                String pass = bs.getString(2);
                 if (bs.getString(2).equals("client")){
 
                  ResultSet rs =   statement.executeQuery("select * from client where mail = " + query.getAttributes().get(0));
-                    return "Client,"+ rs.getString(1) +"," + rs.getString(2) + "," +
+                    return "Client,"+ rs.getString(1) +"," + pass+","+rs.getString(2) + "," +
                             rs.getString(3);
                 } else {
                     ResultSet rs =   statement.executeQuery("select * from owner where mail = " +"'"+ query.getAttributes().get(0)+"'");
                     if(rs.next()) {
-                    return "Owner,"+ rs.getString(1) +"," +rs.getString(2) + "," +
+                    return "Owner,"+ rs.getString(1) +"," +pass+","+rs.getString(2) + "," +
                                 rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);
                       }
                     }

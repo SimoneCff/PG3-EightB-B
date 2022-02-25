@@ -2,7 +2,7 @@ package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthFacade;
 import it.EightBB.Client.CEssentials.SocketProxy;
-import it.EightBB.Client.Interface.Pclient.PclientFacade;
+import it.EightBB.Client.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.visitor;
 import it.EightBB.Client.Powner.PownerFacade;
 

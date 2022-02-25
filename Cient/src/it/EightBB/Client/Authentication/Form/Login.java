@@ -2,11 +2,9 @@ package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.ClientVisitor;
-import it.EightBB.Client.Interface.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Template.Form;
-import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
 import java.awt.*;

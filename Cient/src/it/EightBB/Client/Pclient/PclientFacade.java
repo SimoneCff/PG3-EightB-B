@@ -1,19 +1,21 @@
-package it.EightBB.Client.Interface.Pclient;
+package it.EightBB.Client.Pclient;
 
 import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
+import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
-import it.EightBB.Client.Interface.Pclient.Form.PrenotationOne;
-import it.EightBB.Client.Interface.Pclient.Form.RicercaLuogo;
+import it.EightBB.Client.Interface.Template.TextGroup;
+import it.EightBB.Client.Pclient.Form.PrenotationOne;
+import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 
 import javax.swing.*;
 
 public class PclientFacade {
     private static PclientFacade Instance;
-    private String text;
     private JFrame F;
     private FactoryMaker FM;
     private AbstractFactory PCF;
+    private String[] text;
 
     public static PclientFacade getInstance(){
         if(Instance==null){
@@ -30,10 +32,10 @@ public class PclientFacade {
 
     public void setF(JFrame f) { F = f; }
 
-    public void inizialize(String S){
-        switch (S){
-        }
+    public void setText(String text){
+        this.text = text.split(",");
     }
+
 
     void Prenot(){
         F.getContentPane().removeAll();
@@ -77,9 +79,47 @@ public class PclientFacade {
         AreaRicerca.add(immagine);
     }
 
-    public void setText(String toString) {
-    }
-
     public void PrivateArea() {
+        F.getContentPane().removeAll();
+        F.repaint();
+        TextGroup Frameprivateareatext = PCF.makeText("Private");
+
+        //Set Dynamic Textroup
+        JLabel Name = new JLabel(text[3]);
+        JLabel Surname = new JLabel(text[4]);
+        JLabel Mail = new JLabel(text[1]);
+        JLabel Pass = new JLabel(text[2]);
+        //Set Text
+        F.add(Name);
+        F.add(Surname);
+        F.add(Mail);
+        F.add(Pass);
+
+        //Set Labels
+        Name.setBounds(300,100,200,30);
+        Surname.setBounds(300,160,200,30);
+        Mail.setBounds(300,280,200,30);
+        Pass.setBounds(300,340,200,30);
+
+        //Setting Factory
+        Button uscita = PCF.makeButton("Exit");
+        Button modifica =  PCF.makeButton("Mod");
+        Button prenota = PCF.makeButton("Prenota");
+        Button booked = PCF.makeButton("Booked");
+
+        //Setting Up
+        uscita.setButton();
+        modifica.setButton();
+        prenota.setButton();
+        booked.setButton();
+
+        //SetFrame
+        uscita.InitialiteButtonIntoFrame(F);
+        modifica.InitialiteButtonIntoFrame(F);
+        prenota.InitialiteButtonIntoFrame(F);
+        booked.InitialiteButtonIntoFrame(F);
+
+
+
     }
 }
