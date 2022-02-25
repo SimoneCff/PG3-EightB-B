@@ -9,6 +9,7 @@ import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 import java.awt.event.ActionEvent;
 
 public class ConcreteHanlderOne extends ActionHandler {
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().contains("Auth")){
@@ -31,6 +32,9 @@ public class ConcreteHanlderOne extends ActionHandler {
                     Register.getTextAndSendToDB();
                 }
             }
+        }
+        else {
+            successor.actionPerformed(e);
         }
 
     }
