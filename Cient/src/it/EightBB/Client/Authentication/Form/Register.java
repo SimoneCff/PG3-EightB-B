@@ -8,6 +8,7 @@ import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Register implements Form, Cloneable {
     private static JTextField Name, Sur, Us = null;
@@ -77,7 +78,7 @@ public class Register implements Form, Cloneable {
     }
 
     public static String getUserFromForm(){
-        return "username," + Us.getText() + ",password," + new String(Ps.getPassword())+ ",type";
+        return "mail," + Us.getText() + ",password," + new String(Ps.getPassword()) ;
     }
 
    public static String getStringFromForm(){
@@ -87,13 +88,18 @@ public class Register implements Form, Cloneable {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth," + "Register," + "client," + getUserFromForm()+ ",client" + getStringFromForm();
+            String req ="Auth," + "Register," + "client," + getUserFromForm()+ ",type,client" + getStringFromForm();
             SP.write(req);
             String Result = SP.read();
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{
-                ClientVisitor.getInstance().visitPclient("PrivateArea",getStringFromForm()+getUserFromForm());
+                StringBuilder q = new StringBuilder(getUserFromForm()+getStringFromForm());
+                q.append(0);
+                q.append(1);
+                q.append(2);
+                q.append(3);
+                ClientVisitor.getInstance().visitPclient("PrivateArea", q.toString());
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);

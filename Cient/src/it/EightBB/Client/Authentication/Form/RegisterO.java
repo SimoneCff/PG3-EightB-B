@@ -9,6 +9,7 @@ import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class RegisterO extends Register {
     private static JTextField Cf, Piva = null;
@@ -64,14 +65,22 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth," + "Register," + "owner," + getUserFromForm() + ",owner"+ getStringFromForm();
+            String req ="Auth," + "Register," + "owner," + getUserFromForm() + ",type,owner"+ getStringFromForm();
             String od=",p.iva," + Piva.getText() + ",Cf," + Cf.getText();
             SP.write(req + od);
             String Result = SP.read();
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{
-                ClientVisitor.getInstance().visitPowner("PrivateArea",getStringFromForm()+od);
+                StringBuilder q = new StringBuilder(getUserFromForm()+getStringFromForm()+od);
+                q.append(0);
+                q.append(1);
+                q.append(2);
+                q.append(3);
+                q.append(4);
+                q.append(5);
+                //append text
+                ClientVisitor.getInstance().visitPowner("PrivateArea",q.toString());
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
