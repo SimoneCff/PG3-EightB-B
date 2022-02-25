@@ -11,7 +11,7 @@ public class ModifyProfileO implements Button{
         //set button
         ModifyP = new JButton("<html>Modifica<br />Profilo utente</html>");
         //set pos
-        ModifyP.setBounds(968,150,150,60);
+        ModifyP.setBounds(700,150,150,60);
     }
     @Override
     public void InitialiteButtonIntoFrame(JFrame F) {

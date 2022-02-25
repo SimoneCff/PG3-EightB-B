@@ -32,7 +32,7 @@ public class PrivateOwner implements TextGroup {
         F.add(Mail);
         F.add(Pass);
 
-        F.setSize(1366, 768);
+        F.setSize(880, 500);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 }
