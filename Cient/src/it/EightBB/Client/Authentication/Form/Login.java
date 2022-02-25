@@ -1,6 +1,7 @@
 package it.EightBB.Client.Authentication.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.CEssentials.SocketProxy;
@@ -90,13 +91,11 @@ public class Login implements Form {
                SP.write("Auth,GetCheck,user,mail,"+ user + ",pass," +pass);
                String[] Check = SP.read().split(",");
                if (Check[0].equals("Owner")){
-                   String q = Arrays.toString(Check) + 0;
-                   PownerFacade.getInstance().setText(q);
-                   PownerFacade.getInstance().PrivateArea();
+                   String q = Arrays.toString(Check);
+                   ClientVisitor.getInstance().visitPowner("PrivateArea",q);
                } else {
-                   String q = Arrays.toString(Check) + 0;
-                   PclientFacade.getInstance().setText(q);
-                   PclientFacade.getInstance().PrivateArea();
+                   String q = Arrays.toString(Check);
+                   ClientVisitor.getInstance().visitPclient("PrivateArea",q);
                }
            }
        } catch (IOException e) {

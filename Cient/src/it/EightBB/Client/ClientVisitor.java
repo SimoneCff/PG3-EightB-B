@@ -2,7 +2,9 @@ package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthFacade;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.visitor;
+import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
 
@@ -60,12 +62,26 @@ private JFrame F;
     }
 
     @Override
-    public void visitPclient( String where) {
+    public void visitPclient(String where, String text) {
+        PclientFacade PCF = PclientFacade.getInstance();
+        if (text != null){
+            PCF.setText(text);
+        }
+        switch(where){
+            case "PrivateArea"-> PCF.PrivateArea();
+        }
 
     }
 
     @Override
-    public void visitPowner(String where) {
+    public void visitPowner(String where, String text) {
+        PownerFacade POF = PownerFacade.getInstance();
+        if (text != null){
+            POF.setText(text);
+        }
+        switch(where){
+            case "PrivateArea"-> POF.PrivateArea();
+        }
 
     }
 }
