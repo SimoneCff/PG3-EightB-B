@@ -27,7 +27,7 @@ public class AuthDBOperations implements DatabaseOperations {
         Connection Q = DatabaseProxy.getInstance().getConnect();
         try {
             StringBuilder q = new StringBuilder();
-            String fist = "select * from " + table + " where" + " ";
+            String fist = "select * from " + table + " where ";
             for (int i = 0; i < query.getAttributes().size(); i++) {
                 q.append(query.getValues().get(i));
                 q.append(" = ");
@@ -39,19 +39,20 @@ public class AuthDBOperations implements DatabaseOperations {
                     q.append("and ");
                 }
             }
-            System.out.println("Query : "+q);
+            System.out.println("Query : " +fist+q);
             Statement statement = Q.createStatement();
-            ResultSet rs = statement.executeQuery(fist+q.toString());
+            ResultSet rs = statement.executeQuery(fist+ q);
             if (!rs.next()){
                 return "False";
             } else {
-                rs = statement.executeQuery("select * from owner where" + q);
-                if (!rs.next()){
-                 rs =   statement.executeQuery("select * from client where" + q);
+                if (rs.getString(3).equals("client")){
+                 rs =   statement.executeQuery("select * from client where mail = " + query.getValues());
                     return "Client,"+ rs.getString(1) +"," + rs.getString(2) + "," +
                             rs.getString(3);
-                } else return "Owner,"+ rs.getString(1) +"," +rs.getString(2) + "," +
-                        rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);
+                } else {
+                    rs =   statement.executeQuery("select * from owner where mail = " + query.getValues());
+                    return "Owner,"+ rs.getString(1) +"," +rs.getString(2) + "," +
+                        rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);}
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -64,7 +65,8 @@ public class AuthDBOperations implements DatabaseOperations {
         Connection Q = DatabaseProxy.getInstance().getConnect();
         try{
             StringBuilder user, q;
-            user = new StringBuilder( "insert into user values ('" + query.getAttributes().get(0) +"','" + query.getAttributes().get(1) + "');");
+            user = new StringBuilder( "insert into user values ('" + query.getAttributes().get(0) +"','" +
+                    query.getAttributes().get(1) + "','" + query.getAttributes().get(2) + "');");
             q = new StringBuilder("insert into "+table+" values ('" +query.getAttributes().get(0)+"',");
             for (int i = 2; i < query.getAttributes().size(); i++){
                 q.append("'");

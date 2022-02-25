@@ -63,7 +63,7 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth," + "Register," + "owner," + getStringFromForm();
+            String req ="Auth," + "Register," + "owner," + getUserFromForm() + "owner";
             String od=",p.iva," + Piva.getText() + ",Cf," + Cf.getText();
             System.out.println(req+od);
             SP.write(req + od);
