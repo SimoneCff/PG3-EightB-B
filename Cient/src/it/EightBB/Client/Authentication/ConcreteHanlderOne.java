@@ -3,6 +3,7 @@ package it.EightBB.Client.Authentication;
 import it.EightBB.Client.Authentication.Form.Login;
 import it.EightBB.Client.Authentication.Form.Register;
 import it.EightBB.Client.Authentication.Form.RegisterO;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 
 import java.awt.event.ActionEvent;
@@ -13,13 +14,13 @@ public class ConcreteHanlderOne extends ActionHandler {
         if (e.getActionCommand().contains("Auth")){
             if (e.getActionCommand().contains("BP")){
                  if (e.getActionCommand().contains("Register")){
-                  AuthFacade.getInstance().Register();
+                     ClientVisitor.getInstance().visitAuth("Register");
                 } else if (e.getActionCommand().contains("RegC")){
-                    AuthFacade.getInstance().RegisterClient();
+                     ClientVisitor.getInstance().visitAuth("RegisterC");
                 } else if (e.getActionCommand().contains("RegO")){
-                    AuthFacade.getInstance().RegisterOwner();
+                     ClientVisitor.getInstance().visitAuth("RegisterO");
                 } else if (e.getActionCommand().contains("RetGin")){
-                    AuthFacade.getInstance().Login();
+                     ClientVisitor.getInstance().visitAuth("Login");
                 }
             } else if (e.getActionCommand().contains("BFORM")){
                 if (e.getActionCommand().contains("L")){

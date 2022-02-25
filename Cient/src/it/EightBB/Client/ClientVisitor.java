@@ -8,6 +8,7 @@ import javax.swing.*;
 
 public class ClientVisitor implements visitor {
 private static visitor Instance;
+private JFrame F;
 
     public static visitor getInstance(){
         if (Instance == null){
@@ -16,7 +17,27 @@ private static visitor Instance;
     }
 
     @Override
-    public void visitAuth(JFrame F, String where) {
+    public void setFrame(JFrame F) {
+        this.F = F;
+        F.setLayout(null);
+        F.setResizable(false);
+        F.setVisible(true);
+        F.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                if (JOptionPane.showConfirmDialog(F,
+                        "Sicuro di Chiudere ?", "Exit",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                    visitProxy("SendEnd");
+                    System.exit(0);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void visitAuth(String where) {
         AuthFacade AF = AuthFacade.getInstance();
         AF.setF(F);
         switch(where) {
@@ -39,12 +60,12 @@ private static visitor Instance;
     }
 
     @Override
-    public void visitPclient(JFrame F, String where) {
+    public void visitPclient( String where) {
 
     }
 
     @Override
-    public void visitPowner(JFrame F,String where) {
+    public void visitPowner(String where) {
 
     }
 }
