@@ -52,7 +52,7 @@ public class AuthFacade {
         Bf.InitialiteButtonIntoFrame(F);
         Ff.InitialiateFormIntoFrame(F);
 
-        F.setSize(400,400);
+        F.setSize(330,370);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 

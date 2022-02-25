@@ -64,6 +64,7 @@ private JFrame F;
     @Override
     public void visitPclient(String where, String text) {
         PclientFacade PCF = PclientFacade.getInstance();
+        PCF.setF(F);
         if (text != null){
             PCF.setText(text);
         }
@@ -76,6 +77,7 @@ private JFrame F;
     @Override
     public void visitPowner(String where, String text) {
         PownerFacade POF = PownerFacade.getInstance();
+        POF.setF(F);
         if (text != null){
             POF.setText(text);
         }

@@ -40,25 +40,28 @@ public class AuthDBOperations implements DatabaseOperations {
                 }
             }
             Statement statement = Q.createStatement();
-            ResultSet rs = statement.executeQuery(fist+ q);
-            if (!rs.next()){
+            ResultSet bs = statement.executeQuery(fist+ q);
+            if (!bs.next()){
                 return "False";
             } else {
-                if (rs.getString(2).equals("client")){
+                if (bs.getString(2).equals("client")){
 
-                 rs =   statement.executeQuery("select * from client where mail = " + query.getAttributes().get(0));
+                 ResultSet rs =   statement.executeQuery("select * from client where mail = " + query.getAttributes().get(0));
                     return "Client,"+ rs.getString(1) +"," + rs.getString(2) + "," +
                             rs.getString(3);
                 } else {
-
-                    rs =   statement.executeQuery("select * from owner where mail = " +"'"+ query.getAttributes().get(0)+"'");
+                    ResultSet rs =   statement.executeQuery("select * from owner where mail = " +"'"+ query.getAttributes().get(0)+"'");
+                    if(rs.next()) {
                     return "Owner,"+ rs.getString(1) +"," +rs.getString(2) + "," +
-                        rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);}
+                                rs.getString(3)+"," + rs.getString(4) + "," + rs.getString(5);
+                      }
+                    }
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return "False";
         }
+        return null;
     }
 
     @Override
@@ -78,7 +81,6 @@ public class AuthDBOperations implements DatabaseOperations {
                 }
             }
             q.append(");");
-            System.out.println("Query : "+q);
             Statement statement = Q.createStatement();
             statement.executeUpdate(user.toString());
             statement.executeUpdate(q.toString());
@@ -125,7 +127,6 @@ public class AuthDBOperations implements DatabaseOperations {
                    q.append("and ");
                }
            }
-           System.out.println("Query : "+q);
            Statement statement = Q.createStatement();
            ResultSet rs = statement.executeQuery(q.toString());
            if (!rs.next()){

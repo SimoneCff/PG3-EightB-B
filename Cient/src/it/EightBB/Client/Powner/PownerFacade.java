@@ -50,6 +50,11 @@ public class PownerFacade{
         JLabel Surname = new JLabel(text[3]);
         JLabel Mail = new JLabel(text[0]);
         JLabel Pass = new JLabel(text[1]);
+        //Set Text
+        F.add(Name);
+        F.add(Surname);
+        F.add(Mail);
+        F.add(Pass);
 
 
         //Set Labels
