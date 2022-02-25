@@ -77,7 +77,7 @@ public class Register implements Form, Cloneable {
     }
 
     public static String getUserFromForm(){
-        return "username," + Us.getText() + ",password," + new String(Ps.getPassword())+ "type";
+        return "username," + Us.getText() + ",password," + new String(Ps.getPassword())+ ",type";
     }
 
    public static String getStringFromForm(){
@@ -87,11 +87,9 @@ public class Register implements Form, Cloneable {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth," + "Register," + "client," + getUserFromForm()+ "client" + getStringFromForm();
-            System.out.println(req);
+            String req ="Auth," + "Register," + "client," + getUserFromForm()+ ",client" + getStringFromForm();
             SP.write(req);
             String Result = SP.read();
-            System.out.println(Result);
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{

@@ -64,12 +64,10 @@ public class RegisterO extends Register {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req ="Auth," + "Register," + "owner," + getUserFromForm() + "owner";
+            String req ="Auth," + "Register," + "owner," + getUserFromForm() + ",owner"+ getStringFromForm();
             String od=",p.iva," + Piva.getText() + ",Cf," + Cf.getText();
-            System.out.println(req+od);
             SP.write(req + od);
             String Result = SP.read();
-            System.out.println(Result);
             if (Result.equals("False")) {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione Non Avvenuta O Utente Esistente", "Error", JOptionPane.ERROR_MESSAGE);
             } else{

@@ -73,7 +73,7 @@ public class AuthDBOperations implements DatabaseOperations {
             user = new StringBuilder( "insert into user values ('" + query.getAttributes().get(0) +"','" +
                     query.getAttributes().get(1) + "','" + query.getAttributes().get(2) + "');");
             q = new StringBuilder("insert into "+table+" values ('" +query.getAttributes().get(0)+"',");
-            for (int i = 2; i < query.getAttributes().size(); i++){
+            for (int i = 3; i < query.getAttributes().size(); i++){
                 q.append("'");
                 q.append(query.getAttributes().get(i));
                 q.append("'");
@@ -82,6 +82,7 @@ public class AuthDBOperations implements DatabaseOperations {
                 }
             }
             q.append(");");
+            System.out.println(q.toString());
             Statement statement = Q.createStatement();
             statement.executeUpdate(user.toString());
             statement.executeUpdate(q.toString());

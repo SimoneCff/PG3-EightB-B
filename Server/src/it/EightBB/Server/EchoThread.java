@@ -32,6 +32,7 @@ public class EchoThread extends Thread {
             QueryAdapter QA = new QueryAdapter();
             List<String> list = Arrays.asList(x.split(","));
             ArrayList<String> rq= new ArrayList<String>(list);
+            System.out.println(rq);
             //
             String sub = rq.get(0);
             rq.remove(0);
