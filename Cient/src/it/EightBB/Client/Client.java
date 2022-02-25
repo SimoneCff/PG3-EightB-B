@@ -25,12 +25,13 @@ public class Client {
 
         //Setting Frame
         Frame.setLayout(null);
+        Frame.
         Frame.setVisible(true);
         Frame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 if (JOptionPane.showConfirmDialog(Frame,
-                        "Are you sure you want to close this window?", "Close Window?",
+                        "Sicuro di Chiudere ?", "Exit",
                         JOptionPane.YES_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
                     Proxy.SendEnd();
