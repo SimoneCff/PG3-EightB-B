@@ -117,24 +117,22 @@ public class PownerFacade{
 
     }
 
-    /*void RegNewStr(){
-        JFrame RegisterStr = new JFrame();
-        Form RegisterStrForm = new RegisterNewStructure();
-        Button Annulla = new GoBackO();
+    void RegNewStr(){
+        F.getContentPane().removeAll();
+        F.repaint();
+        Form RegisterStrForm = POF.makeForm("RegNewStr");
+        Button Annulla = POF.makeButton("ModBack");
 
         Annulla.setButton();
-        Annulla.InitialiteButtonIntoFrame(RegisterStr);
+        Annulla.InitialiteButtonIntoFrame(F);
 
 
         RegisterStrForm.setForm();
-        RegisterStrForm.InitialiateFormIntoFrame(RegisterStr);
+        RegisterStrForm.InitialiateFormIntoFrame(F);
 
-        RegisterStr.setLayout(null);
-        RegisterStr.setVisible(true);
-        RegisterStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
-    }*/
+
 }
 
 
