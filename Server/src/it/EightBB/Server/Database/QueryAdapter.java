@@ -22,20 +22,4 @@ public class QueryAdapter extends Query {
 
         return q;
     }
-
-    public List<String> AdaptQueryToString(Query query){
-        List<String> result = null;
-        //search max size
-        int max= 0;
-        if (query.getAttributes().size() > query.getValues().size()){
-            max = query.getAttributes().size();
-        } else max = query.getValues().size();
-        //Convert
-        for (int n =0; n<max; n++ ){
-            if (n % 2 ==0){
-                result.add(query.getAttributes().get(n));
-            } else result.add(query.getValues().get(n));
-        }
-        return result;
-    }
 }
