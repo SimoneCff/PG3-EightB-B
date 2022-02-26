@@ -1,10 +1,6 @@
 package it.EightBB.Server.Database;
 
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public interface DatabaseOperations {
     public String getQuery(String table , Query query);

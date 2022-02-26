@@ -1,6 +1,5 @@
 package it.EightBB.Server.Authservice;
 
-import it.EightBB.Server.Database.DatabaseConnect;
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.Database.Query;
 import it.EightBB.Server.Database.DatabaseProxy;
@@ -9,7 +8,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 public class AuthDBOperations implements DatabaseOperations {
     private AuthDBOperations Instance;
