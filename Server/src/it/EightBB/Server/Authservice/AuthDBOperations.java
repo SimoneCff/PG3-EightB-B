@@ -79,7 +79,6 @@ public class AuthDBOperations implements DatabaseOperations {
                 }
             }
             q.append(");");
-            System.out.println(q.toString());
             Statement statement = Q.createStatement();
             statement.executeUpdate(user.toString());
             statement.executeUpdate(q.toString());

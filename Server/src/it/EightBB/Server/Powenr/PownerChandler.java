@@ -6,6 +6,8 @@ import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Proxy.SocketInitialService;
 
+import java.sql.SQLException;
+
 public class PownerChandler extends Handler {
     private static Handler instance;
 
@@ -16,12 +18,13 @@ public class PownerChandler extends Handler {
     }
 
     @Override
-    public String handlerRequest(Request request, SocketInitialService socket) {
+    public String handlerRequest(Request request, SocketInitialService socket) throws SQLException {
         String Req = null;
         if(request.getSubSys().equals("Owner")){
             DatabaseOperations PO = PownerDBOperations.getInstance();
             switch (request.getRequest()){
                 case "Modify" : Req= PO.modifyQueryFromTable(request.getData().getTable(), request.getData());
+                case "RegStruct" : Req = PO.AddQuery(request.getData().getTable(), request.getData());
             }
 
         }else Req= "False";
