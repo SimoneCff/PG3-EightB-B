@@ -38,7 +38,7 @@ public class ModifyProfile implements Form {
 
         Namee.setBounds(50, 70, 200, 30);
         Surr.setBounds(50, 130, 200, 30);
-        Pss.setBounds(50, 160, 200, 30); //set Button
+        Pss.setBounds(50, 190, 200, 30); //set Button
 
         RegConfBt.setBounds(350, 300, 200, 30);
         RegConfBt.setActionCommand("Powner-BFORM-Mod");
