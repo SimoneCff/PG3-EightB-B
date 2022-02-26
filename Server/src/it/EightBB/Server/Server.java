@@ -3,6 +3,7 @@ package it.EightBB.Server;
 import it.EightBB.Server.Authservice.AuthenticationChandler;
 import it.EightBB.Server.Database.DatabaseProxy;
 import it.EightBB.Server.HandlingSubSystem.Handler;
+import it.EightBB.Server.Powenr.PownerChandler;
 import it.EightBB.Server.Proxy.SocketInitial;
 
 public class Server {
@@ -22,8 +23,10 @@ public class Server {
 
     public static void setHandler(){
         Handler Auth = AuthenticationChandler.getInstance();
+        Handler Powenr = PownerChandler.getInstance();
 
-        Auth.setSuccessor(null);
+        Auth.setSuccessor(Powenr);
+        Powenr.setSuccessor(null);
     }
 
 }

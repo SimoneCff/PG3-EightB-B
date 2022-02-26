@@ -1,6 +1,6 @@
 package it.EightBB.Server.HandlingSubSystem;
 
-import it.EightBB.Server.SocketInitialService;
+import it.EightBB.Server.Proxy.SocketInitialService;
 
 public abstract class Handler {
     protected Handler successor;

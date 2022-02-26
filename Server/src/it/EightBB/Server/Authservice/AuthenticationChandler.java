@@ -3,7 +3,7 @@ package it.EightBB.Server.Authservice;
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
-import it.EightBB.Server.SocketInitialService;
+import it.EightBB.Server.Proxy.SocketInitialService;
 
 import java.sql.SQLException;
 

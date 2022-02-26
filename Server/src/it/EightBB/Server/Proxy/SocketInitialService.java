@@ -1,4 +1,4 @@
-package it.EightBB.Server;
+package it.EightBB.Server.Proxy;
 
 
 import java.io.*;
