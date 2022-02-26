@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class ModifyProfile implements Form {
     private static JButton RegConfBt = null;
     private static JTextField Name, Sur = null;
+    private static JLabel Namee, Surr, Pss = null;
     private static JPasswordField Ps = null;
     @Override
     public void setForm() {
@@ -22,12 +23,22 @@ public class ModifyProfile implements Form {
         Name = new JTextField();
         Sur = new JTextField();
         Ps = new JPasswordField();
-        RegConfBt = new JButton("Registrati!");
+        RegConfBt = new JButton("Conferma!");
+
+        //Labels
+        Namee = new JLabel("Nome");
+        Surr = new JLabel("Cognome");
+        Pss = new JLabel("Password");
+
 
         //Set Fields:
         Name.setBounds(50, 100, 200, 30);
         Sur.setBounds(50, 160, 200, 30);
-        Ps.setBounds(50, 300, 200, 30); //set Button
+        Ps.setBounds(50, 220, 200, 30); //set Button
+
+        Namee.setBounds(50, 70, 200, 30);
+        Surr.setBounds(50, 130, 200, 30);
+        Pss.setBounds(50, 160, 200, 30); //set Button
 
         RegConfBt.setBounds(350, 300, 200, 30);
         RegConfBt.setActionCommand("Powner-BFORM-Mod");
