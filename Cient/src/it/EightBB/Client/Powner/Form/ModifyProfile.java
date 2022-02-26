@@ -51,6 +51,10 @@ public class ModifyProfile implements Form {
         F.add(Name);
         F.add(Sur);
         F.add(Ps);
+
+        F.add(Namee);
+        F.add(Surr);
+        F.add(Pss);
         F.add(RegConfBt);
     }
     public static void getTextAndSendToDB() {
