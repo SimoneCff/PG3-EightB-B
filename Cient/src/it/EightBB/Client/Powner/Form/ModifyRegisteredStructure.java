@@ -76,6 +76,8 @@ public class ModifyRegisteredStructure implements Form {
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
+    public static void getTextAndSendToDB(){}
+
     }
 
 
