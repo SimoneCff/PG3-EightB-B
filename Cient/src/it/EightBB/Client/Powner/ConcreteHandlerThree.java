@@ -21,7 +21,8 @@ public class ConcreteHandlerThree extends ActionHandler {
             if (e.getActionCommand().contains("B")) {
                 if(e.getActionCommand().contains("Mod")){
                     ClientVisitor.getInstance().visitPowner("Modify",null);
-                }
+                } else if(e.getActionCommand().contains("ModBack")){
+                    ClientVisitor.getInstance().visitPowner("PrivateArea",null); }
             }
         }
 

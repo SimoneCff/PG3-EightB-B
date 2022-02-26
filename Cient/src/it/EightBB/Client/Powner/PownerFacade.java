@@ -106,15 +106,15 @@ public class PownerFacade{
         F.getContentPane().removeAll();
         F.repaint();
 
-
         Form ModifyStrForm = POF.makeForm("Mod");
         Button Annulla = POF.makeButton("ModBack");
 
-        Annulla.setButton();
-        Annulla.InitialiteButtonIntoFrame(F);
+        ModifyStrForm.setForm();
+        ModifyStrForm.InitialiateFormIntoFrame(F);
 
         Annulla.setButton();
         Annulla.InitialiteButtonIntoFrame(F);
+
     }
 
     /*void RegNewStr(){

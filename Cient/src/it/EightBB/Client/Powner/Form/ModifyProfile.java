@@ -31,7 +31,7 @@ public class ModifyProfile implements Form {
 
         RegConfBt.setBounds(350, 300, 200, 30);
         RegConfBt.setActionCommand("Powner-BFORM-Mod");
-        RegConfBt.addActionListener(new ConcreteHanlderOne());
+        RegConfBt.addActionListener(ConcreteHanlderOne.getInstance());
 
     }
 
