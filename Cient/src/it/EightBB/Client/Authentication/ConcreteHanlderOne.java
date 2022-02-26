@@ -47,6 +47,7 @@ public class ConcreteHanlderOne extends ActionHandler {
             }
         }
         else {
+            System.out.println(successor);
             successor.actionPerformed(e);
         }
 
