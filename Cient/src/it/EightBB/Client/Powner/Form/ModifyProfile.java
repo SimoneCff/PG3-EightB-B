@@ -61,7 +61,7 @@ public class ModifyProfile implements Form {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req = "Owner," + "Modify," + "owner,"+"mail,"+PownerFacade.getInstance().getMail()+",";
+            String req = "Owner," + "Modify," + "owner,"+"mail,"+PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",";
             StringBuilder q = new StringBuilder();
             boolean isLast = false;
             String ps = new String(Ps.getPassword());

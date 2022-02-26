@@ -42,9 +42,9 @@ public class PownerDBOperations implements DatabaseOperations {
                 }
                 Statement.executeUpdate("update user set pass = '" + query.getValues().get(1) + "' where mail = '" + query.getValues().get(0) + "';");
             }
-            Statement.executeUpdate("update owner set"+query.getAttributes().get(2)+"='"+query.getValues().get(2)+
-                    "', "+query.getAttributes().get(3)+"='"+query.getValues().get(3)+"' where mail = '"
-                    + query.getValues().get(0) + "';");
+            Statement.executeUpdate("update owner set"+query.getValues().get(2)+"='"+query.getAttributes().get(2)+
+                    "', "+query.getValues().get(3)+"='"+query.getAttributes().get(3)+"' where mail = '"
+                    + query.getAttributes().get(0) + "';");
             return "True";
         } catch (SQLException throwables) {
             throwables.printStackTrace();
