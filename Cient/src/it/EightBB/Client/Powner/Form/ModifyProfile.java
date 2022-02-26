@@ -42,7 +42,7 @@ public class ModifyProfile implements Form {
         Pss.setBounds(50, 190, 200, 30); //set Button
 
         RegConfBt.setBounds(350, 300, 200, 30);
-        RegConfBt.setActionCommand("Powner-BFORM-Mod");
+        RegConfBt.setActionCommand("Owner-BFORM-Mod");
         RegConfBt.addActionListener(ConcreteHandlerThree.getInstance());
 
     }
@@ -61,7 +61,7 @@ public class ModifyProfile implements Form {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req = "Powner," + "Modify," + "owner,"+"mail,"+PownerFacade.getInstance().getMail()+",";
+            String req = "Owner," + "Modify," + "owner,"+"mail,"+PownerFacade.getInstance().getMail()+",";
             StringBuilder q = new StringBuilder();
             boolean isLast = false;
             String ps = new String(Ps.getPassword());
