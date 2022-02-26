@@ -8,4 +8,5 @@ public interface visitor {
     void visitProxy(String where);
     void visitPclient(String where,String text);
     void visitPowner(String where, String text);
+    void setHandler();
 }

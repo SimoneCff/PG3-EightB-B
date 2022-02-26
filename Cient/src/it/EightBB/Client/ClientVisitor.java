@@ -1,9 +1,13 @@
 package it.EightBB.Client;
 
 import it.EightBB.Client.Authentication.AuthFacade;
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
+import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 import it.EightBB.Client.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.visitor;
+import it.EightBB.Client.Powner.ConcreteHandlerThree;
 import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
@@ -83,7 +87,18 @@ private JFrame F;
         }
         switch(where){
             case "PrivateArea"-> POF.PrivateArea();
+            case "Modify" -> POF.ModRegStr();
         }
+    }
 
+    @Override
+    public void setHandler() {
+        ActionHandler AH= ConcreteHanlderOne.getInstance();
+        ActionHandler PCH = ConcreteHandlerTwo.getInstance();
+        ActionHandler POW = ConcreteHandlerThree.getInstance();
+
+        //Setting COR
+        AH.setSuccessor(PCH);
+        PCH.setSuccessor(POW);
     }
 }

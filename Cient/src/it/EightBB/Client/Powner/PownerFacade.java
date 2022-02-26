@@ -102,7 +102,7 @@ public class PownerFacade{
     }
 
 
-    void ModRegStr() {
+    public void ModRegStr() {
         F.getContentPane().removeAll();
         F.repaint();
 

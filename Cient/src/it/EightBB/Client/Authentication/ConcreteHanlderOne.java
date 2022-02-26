@@ -14,6 +14,13 @@ import java.awt.event.ActionEvent;
  * {@param ConcreteHandlerOne}
  */
 public class ConcreteHanlderOne extends ActionHandler {
+    private static ActionHandler Instance;
+
+    public static ActionHandler getInstance(){
+        if(Instance == null){
+            Instance = new ConcreteHanlderOne();
+        } return Instance;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -11,6 +11,7 @@ public class Client {
         Visitor.visitProxy("Start");
         //Setting Login Frame (Default Frame);
         Visitor.setFrame(new JFrame("EightBB"));
+        Visitor.setHandler();
         Visitor.visitAuth("Login");
     }
 }
