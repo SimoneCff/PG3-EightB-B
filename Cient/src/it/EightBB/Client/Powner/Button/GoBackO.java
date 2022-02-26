@@ -11,7 +11,7 @@ public class GoBackO implements Button {
     public void setButton(){
         GoBack=new JButton("Annulla");
         GoBack.setBounds(200,380,100,30);
-        GoBack.setActionCommand("Powner-BFORM-ModBack");
+        GoBack.setActionCommand("Owner-B-ModBack");
         GoBack.addActionListener(ConcreteHanlderOne.getInstance());
     }
     public void InitialiteButtonIntoFrame(JFrame F){

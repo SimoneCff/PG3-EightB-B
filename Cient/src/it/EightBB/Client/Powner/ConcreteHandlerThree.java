@@ -17,6 +17,7 @@ public class ConcreteHandlerThree extends ActionHandler {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("One :"+e.getActionCommand());
         if (e.getActionCommand().contains("Owner")){
             if (e.getActionCommand().contains("B")) {
                 if(e.getActionCommand().contains("Mod")){

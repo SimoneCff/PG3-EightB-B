@@ -24,6 +24,7 @@ public class ConcreteHanlderOne extends ActionHandler {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("One :"+e.getActionCommand());
         if (e.getActionCommand().contains("Auth")){
             if (e.getActionCommand().contains("BP")){
                  if (e.getActionCommand().contains("Register")){

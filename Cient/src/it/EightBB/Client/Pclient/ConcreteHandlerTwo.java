@@ -20,6 +20,7 @@ public class ConcreteHandlerTwo extends ActionHandler{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("One :"+e.getActionCommand());
         if (e.getActionCommand().contains("Client")){
             if (e.getActionCommand().contains("BFORM")) {
                 if(e.getActionCommand().contains("PC")){
