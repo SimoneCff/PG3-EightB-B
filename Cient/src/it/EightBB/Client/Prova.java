@@ -1,5 +1,10 @@
 package it.EightBB.Client;
 
+import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Pclient.Form.PaymentPage;
+
+import javax.swing.*;
+
 public class Prova {
 /**
  * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
@@ -176,7 +181,20 @@ public static void main(String[] args){
     RegisterStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }*/
+
+    public static void main(String[] args) {
+        JFrame Payment = new JFrame();
+        Form PayForm = new PaymentPage();
+
+        PayForm.setForm();
+        PayForm.InitialiateFormIntoFrame(Payment);
+
+        Payment.setLayout(null);
+        Payment.setVisible(true);
+        Payment.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
 }
+
 
 
 

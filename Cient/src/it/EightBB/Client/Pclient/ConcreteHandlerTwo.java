@@ -11,16 +11,17 @@ public class ConcreteHandlerTwo extends ActionHandler{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().contains(""))   {
-            if(e.getActionCommand().contains("")){
-              ClientVisitor.getInstance().visitAuth("");
-            }else if(e.getActionCommand().contains("")){
-                ClientVisitor.getInstance().visitAuth("");
-            }else if(e.getActionCommand().contains("")){
-                ClientVisitor.getInstance().visitAuth("");
-            }else if(e.getActionCommand().contains("")){
-                ClientVisitor.getInstance().visitAuth("");
+        if (e.getActionCommand().contains("Client")){
+            if (e.getActionCommand().contains("BFORM")) {
+                if(e.getActionCommand().contains("PC")){
+                    //ClientVisitor.getInstance().visitAuth("RegisterC")
+                }else if (e.getActionCommand().contains("PB")){
+                    //ClientVisitor.getInstance().visitAuth("RegisterC")
+                }
             }
+        }
+        else {
+            successor.actionPerformed(e);
         }
     }
 }
