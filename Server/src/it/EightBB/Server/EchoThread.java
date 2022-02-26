@@ -6,6 +6,7 @@ import it.EightBB.Server.Database.QueryAdapter;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Proxy.SocketInitial;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -45,7 +46,12 @@ public class EchoThread extends Thread {
             Query a = QA.AdaptStringToQuery(rq);
             a.setTable(table);
             Request req = new Request(sub,riq,a);
-            String result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
+            String result = null;
+            try {
+                result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             proxy.Write(result);
         }
     }
