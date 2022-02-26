@@ -91,7 +91,7 @@ public class RegisterNewStructure implements Form {
             String q = "Owner,RegStruct,structure,mail,"+
                     PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",nome,"+ Name.getText()+
                     ",via,"+Address.getText()+",n_camere,"+n_room.getText()+",telefono,"+telephone.getText()
-                    +",descrizione,"+description.getText();
+                    +",descrizione,"+description.getText()+",service,"+ services.getText();
             SP.write(q);
             String Result = SP.read();
             if (Result.equals("False")) {
