@@ -20,6 +20,7 @@ public class ConcreteHandlerThree extends ActionHandler {
         System.out.println("One :"+e.getActionCommand());
         if (e.getActionCommand().contains("Owner")){
             if (e.getActionCommand().contains("B")) {
+                System.out.println("Bub");
                 if(e.getActionCommand().contains("Mod")){
                     ClientVisitor.getInstance().visitPowner("Modify",null);
                 } else if(e.getActionCommand().contains("ModBack")){
