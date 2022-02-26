@@ -7,14 +7,13 @@ import javax.swing.*;
 
 /**
  * Form di implementazione del bottone di registrazione Utente
- * <p></p>
-
  */
 
 public class RegistrationB implements Button {
     private JButton RegBt = null;
     private JLabel RegNew = null;
     @Override
+
     public void setButton() {
         //set button
         RegBt = new JButton("Registrati");

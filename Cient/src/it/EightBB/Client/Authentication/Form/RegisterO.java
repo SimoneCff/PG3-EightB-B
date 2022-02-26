@@ -11,6 +11,10 @@ import javax.swing.*;
 import java.io.IOException;
 import java.util.Arrays;
 
+/**
+ * Form che implementa la fase di registrazione dell'utente Proprietario nel sistema
+ * {@param Register0)
+ */
 public class RegisterO extends Register {
     private static JTextField Cf, Piva = null;
     private JLabel Cff, Pivaa = null;

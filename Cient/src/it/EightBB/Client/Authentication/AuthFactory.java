@@ -10,6 +10,11 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
 
+/**
+ *Classe che va ad implementare una Concrete Factory che va ad implementare Abstract Factory
+ * La classe è responsabile di tutti i form bottoni del sottosistema Authentication
+ * {@param AuthFactory}
+ */
 public class AuthFactory implements AbstractFactory {
 
     @Override

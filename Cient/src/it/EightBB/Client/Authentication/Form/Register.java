@@ -10,6 +10,10 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 
+/**
+ * Form che implementa la fase di registrazione dell'utente Cliente nel sistema
+ * {@param Register}, Inserimento dei Dati
+ */
 public class Register implements Form, Cloneable {
     private static JTextField Name, Sur, Us = null;
     private static JPasswordField Ps = null;
@@ -77,6 +81,10 @@ public class Register implements Form, Cloneable {
         F.add(RegConfBt);
     }
 
+    /**
+     *
+     * @return La stringa di riferimento ai dati di registrazione
+     */
     public static String getUserFromForm(){
         return "mail," + Us.getText() + ",password," + new String(Ps.getPassword()) ;
     }

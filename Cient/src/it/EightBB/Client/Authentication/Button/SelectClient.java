@@ -8,6 +8,7 @@ import javax.swing.*;
 
 /**
  * Implementazione del Tasto che permette di selezionare una registrazione di tipo Cliente
+ *
  */
 public class SelectClient implements Button {
     private JButton SelectClient=null;
