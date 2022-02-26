@@ -13,7 +13,7 @@ public class ConcreteHandlerTwo extends ActionHandler{
 
     public static ActionHandler getInstance(){
         if(Instance == null){
-            Instance = new ConcreteHanlderOne();
+            Instance = new ConcreteHandlerTwo();
         } return Instance;
     }
 

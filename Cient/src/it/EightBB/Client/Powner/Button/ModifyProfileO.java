@@ -13,8 +13,8 @@ public class ModifyProfileO implements Button{
         ModifyP = new JButton("<html>Modifica<br />Profilo utente</html>");
         //set pos
         ModifyP.setBounds(700,150,150,60);
-        ModifyP.setActionCommand("Powner-B-Mod");
-        ModifyP.addActionListener(ConcreteHanlderOne);
+        ModifyP.setActionCommand("Owner-B-Mod");
+        ModifyP.addActionListener(ConcreteHanlderOne.getInstance());
     }
     @Override
     public void InitialiteButtonIntoFrame(JFrame F) {
