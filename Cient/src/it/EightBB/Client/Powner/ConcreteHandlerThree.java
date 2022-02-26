@@ -3,6 +3,7 @@ package it.EightBB.Client.Powner;
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
+import it.EightBB.Client.Powner.Form.ModifyProfile;
 
 import java.awt.event.ActionEvent;
 
@@ -24,6 +25,10 @@ public class ConcreteHandlerThree extends ActionHandler {
                     ClientVisitor.getInstance().visitPowner("Modify",null);
                 } else if(e.getActionCommand().contains("MdBack")){
                     ClientVisitor.getInstance().visitPowner("PrivateArea",null); }
+            } else if (e.getActionCommand().contains("BFORM")){
+                if (e.getActionCommand().contains("Mod")){
+                    ModifyProfile.getTextAndSendToDB();
+                }
             }
         }
 
