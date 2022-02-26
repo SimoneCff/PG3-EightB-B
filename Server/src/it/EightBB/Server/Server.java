@@ -22,8 +22,11 @@ public class Server {
     }
 
     public static void setHandler(){
+
         Handler Auth = AuthenticationChandler.getInstance();
         Handler Powenr = PownerChandler.getInstance();
+        System.out.println(Auth);
+        System.out.println(Powenr);
 
         Auth.setSuccessor(Powenr);
         Powenr.setSuccessor(null);

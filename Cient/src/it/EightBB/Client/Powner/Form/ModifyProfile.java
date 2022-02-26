@@ -73,7 +73,7 @@ public class ModifyProfile implements Form {
                 if (isLast) {
                     q.append(",");
                 }
-                q.append("Nome,").append(Name.getText());
+                q.append("nomec,").append(Name.getText());
                 isLast = true;
             }
             if (!Sur.getText().isBlank()) {

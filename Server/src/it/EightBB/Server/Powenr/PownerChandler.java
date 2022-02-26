@@ -11,7 +11,7 @@ public class PownerChandler extends Handler {
 
     public static Handler getInstance(){
         if(instance == null){
-            instance = new AuthenticationChandler();
+            instance = new PownerChandler();
         } return instance;
     }
 
