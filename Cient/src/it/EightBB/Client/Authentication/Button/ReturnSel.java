@@ -5,6 +5,9 @@ import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
 
+/**
+ *Implementazione del tasto che ci permette di tornare indietro e selezionare il tipo di utente
+ */
 public class ReturnSel implements Button {
     private JButton Return;
     @Override

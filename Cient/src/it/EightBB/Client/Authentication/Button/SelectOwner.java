@@ -6,6 +6,9 @@ import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
+/**
+ * Implementazione del tasto che permette di selezionare una registrazione di tipo Proprietario
+ */
 public class SelectOwner implements Button {
     private JButton SelectOwner = null;
 
