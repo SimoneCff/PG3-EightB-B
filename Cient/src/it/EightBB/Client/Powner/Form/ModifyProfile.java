@@ -66,7 +66,7 @@ public class ModifyProfile implements Form {
             boolean isLast = false;
             String ps = new String(Ps.getPassword());
             if (!ps.isBlank()) {
-                q.append("password,").append(ps);
+                q.append("pass,").append(ps);
                 isLast = true;
             }
             if (!Name.getText().isBlank()) {
