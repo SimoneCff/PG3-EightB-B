@@ -91,7 +91,7 @@ public class ModifyProfile implements Form {
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Modifica non Avvenuta", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(new JFrame(), "Fatto!, Form Modificato", "Success",JOptionPane.INFORMATION_MESSAGE);
-                ClientVisitor.getInstance().visitPclient("PrivateArea",null);
+                ClientVisitor.getInstance().visitPowner("PrivateArea",null);
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

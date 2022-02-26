@@ -35,7 +35,7 @@ public class PownerDBOperations implements DatabaseOperations {
         try{
             Statement = Q.createStatement();
             StringBuilder q;
-            if (query.getValues().get(1).equals("pass")){
+            if (query.getValues().get(1).contains("pass")){
                 ResultSet req = Statement.executeQuery("select pass from user where mail = '"+query.getValues().get(0)+"'");
                 if(req.next()){
                     pass = req.getString(0);
