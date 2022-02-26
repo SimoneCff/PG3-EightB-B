@@ -27,7 +27,12 @@ public class PownerFacade{
     }
 
     public void setText(String text){
+        this.text = null;
         this.text = text.split(",");
+    }
+
+    public String getMail(){
+        return text[1];
     }
 
     public JFrame getF(){ return F;}

@@ -1,5 +1,7 @@
 package it.EightBB.Client.Powner.Form;
 
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -76,7 +78,6 @@ public class ModifyRegisteredStructure implements Form {
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
-    public static void getTextAndSendToDB(){}
 
     }
 
