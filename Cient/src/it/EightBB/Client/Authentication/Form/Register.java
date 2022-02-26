@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Form che implementa la fase di registrazione dell'utente Cliente nel sistema
- * {@param Register}, Inserimento dei Dati
+ * Implementazione della fase di registrazione dell'utente Cliente nel sistema
+ * {@param Register}
  */
 public class Register implements Form, Cloneable {
     private static JTextField Name, Sur, Us = null;

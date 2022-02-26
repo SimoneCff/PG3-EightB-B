@@ -12,9 +12,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Form che implementa la fase di Login per accedere al sistema
- *<p>/</p>
- * {@param Us; Pss; Log}
+ *Implementazione della fase di Login per accedere al sistema
+ * {@param Login}
  */
 
 public class Login implements Form {

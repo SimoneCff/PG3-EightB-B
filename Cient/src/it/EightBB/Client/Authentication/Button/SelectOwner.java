@@ -7,8 +7,8 @@ import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
 /**
- * Implementazione del tasto che permette di selezionare una registrazione di tipo Proprietario
- *
+ * implementazione del tasto che permette di selezionare una registrazione di tipo Proprietario
+ *{@param SelectOwner}
  */
 public class SelectOwner implements Button {
     private JButton SelectOwner = null;

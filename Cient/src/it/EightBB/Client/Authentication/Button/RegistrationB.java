@@ -6,7 +6,8 @@ import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
 /**
- * Form di implementazione del bottone di registrazione Utente
+ * Implementazione del tasto di registrazione Utente
+ * {@param RegistrationB}
  */
 
 public class RegistrationB implements Button {

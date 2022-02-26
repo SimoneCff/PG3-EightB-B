@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * classe del sottosistema FAcade che implementa
+ * classe del sottosistema Facade che implementa
  * le funzioni di Visitors per l'accesso al sottosistema Authentication
  * {@param AuthFacade}
  */
