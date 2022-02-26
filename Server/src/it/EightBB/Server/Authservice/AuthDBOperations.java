@@ -10,10 +10,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class AuthDBOperations implements DatabaseOperations {
-    private AuthDBOperations Instance;
+    private static AuthDBOperations Instance;
 
-    @Override
-    public AuthDBOperations getInstance(){
+    public static DatabaseOperations getInstance(){
         if (Instance == null) {
             Instance = new AuthDBOperations();
             }
@@ -106,8 +105,8 @@ public class AuthDBOperations implements DatabaseOperations {
     }
 
     @Deprecated
-    public boolean modifyQueryFromTable(String table, String id, String Attribute_N, String Attribute_V) {
-        return false;
+    public String modifyQueryFromTable(String table, Query query) {
+        return null;
     }
 
     @Override

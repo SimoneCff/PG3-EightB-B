@@ -20,7 +20,7 @@ public class AuthenticationChandler extends Handler {
     public String handlerRequest(Request request, SocketInitialService socket) {
         String Req = null;
         if (request.getSubSys().equals("Auth")) {
-            DatabaseOperations ADB = new AuthDBOperations();
+            DatabaseOperations ADB = AuthDBOperations.getInstance();
             switch (request.getRequest()) {
                 case "Login":
                     Req = ADB.checkInsideDB(request.getData().getTable(), request.getData());
