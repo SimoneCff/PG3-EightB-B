@@ -17,7 +17,7 @@ public class AuthenticationChandler extends Handler {
     }
 
     @Override
-    public String handlerRequest(Request request, SocketInitialService socket) {
+    public String handlerRequest(Request request, SocketInitialService socket) throws SQLException {
         String Req = null;
         if (request.getSubSys().equals("Auth")) {
             DatabaseOperations ADB = AuthDBOperations.getInstance();
