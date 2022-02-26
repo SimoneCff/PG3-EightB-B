@@ -8,7 +8,19 @@ import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 
 import java.awt.event.ActionEvent;
 
+/**
+ * classe principale del sottosistema Authenticate
+ * Gestisce gli Handler Event della classe Authentication
+ * {@param ConcreteHandlerOne}
+ */
 public class ConcreteHanlderOne extends ActionHandler {
+    private static ActionHandler Instance;
+
+    public static ActionHandler getInstance(){
+        if(Instance == null){
+            Instance = new ConcreteHanlderOne();
+        } return Instance;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

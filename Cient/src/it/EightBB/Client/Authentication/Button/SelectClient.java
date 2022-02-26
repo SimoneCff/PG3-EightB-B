@@ -7,7 +7,8 @@ import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
 /**
- * Implementazione del Tasto che permette di selezionare una registrazione di tipo Cliente
+ * implementazione del Tasto che permette di selezionare una registrazione di tipo Cliente
+ *{@param SelectClient}
  */
 public class SelectClient implements Button {
     private JButton SelectClient=null;

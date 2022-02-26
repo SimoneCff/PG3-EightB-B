@@ -1,5 +1,6 @@
 /** Bottone per Modificare il Profilo Utente*/
 package it.EightBB.Client.Powner.Button;
+import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.Interface.Template.Button;
 
 import javax.swing.*;
@@ -12,6 +13,8 @@ public class ModifyProfileO implements Button{
         ModifyP = new JButton("<html>Modifica<br />Profilo utente</html>");
         //set pos
         ModifyP.setBounds(700,150,150,60);
+        ModifyP.setActionCommand("Owner-B-Mod");
+        ModifyP.addActionListener(ConcreteHanlderOne.getInstance());
     }
     @Override
     public void InitialiteButtonIntoFrame(JFrame F) {
@@ -19,14 +22,6 @@ public class ModifyProfileO implements Button{
         F.add(ModifyP);
     }
 
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 }
 

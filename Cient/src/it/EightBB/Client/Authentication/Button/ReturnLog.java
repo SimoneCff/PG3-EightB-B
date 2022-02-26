@@ -6,7 +6,8 @@ import it.EightBB.Client.Interface.Template.Button;
 import javax.swing.*;
 
 /**
- * Form di implementazione del tasto Return che consente di tornare indietro alla fase di Login
+ * Implementazione del tasto Return che consente di tornare indietro alla fase di Login
+
  */
 public class ReturnLog implements Button {
     private JButton Return;

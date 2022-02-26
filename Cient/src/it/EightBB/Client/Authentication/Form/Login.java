@@ -11,6 +11,10 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 
+/**
+ *Implementazione della fase di Login per accedere al sistema
+ * {@param Login}
+ */
 
 public class Login implements Form {
     private static String us;

@@ -9,6 +9,11 @@ import it.EightBB.Client.Interface.Template.TextGroup;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * classe del sottosistema Facade che implementa
+ * le funzioni di Visitors per l'accesso al sottosistema Authentication
+ * {@param AuthFacade}
+ */
 public class AuthFacade {
     private static AuthFacade Instance;
     private JFrame F;
