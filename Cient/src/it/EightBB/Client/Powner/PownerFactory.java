@@ -28,6 +28,7 @@ public class PownerFactory implements AbstractFactory {
             case "Mod" -> new ModifyProfileO();
             case "PrivAreaEnt" -> new PrivateAreaEntities();
             case "RegStruct" -> new RegisterStructure();
+            case "ModBack" -> new GoBackO();
             default -> null;
         };
 

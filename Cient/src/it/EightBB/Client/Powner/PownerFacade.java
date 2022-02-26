@@ -5,8 +5,10 @@ package it.EightBB.Client.Powner;
 import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
-
+import it.EightBB.Client.Powner.Button.GoBackO;
+import it.EightBB.Client.Powner.Form.ModifyRegisteredStructure;
 
 
 import javax.swing.*;
@@ -99,6 +101,22 @@ public class PownerFacade{
         modifica.InitialiteButtonIntoFrame(F);
     }
 
+
+    void ModRegStr() {
+        F.getContentPane().removeAll();
+        F.repaint();
+
+
+        Form ModifyStrForm = POF.makeForm("Mod");
+        Button Annulla = POF.makeButton("ModBack");
+
+        Annulla.setButton();
+        Annulla.InitialiteButtonIntoFrame(F);
+
+        Annulla.setButton();
+        Annulla.InitialiteButtonIntoFrame(F);
+    }
+
     /*void RegNewStr(){
         JFrame RegisterStr = new JFrame();
         Form RegisterStrForm = new RegisterNewStructure();
@@ -116,22 +134,8 @@ public class PownerFacade{
         RegisterStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
-
-    void ModRegStr(){
-        JFrame ModifyStr = new JFrame();
-        Form ModifyStrForm = new ModifyRegisteredStructure();
-        Button Annulla = new GoBackO();
-
-        Annulla.setButton();
-        Annulla.InitialiteButtonIntoFrame(RegisterStr);
-
-        ModifyStrForm.setForm();
-        ModifyStrForm.InitialiateFormIntoFrame(ModifyStr);
-
-
-        ModifyStr.setLayout(null);
-        ModifyStr.setVisible(true);
-        ModifyStr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }*/
 }
+
+
 
