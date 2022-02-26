@@ -59,7 +59,7 @@ private JFrame F;
     public void visitProxy(String where) {
         SocketProxy Proxy = SocketProxy.getIstance();
         switch (where) {
-            case "Start" -> Proxy.settingUP("79.54.190.241",5432);
+            case "Start" -> Proxy.settingUP("82.55.143.63",5432);
             case "SendEnd" -> Proxy.SendEnd();
         }
 
