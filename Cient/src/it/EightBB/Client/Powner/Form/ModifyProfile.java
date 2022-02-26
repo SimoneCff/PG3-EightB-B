@@ -6,6 +6,7 @@ import it.EightBB.Client.Client;
 import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Powner.ConcreteHandlerThree;
 import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class ModifyProfile implements Form {
 
         RegConfBt.setBounds(350, 300, 200, 30);
         RegConfBt.setActionCommand("Powner-BFORM-Mod");
-        RegConfBt.addActionListener(ConcreteHanlderOne.getInstance());
+        RegConfBt.addActionListener(ConcreteHandlerThree.getInstance());
 
     }
 

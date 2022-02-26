@@ -29,8 +29,7 @@ public class ConcreteHandlerTwo extends ActionHandler{
                     //ClientVisitor.getInstance().visitAuth("RegisterC")
                 }
             }
-        }
-        else {
+        } else {
             successor.actionPerformed(e);
         }
     }
