@@ -59,6 +59,7 @@ public class ModifyProfile implements Form {
         F.add(RegConfBt);
     }
     public static void getTextAndSendToDB() {
+        System.out.println("dentro");
         SocketInterface SP = SocketProxy.getIstance();
         try {
             String req = "Owner," + "Modify," + "owner,"+"mail,"+PownerFacade.getInstance().getMail()+",";
