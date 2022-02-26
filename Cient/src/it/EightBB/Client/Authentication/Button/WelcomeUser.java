@@ -1,6 +1,16 @@
 package it.EightBB.Client.Authentication.Button;
 
-public class WelcomeUser  { /* implements Button
+import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Interface.Template.TextGroup;
+import it.EightBB.Client.Pclient.Button.ModifyProfileC;
+import it.EightBB.Client.Pclient.TextArea.PrivateClient;
+import it.EightBB.Client.Powner.Button.*;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class WelcomeUser implements Button{
     private JButton Welcome = null;
 
     public void setButton() {
@@ -10,14 +20,13 @@ public class WelcomeUser  { /* implements Button
     }
 
     public void InitialiteButtonIntoFrame(JFrame F) {
-       /* REINDIRIZZAMENTO ALL'AREA RISERVATA DEL PROPRIETARIO
+        //REINDIRIZZAMENTO ALL'AREA RISERVATA DEL PROPRIETARIO
         Welcome.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame Frameprivatearea = new JFrame();
                 TextGroup Frameprivateareatext = new PrivateClient();
 
-                Button uscita = new ExitC();
                 Button modifica = new ModifyProfileC();
 
                 Button strutture = new AllOwnerStructures();
@@ -45,9 +54,6 @@ public class WelcomeUser  { /* implements Button
                 registrazioneStruttura.setButton();
                 registrazioneStruttura.InitialiteButtonIntoFrame(Frameprivatearea);
 
-                //Set uscita button
-                uscita.setButton();
-                uscita.InitialiteButtonIntoFrame(Frameprivatearea);
                 //Set modifica button
                 modifica.setButton();
                 modifica.InitialiteButtonIntoFrame(Frameprivatearea);
@@ -66,5 +72,5 @@ public class WelcomeUser  { /* implements Button
 
         });
         F.add(Welcome);
-    }*/
+    }
 }
