@@ -12,7 +12,7 @@ public class GoBackO implements Button {
     public void setButton(){
         GoBack=new JButton("Annulla");
         GoBack.setBounds(200,380,100,30);
-        GoBack.setActionCommand("Owner-B-ModBack");
+        GoBack.setActionCommand("Owner-B-MdBack");
         GoBack.addActionListener(ConcreteHandlerThree.getInstance());
     }
     public void InitialiteButtonIntoFrame(JFrame F){
