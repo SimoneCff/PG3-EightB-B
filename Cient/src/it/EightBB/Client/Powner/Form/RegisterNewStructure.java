@@ -1,12 +1,18 @@
 package it.EightBB.Client.Powner.Form;
 
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.ClientVisitor;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Powner.ConcreteHandlerThree;
+import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class RegisterNewStructure implements Form {
-    private JTextField Name, Address, n_room, telephone, services, description = null;
+    private static JTextField Name, Address,n_room, telephone, services, description = null;
     private JLabel Namee, Addresss, n_roomm, telephonee, servicess, descriptionn = null;
     private JButton confirmation = null;
 
@@ -19,6 +25,7 @@ public class RegisterNewStructure implements Form {
         telephone = new JTextField();
         services = new JTextField();
         description = new JTextField();
+
 
         //Labels
         Namee = new JLabel("Nome struttura");
@@ -49,6 +56,8 @@ public class RegisterNewStructure implements Form {
 
         //set Button
         confirmation.setBounds(650,380,100,30);
+        confirmation.setActionCommand("Owner-FORM-RegStruct");
+        confirmation.addActionListener(ConcreteHandlerThree.getInstance());
 
     }
     @Override
@@ -74,6 +83,27 @@ public class RegisterNewStructure implements Form {
 
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
+    }
+
+    public static void getFormandSendtoDB(){
+        SocketInterface SP = SocketProxy.getIstance();
+        try{
+            String q = "Owner,RegStruct,structure,mail,"+
+                    PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",nome,"+ Name.getName()+
+                    ",via,"+Address.getText()+",n_camere,"+n_room.getText()+",telefono,"+telephone.getText()
+                    +",descrizione,"+description.getText();
+            SP.write(q);
+            String Result = SP.read();
+            if (Result.equals("False")) {
+                JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione nona avvenuta o Struttura esistente", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(new JFrame(), "Fatto!, Struttura Registrata", "Success",JOptionPane.INFORMATION_MESSAGE);
+                ClientVisitor.getInstance().visitPowner("PrivateArea",null);
+            }
+
+            } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     }

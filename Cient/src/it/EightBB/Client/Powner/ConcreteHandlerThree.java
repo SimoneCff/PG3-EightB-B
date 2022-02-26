@@ -4,6 +4,7 @@ import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 import it.EightBB.Client.Powner.Form.ModifyProfile;
+import it.EightBB.Client.Powner.Form.RegisterNewStructure;
 
 import java.awt.event.ActionEvent;
 
@@ -31,6 +32,8 @@ public class ConcreteHandlerThree extends ActionHandler {
             } else if (e.getActionCommand().contains("FORM")){
                 if (e.getActionCommand().contains("Mod")){
                     ModifyProfile.getTextAndSendToDB();
+                } else if (e.getActionCommand().contains("RegStruct")){
+                    RegisterNewStructure.getFormandSendtoDB();
                 }
             }
         }

@@ -17,13 +17,5 @@ public class RegisterStructure implements Button{
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(RegisterStruct);
     }
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
+
     }
-}
