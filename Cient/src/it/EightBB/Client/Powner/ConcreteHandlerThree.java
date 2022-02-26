@@ -26,7 +26,9 @@ public class ConcreteHandlerThree extends ActionHandler {
                 } else if(e.getActionCommand().contains("MdBack")){
                     ClientVisitor.getInstance().visitPowner("PrivateArea",null); }
             } else if (e.getActionCommand().contains("BFORM")){
+                System.out.println("pattr");
                 if (e.getActionCommand().contains("Mod")){
+                    System.out.println("patt");
                     ModifyProfile.getTextAndSendToDB();
                 }
             }
