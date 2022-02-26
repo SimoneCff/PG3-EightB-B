@@ -103,7 +103,6 @@ public class Register implements Form, Cloneable {
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(),e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
         }
     }
     public JButton returnButton(){
