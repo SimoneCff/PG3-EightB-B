@@ -89,7 +89,7 @@ public class RegisterNewStructure implements Form {
         SocketInterface SP = SocketProxy.getIstance();
         try{
             String q = "Owner,RegStruct,structure,mail,"+
-                    PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",nome,"+ Name.getName()+
+                    PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",nome,"+ Name.getText()+
                     ",via,"+Address.getText()+",n_camere,"+n_room.getText()+",telefono,"+telephone.getText()
                     +",descrizione,"+description.getText();
             SP.write(q);

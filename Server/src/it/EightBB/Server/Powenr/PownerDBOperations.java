@@ -23,7 +23,7 @@ public class PownerDBOperations implements DatabaseOperations {
         try {
             StringBuilder q;
             q = new StringBuilder("insert into " + table + " values ('" + query.getAttributes().get(0) + "',");
-            for (int i = 3; i < query.getAttributes().size(); i++) {
+            for (int i = 1; i < query.getAttributes().size(); i++) {
                 q.append("'");
                 q.append(query.getAttributes().get(i));
                 q.append("'");
@@ -32,6 +32,7 @@ public class PownerDBOperations implements DatabaseOperations {
                 }
             }
             q.append(");");
+            System.out.println(q.toString());
             Statement statement = Q.createStatement();
             statement.executeUpdate(q.toString());
             return "True";
