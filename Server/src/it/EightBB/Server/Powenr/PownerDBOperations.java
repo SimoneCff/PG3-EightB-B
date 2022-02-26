@@ -36,16 +36,15 @@ public class PownerDBOperations implements DatabaseOperations {
             Statement = Q.createStatement();
             StringBuilder q;
             if (query.getValues().get(1).contains("pass")){
-                ResultSet req = Statement.executeQuery("select pass from user where mail = '"+query.getValues().get(0)+"'");
+                ResultSet req = Statement.executeQuery("select pass from user where mail = '"+query.getAttributes().get(0)+"'");
                 if(req.next()){
-                    pass = req.getString(0);
+                    pass = req.getString(1);
                 }
-                Statement.executeUpdate("update user set pass = '" + query.getValues().get(1) + "' where mail = '" + query.getValues().get(0) + "';");
+                Statement.executeUpdate("update user set pass = '" + query.getAttributes().get(1) + "' where mail = '" + query.getAttributes().get(0) + "';");
             }
             String qu = "update owner set "+query.getValues().get(2)+"='"+query.getAttributes().get(2)+
                     "', "+query.getValues().get(3)+"='"+query.getAttributes().get(3)+"' where mail ='"
                     + query.getAttributes().get(0) + "'";
-            System.out.println(qu);
             Statement.executeUpdate(qu);
             return "True";
         } catch (SQLException throwables) {
