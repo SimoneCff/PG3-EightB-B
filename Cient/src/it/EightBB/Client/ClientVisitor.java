@@ -88,6 +88,7 @@ private JFrame F;
         switch(where){
             case "PrivateArea"-> POF.PrivateArea();
             case "Modify" -> POF.ModRegStr();
+            case "RStructure" -> POF.RegNewStr();
         }
     }
 

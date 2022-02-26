@@ -25,6 +25,9 @@ public class ConcreteHandlerThree extends ActionHandler {
                     ClientVisitor.getInstance().visitPowner("Modify",null);
                 } else if(e.getActionCommand().contains("MdBack")){
                     ClientVisitor.getInstance().visitPowner("PrivateArea",null); }
+                else if (e.getActionCommand().contains("Rowner")){
+                    ClientVisitor.getInstance().visitPowner("RStructure",null);
+                }
             } else if (e.getActionCommand().contains("FORM")){
                 if (e.getActionCommand().contains("Mod")){
                     ModifyProfile.getTextAndSendToDB();

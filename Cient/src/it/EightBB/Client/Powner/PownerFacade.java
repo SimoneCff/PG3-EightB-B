@@ -117,7 +117,7 @@ public class PownerFacade{
 
     }
 
-    void RegNewStr(){
+    public void RegNewStr(){
         F.getContentPane().removeAll();
         F.repaint();
         Form RegisterStrForm = POF.makeForm("RegNewStr");
