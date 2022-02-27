@@ -167,7 +167,7 @@ public class PownerFacade{
 
                         RegClientLive cli = new RegClientLive();
                         JButton Back = new JButton("Indietro");
-                        Back.setBounds(250,250,100,20);
+                        Back.setBounds(250,300,100,20);
                         F.add(Back);
                         Back.addActionListener(new ActionListener() {
                             @Override
