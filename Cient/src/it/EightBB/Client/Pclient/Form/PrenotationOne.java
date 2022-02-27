@@ -103,7 +103,7 @@ public class PrenotationOne implements Form{
                 int size = L.size();
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
-                    System.out.println(label);
+                    System.out.println(Arrays.toString(label));
                     //JLabel
                     JLabel name = new JLabel(label[0]);
                     JLabel via = new JLabel(label[1]);
