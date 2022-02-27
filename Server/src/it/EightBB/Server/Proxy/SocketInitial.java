@@ -21,26 +21,20 @@ public class SocketInitial implements SocketInitialService {
       }
 
     @Override
-    public boolean setSocket() {
+    public void setSocket() {
           try {
               socket = server.accept();
               System.out.println("Client connected : "+ socket.getInetAddress());
-              return true;
           } catch (IOException e){
               e.printStackTrace();
-              return false;
           }
     }
 
     @Override
-    public void setIO() {
-          try {
+    public void setIO() throws IOException {
               in = socket.getInputStream();
               brin = new BufferedReader(new InputStreamReader(in));
               out= new DataOutputStream(socket.getOutputStream());
-          } catch (IOException e){
-              e.printStackTrace();
-          }
     }
 
     @Override
@@ -51,13 +45,9 @@ public class SocketInitial implements SocketInitialService {
     }
 
     @Override
-    public void Write(String s) {
-          try {
-              out.writeUTF(s);
+    public void Write(String s) throws IOException {
+              out. writeUTF(s);
               out.flush();
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
     }
 
     @Override

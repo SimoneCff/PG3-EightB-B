@@ -25,7 +25,13 @@ public class EchoThread extends Thread {
     public void run() {
         System.out.println("Thread"+Thread.currentThread().getName()+" Setted UP");
         String line;
-        proxy.setIO();
+        try {
+            proxy.setIO();
+        } catch (IOException e) {
+            System.out.println("Thread"+Thread.currentThread().getName()+" ShutDown");
+            proxy.close();
+            return;
+        }
         while (true) {
             try {
             String x =proxy.Read();
