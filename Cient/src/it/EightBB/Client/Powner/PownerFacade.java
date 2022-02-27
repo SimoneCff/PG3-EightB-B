@@ -203,7 +203,6 @@ public class PownerFacade{
             int size = L.size();
             for(int i = 0; i<size; i++) {
                 String[] label = L.get(i).split(",");
-                System.out.println(label);
                 JLabel type = new JLabel(label[1]);
                 JLabel value = new JLabel(label[2]);
                 type.setBounds(50, 100+(50*i), 100, 30);
