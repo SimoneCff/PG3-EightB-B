@@ -27,6 +27,7 @@ public class EchoThread extends Thread {
         String line;
         proxy.setIO();
         while (true) {
+            try {
             String x =proxy.Read();
             if (x == null || x.equalsIgnoreCase("QUIT")){
                 System.out.println("Thread"+Thread.currentThread().getName()+" ShutDown");
@@ -50,12 +51,18 @@ public class EchoThread extends Thread {
             a.setTable(table);
             Request req = new Request(sub,riq,a);
             String result = null;
-            try {
+                proxy.Write(result);
+
                 result = AuthenticationChandler.getInstance().handlerRequest(req,proxy);
             } catch (SQLException e) {
                 e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+                System.out.println("Thread"+Thread.currentThread().getName()+" ShutDown");
+                proxy.close();
+                return;
             }
-            proxy.Write(result);
+
         }
     }
 }
