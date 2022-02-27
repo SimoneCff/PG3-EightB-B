@@ -146,11 +146,10 @@ public class PrenotationOne implements Form{
 
                 }
                 x.repaint();
-                JScrollPane scrollPane = new JScrollPane();
+                JScrollPane scrollPane = new JScrollPane(x);
                 System.out.println("we");
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-                scrollPane.setViewportView(x);
 
                 F.add(scrollPane);
                 F.repaint();
