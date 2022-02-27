@@ -28,6 +28,8 @@ public class ConcreteHandlerThree extends ActionHandler {
                     ClientVisitor.getInstance().visitPowner("PrivateArea",null); }
                 else if (e.getActionCommand().contains("Rowner")){
                     ClientVisitor.getInstance().visitPowner("RStructure",null);
+                } else if (e.getActionCommand().contains("Client")){
+                    ClientVisitor.getInstance().visitPowner("Client",null);
                 }
             } else if (e.getActionCommand().contains("FORM")){
                 if (e.getActionCommand().contains("Mod")){
