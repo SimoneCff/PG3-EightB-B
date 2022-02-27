@@ -7,9 +7,11 @@ import it.EightBB.Client.Interface.Template.TextGroup;
 import it.EightBB.Client.Pclient.Button.BookedStructures;
 import it.EightBB.Client.Pclient.Button.ModifyProfileC;
 import it.EightBB.Client.Pclient.Button.Prenota;
+import it.EightBB.Client.Pclient.Form.ModifyProfile;
 import it.EightBB.Client.Pclient.Form.PrenotationOne;
 import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 import it.EightBB.Client.Pclient.TextArea.PrivateClient;
+import it.EightBB.Client.Powner.Button.GoBackO;
 
 public class PclientFactory implements AbstractFactory {
 
@@ -29,6 +31,7 @@ public class PclientFactory implements AbstractFactory {
             case "Mod" -> new ModifyProfileC();
             case "Prenota" -> new Prenota();
             case "Booked" -> new BookedStructures();
+            case "ModBack" -> new GoBackO();
             default -> null;
         };
     }
