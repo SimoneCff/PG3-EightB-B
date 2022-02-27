@@ -143,7 +143,7 @@ public class PrenotationOne implements Form{
                     });
 
                 }
-                panel.setBounds(40,80,200,200);
+                panel.setBounds(F.getBounds());
                 panel.setBackground(new Color(225,204,204));
 
                 JScrollPane scrollPane = new JScrollPane(panel);
