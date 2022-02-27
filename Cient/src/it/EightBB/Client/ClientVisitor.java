@@ -90,6 +90,7 @@ private JFrame F;
             case "Modify" -> POF.ModRegStr();
             case "RStructure" -> POF.RegNewStr();
             case "Client" -> POF.RegisteredStructure();
+            case "Economic" -> POF.Economic();
         }
     }
 

@@ -3,23 +3,19 @@
 
 package it.EightBB.Client.Powner.Button;
 import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Powner.ConcreteHandlerThree;
+
 import javax.swing.*;
 public class EconomicManagement implements Button{
     private JButton ManageEconomy=null;
     public void setButton(){
         ManageEconomy=new JButton("Gestione economica");
         ManageEconomy.setBounds(20,220,150,60);
+        ManageEconomy.setActionCommand("Owner-B-Economic");
+        ManageEconomy.addActionListener(ConcreteHandlerThree.getInstance());
     }
     public void InitialiteButtonIntoFrame(JFrame F){
         F.add(ManageEconomy);
     }
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 }

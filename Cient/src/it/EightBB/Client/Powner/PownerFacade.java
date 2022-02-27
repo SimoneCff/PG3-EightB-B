@@ -185,6 +185,31 @@ public class PownerFacade{
         Back.InitialiteButtonIntoFrame(F);
     }
 
+    public void Economic(){
+        F.getContentPane().removeAll();
+        F.repaint();
+
+        SocketInterface proxy = SocketProxy.getIstance();
+        try{
+            proxy.write("Owner,gettura,structure,mail,"+getMail().replaceAll("\\s+",""));
+            List<String> L =  Arrays.asList(proxy.read().split("-"));
+            System.out.println(L);
+            int size = L.size();
+            for(int i = 0; i<size; i++) {
+                String[] label = L.get(i).split(",");
+                JLabel type = new JLabel(label[1]);
+                JLabel value = new JLabel(label[2]);
+                type.setBounds();
+                value.setBounds();
+
+                F.add(type);
+                F.add(value);
+             }
+            } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
 
