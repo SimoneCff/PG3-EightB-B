@@ -30,7 +30,7 @@ public class PownerDBOperations implements DatabaseOperations {
             System.out.println(list);
             return list.toString(); }
             else {
-                String q = "select type, value from economic where mail ='"+query.getAttributes().get(0)+"'";
+                String q = "select type, value from economic where name ='"+query.getAttributes().get(0)+"'";
                 StringBuilder list = new StringBuilder();
                 Statement statement = Q.createStatement();
                 ResultSet result = statement.executeQuery(q);
@@ -39,9 +39,7 @@ public class PownerDBOperations implements DatabaseOperations {
                     list.append(",");
                     list.append(result.getString(2));
                     if (!result.isLast()) {
-                        list.append(",");
-                    }else {
-                        list.append("-");
+                        list.append("-,");
                     }
                 }
                 System.out.println(list);
