@@ -147,7 +147,7 @@ public class PrenotationOne implements Form{
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-                F.getContentPane().add(scrollPane);
+                F.add(scrollPane);
                 F.repaint();
             }
         } catch (IOException e) {
