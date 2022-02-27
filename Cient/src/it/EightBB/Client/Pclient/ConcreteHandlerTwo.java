@@ -1,11 +1,9 @@
 package it.EightBB.Client.Pclient;
 
-import it.EightBB.Client.Authentication.ConcreteHanlderOne;
-import it.EightBB.Client.Authentication.Form.Login;
-import it.EightBB.Client.Authentication.Form.Register;
-import it.EightBB.Client.Authentication.Form.RegisterO;
 import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
+import it.EightBB.Client.Pclient.Form.ModifyProfile;
+
 import java.awt.event.ActionEvent;
 
 public class ConcreteHandlerTwo extends ActionHandler{
@@ -20,13 +18,14 @@ public class ConcreteHandlerTwo extends ActionHandler{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("One :"+e.getActionCommand());
         if (e.getActionCommand().contains("Client")){
-            if (e.getActionCommand().contains("BFORM")) {
-                if(e.getActionCommand().contains("PC")){
-                    //ClientVisitor.getInstance().visitAuth("RegisterC")
-                }else if (e.getActionCommand().contains("PB")){
-                    //ClientVisitor.getInstance().visitAuth("RegisterC")
+            if (e.getActionCommand().contains("B")) {
+                if(e.getActionCommand().contains("MdBack")){
+                    ClientVisitor.getInstance().visitPclient("PrivateArea",null);
+            }
+            }else if (e.getActionCommand().contains("FORM")) {
+                if (e.getActionCommand().contains("Mod")) {
+                    ModifyProfile.getTextAndSendToDB();
                 }
             }
         } else {
