@@ -106,7 +106,7 @@ public class PrenotationOne implements Form{
                 int size = L.size();
 
                 JPanel x = new JPanel();
-                x.setBounds(300,200,200,40);
+                x.setBounds(300,200,400,400);
 
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
@@ -145,6 +145,7 @@ public class PrenotationOne implements Form{
                     });
 
                 }
+                x.se
                 JScrollPane scrollPane = new JScrollPane();
                 System.out.println("we");
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
