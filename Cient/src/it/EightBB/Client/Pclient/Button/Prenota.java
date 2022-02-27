@@ -1,6 +1,7 @@
 package it.EightBB.Client.Pclient.Button;
 
 import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 
 import javax.swing.*;
 
@@ -15,6 +16,7 @@ public class Prenota implements Button {
         //set pos
         Bookedstr.setBounds(50,195,100,30);
         Bookedstr.setActionCommand("Client-B-Prenota");
+        Bookedstr.addActionListener(ConcreteHandlerTwo.getInstance());
     }
 
     @Override

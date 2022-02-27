@@ -11,8 +11,7 @@ import it.EightBB.Client.Powner.ConcreteHandlerThree;
 import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
-import java.io.File;
-import java.net.Socket;
+
 
 public class ClientVisitor implements visitor {
 private static visitor Instance;
