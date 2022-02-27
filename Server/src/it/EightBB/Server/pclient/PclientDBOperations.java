@@ -40,7 +40,7 @@ public class PclientDBOperations implements DatabaseOperations {
                     xq.append(ara.getString(1)+","+ara.getString(2)+","+ara.getString(3)
                             +","+ara.getString(4)+","+ara.getString(5));}
                     if (!ara.isLast()) {
-                        list.append("-");
+                        xq.append("-");
                     }
                 rew = xq.toString();
                 }
