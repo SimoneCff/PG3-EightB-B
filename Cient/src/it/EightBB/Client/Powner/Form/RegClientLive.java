@@ -9,6 +9,7 @@ public class RegClientLive implements Form {
     private JTextField Name, Surname, Cf = null;
     private JLabel Namee, Surnamee, Cff = null;
     private JButton Conf = null;
+    private String name = null;
 
 
     @Override
@@ -51,5 +52,9 @@ public class RegClientLive implements Form {
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
 
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
