@@ -85,7 +85,7 @@ public class PrenotationOne implements Form{
         F.add(EndDatee);
 
         F.add(ConfBt);
-        F.setSize(1366, 768);
+        F.setSize(1920, 700);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
@@ -106,7 +106,7 @@ public class PrenotationOne implements Form{
                 int size = L.size();
 
                 JPanel x = new JPanel();
-                x.setBounds(500,100,700,400);
+                x.setBounds(600,100,1300,450);
 
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
@@ -120,11 +120,11 @@ public class PrenotationOne implements Form{
 
                     JButton regclient = new JButton("Prenota");
 
-                    name.setBounds(0, 70 + (50 * i), 70, 30);
-                    via.setBounds(0, 70 + (50 * i), 70, 30);
-                    telefono.setBounds(0, 70+ (50 * i), 70, 30);
-                    descrizione.setBounds(0, 70 + (50 * i), 70, 30);
-                    service.setBounds(0, 70 + (50 * i), 70, 30);
+                    name.setBounds(150, 70 + (50 * i), 110, 30);
+                    via.setBounds(350, 70 + (50 * i), 120, 30);
+                    telefono.setBounds(500, 70+ (50 * i), 70, 30);
+                    descrizione.setBounds(650, 70 + (50 * i), 200, 30);
+                    service.setBounds(1100, 70 + (50 * i), 200, 30);
 
                     regclient.setBounds(0, 70 + (50 * i), 120, 30);
 
