@@ -146,12 +146,11 @@ public class PrenotationOne implements Form{
 
                 }
                 x.repaint();
-                JScrollPane scrollPane = new JScrollPane(x);
-                System.out.println("we");
-                scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-                scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                JScrollPane scrollPane = new JScrollPane(x,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                scrollPane.setPreferredSize(x.getPreferredSize());
 
-                F.getContentPane().add(scrollPane);
+                F.add(scrollPane);
+                F.add(x);
                 F.repaint();
             }
         } catch (IOException e) {
