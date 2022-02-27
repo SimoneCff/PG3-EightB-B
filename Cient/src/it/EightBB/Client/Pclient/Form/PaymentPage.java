@@ -98,7 +98,15 @@ public class PaymentPage implements Form {
 
             //Button
             ConfirmP = new JButton("Conferma");
-            ConfirmP.setBounds(70,350,70,30);
+            ConfirmP.setBounds(70,400,70,30);
+            ConfirmP.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+                }
+            });
+
+
 
             //Fields
             F.add(propcard);
@@ -163,4 +171,5 @@ public class PaymentPage implements Form {
             F.repaint();
         });
     }
+
 }
