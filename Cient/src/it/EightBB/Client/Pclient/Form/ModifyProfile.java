@@ -5,6 +5,7 @@ import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
+import it.EightBB.Client.Pclient.PclientFacade;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
 import it.EightBB.Client.Powner.PownerFacade;
 
@@ -59,7 +60,7 @@ public class ModifyProfile implements Form {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req = "Client," + "Modify," + "client,"+"mail,"+PownerFacade.getInstance().getMail().replaceAll("\\s+","")+",";
+            String req = "Client," + "Modify," + "client,"+"mail,"+ PclientFacade.getInstance().getMail().replaceAll("\\s+","")+",";
             StringBuilder q = new StringBuilder();
             boolean isLast = false;
             String ps = new String(Ps.getPassword());

@@ -116,4 +116,8 @@ public class PclientFacade {
         Annulla.InitialiteButtonIntoFrame(F);
 
     }
+
+    public String getMail() {
+        return text[1];
+    }
 }
