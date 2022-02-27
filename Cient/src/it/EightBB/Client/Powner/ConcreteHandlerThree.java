@@ -33,6 +33,8 @@ public class ConcreteHandlerThree extends ActionHandler {
                     ClientVisitor.getInstance().visitPowner("Client",null);
                 }else if(e.getActionCommand().contains("Economic")){
                     ClientVisitor.getInstance().visitPowner("Economic",null);
+                }else if (e.getActionCommand().contains("File")){
+                    ClientVisitor.getInstance().visitPowner("File",null);
                 }
             } else if (e.getActionCommand().contains("FORM")){
                 if (e.getActionCommand().contains("Mod")){

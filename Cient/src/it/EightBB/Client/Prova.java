@@ -2,7 +2,6 @@ package it.EightBB.Client;
 
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.TextGroup;
-import it.EightBB.Client.Powner.TextArea.SelectEnte;
 
 import javax.swing.*;
 
@@ -114,20 +113,7 @@ public static void main (String[] args){
     RegClient.setVisible(true);
     RegClient.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 }*/
-    public static void main (String[] args){
-        JFrame SelEnt = new JFrame();
-        TextGroup SelEntT = new SelectEnte();
 
-        SelEntT.setText();
-        SelEntT.InitialiteTextIntoFrame(SelEnt);
-
-
-        SelEnt.setLayout(null);
-        SelEnt.setVisible(true);
-        SelEnt.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-
-    }
 }
 
 
