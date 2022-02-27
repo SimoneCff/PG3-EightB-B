@@ -104,6 +104,8 @@ public class PrenotationOne implements Form{
             } else {
                 List<String> L =  Arrays.asList(risp.split("-"));
                 int size = L.size();
+                JPanel panel = new JPanel();
+
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
                     System.out.println(Arrays.toString(label));
@@ -124,12 +126,12 @@ public class PrenotationOne implements Form{
 
                     regclient.setBounds(300, 70 + (50 * i), 120, 30);
 
-                    F.add(name);
-                    F.add(via);
-                    F.add(telefono);
-                    F.add(descrizione);
-                    F.add(service);
-                    F.add(regclient);
+                    panel.add(name);
+                    panel.add(via);
+                    panel.add(telefono);
+                    panel.add(descrizione);
+                    panel.add(service);
+                    panel.add(regclient);
 
                     regclient.addActionListener(new ActionListener() {
                         @Override
@@ -141,6 +143,11 @@ public class PrenotationOne implements Form{
                     });
 
                 }
+                panel.setBounds(40,80,200,200);
+                panel.setBackground(new Color(225,204,204));;
+                JScrollPane scrollPane = new JScrollPane(panel);
+
+                F.add(scrollPane);
                 F.repaint();
             }
         } catch (IOException e) {
