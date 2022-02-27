@@ -117,7 +117,7 @@ public class PrenotationOne implements Form{
                     JButton regclient = new JButton("Prenota");
 
                     name.setBounds(300, 70 + (50 * i), 70, 30);
-                    via.setBounds(300, 700 + (50 * i), 70, 30);
+                    via.setBounds(300, 70 + (50 * i), 70, 30);
                     telefono.setBounds(300, 70+ (50 * i), 70, 30);
                     descrizione.setBounds(300, 70 + (50 * i), 70, 30);
                     service.setBounds(300, 70 + (50 * i), 70, 30);
