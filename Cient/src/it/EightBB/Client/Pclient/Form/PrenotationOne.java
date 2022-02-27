@@ -1,15 +1,27 @@
 package it.EightBB.Client.Pclient.Form;
 
 import com.toedter.calendar.JDateChooser;
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Interface.Memento;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
+import it.EightBB.Client.Pclient.PclientFacade;
+import jdk.internal.icu.text.UnicodeSet;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class PrenotationOne implements Form{
-    private JTextField research, n_adults, n_childrens, StartDate, EndDate = null;
-
-    private JLabel researchh, n_adultss, n_childrenss, StartDatee, EndDatee = null;
+    private JTextField research, n_adults, n_childrens = null;
+    private JDateChooser StartDate = null;
+    private JDateChooser EndDate = null;
+    private static JLabel researchh, n_adultss, n_childrenss, StartDatee, EndDatee = null;
     private JButton ConfBt = null;
+    private static JFrame F;
 
 
     public void setForm(){
@@ -18,8 +30,8 @@ public class PrenotationOne implements Form{
         n_adults = new JTextField();
         n_childrens = new JTextField();
         //Date chooser
-        StartDate = new JTextField();
-        EndDate = new JTextField();
+        StartDate = new JDateChooser();
+        EndDate = new JDateChooser();
         //Confirm button
         ConfBt = new JButton("Conferma");
 
@@ -48,6 +60,8 @@ public class PrenotationOne implements Form{
     @Override
     public void InitialiateFormIntoFrame(JFrame F)
     {
+        this.F=F;
+
         //add User Form
         F.add(research);
         F.add(researchh);
@@ -70,7 +84,51 @@ public class PrenotationOne implements Form{
     }
 
     public static void getFormandSenditToDB(){
-        //String r = "Client,PrenotationOne,booking,mail"
+        PrenotationMemento Mori = PrenotationMemento.getIstance();
+        Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adultss.getText(), n_childrenss.getText(),
+               StartDatee.getText(), EndDatee.getText());
+        try {
+            String req = "Client,PrenotOne,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
+                    StartDatee.getText() + ",date_end," + EndDatee.getText();
+            SocketInterface SP = SocketProxy.getIstance();
+            SP.write(req);
+            String risp = SP.read();
+            if (risp.equals("False")){
+                JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione nona avvenuta", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                List<String> L =  Arrays.asList(risp.split(","));
+                System.out.println(L);
+                int size = L.size();
+                for(int i = 0; i<size; i++) {
+                    String[] label = L.get(i).split(",");
+
+                    //JLabel
+                    JLabel name = new JLabel(label[0]);
+                    JLabel via = new JLabel(label[1]);
+                    JLabel telefono = new JLabel(label[2]);
+                    JLabel descrizione = new JLabel(label[3]);
+                    JLabel service = new JLabel(label[4]);
+
+                    JButton regclient = new JButton("Prenota");
+                    name.setBounds(50, 100 + (50 * i), 70, 30);
+                    via.setBounds(50, 120 + (50 * i), 70, 30);
+                    telefono.setBounds(50, 140+ (50 * i), 70, 30);
+                    descrizione.setBounds(50, 160 + (50 * i), 70, 30);
+                    service.setBounds(50, 180 + (50 * i), 70, 30);
+
+                    regclient.setBounds(250, 200 + (50 * i), 120, 30);
+
+                    F.add(name);
+                    F.add(via);
+                    F.add(telefono);
+                    F.add(descrizione);
+                    F.add(service);
+                    F.add(regclient);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
