@@ -1,15 +1,20 @@
 package it.EightBB.Client.Powner.Form;
 
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.ClientVisitor;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class RegClientLive implements Form {
-    private JTextField Name, Surname, Cf = null;
+    private static JTextField Name, Surname, Cf = null;
     private JLabel Namee, Surnamee, Cff = null;
     private JButton Conf = null;
-    private String name = null;
+    private static String name = null;
 
 
     @Override
@@ -37,6 +42,9 @@ public class RegClientLive implements Form {
         Cf.setBounds(50, 220, 200, 30);
 
         Conf.setBounds(50, 280, 100, 30);
+
+        Conf.addActionListener(ConcreteHandlerThree.getInstance());
+        Conf.setActionCommand("Owner-BFORM-Client");
     }
 
     @Override
@@ -58,4 +66,23 @@ public class RegClientLive implements Form {
     public void setName(String s) {
         this.name=s;
     }
+
+    public static void getTextAndSendToDB() {
+        SocketInterface SP = SocketProxy.getIstance();
+        try {
+            String req="Owner,RegCleint,client_live,nome,"+name+",name_p,"+Name.getText()+",surname_p,"
+                    +Surname.getText()+",CF,"+Cf.getText();
+            SP.write(req);
+            String res =SP.read();
+            if (res.equals("False")){
+                JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione nona avvenuta", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(new JFrame(), "Fatto!, Cliente Registrato", "Success",JOptionPane.INFORMATION_MESSAGE);
+                ClientVisitor.getInstance().visitPowner("PrivateArea",null);
+            }
+         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

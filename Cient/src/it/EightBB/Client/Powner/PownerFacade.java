@@ -173,7 +173,6 @@ public class PownerFacade{
                             }
                         });
                         cli.setName(L.get(finalI));
-
                         cli.setForm();
                         cli.InitialiateFormIntoFrame(F);
                     }
