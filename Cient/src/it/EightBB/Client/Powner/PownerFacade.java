@@ -156,20 +156,23 @@ public class PownerFacade{
                 F.add(regclient);
 
                 int finalI = i;
+                regclient.setActionCommand("ABULLA");
                 regclient.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        F.getContentPane().removeAll();
-                        F.repaint();
-                        RegClientLive cli = new RegClientLive();
-                        JButton Back = new JButton("Indietro");
-                        Back.setBounds(250,300,100,20);
-                        F.add(Back);
-                        Back.setActionCommand("Owner-B-Client");
-                        Back.addActionListener(ConcreteHandlerThree.getInstance());
-                        cli.setName(L.get(finalI));
-                        cli.setForm();
-                        cli.InitialiateFormIntoFrame(F);
+                        if (e.getActionCommand().equals("ABULLA")) {
+                            F.getContentPane().removeAll();
+                            F.repaint();
+                            RegClientLive cli = new RegClientLive();
+                            JButton Back = new JButton("Indietro");
+                            Back.setBounds(250, 300, 100, 20);
+                            F.add(Back);
+                            Back.setActionCommand("Owner-B-Client");
+                            Back.addActionListener(ConcreteHandlerThree.getInstance());
+                            cli.setName(L.get(finalI));
+                            cli.setForm();
+                            cli.InitialiateFormIntoFrame(F);
+                        }
                     }
                 });
             }
