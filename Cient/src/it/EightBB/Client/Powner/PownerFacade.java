@@ -146,6 +146,7 @@ public class PownerFacade{
         try{
             proxy.write("Owner,gettura,structure,mail,"+getMail().replaceAll("\\s+",""));
             List<String> L =  Arrays.asList(proxy.read().split(","));
+            System.out.println(L);
             int size = L.size();
             for(int i = 0; i<size; i++){
                 JLabel name = new JLabel(L.get(i));

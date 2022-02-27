@@ -22,6 +22,9 @@ public class PownerDBOperations implements DatabaseOperations {
             ResultSet result = statement.executeQuery(q);
             while (result.next()){
                 list.append(result.getString(1));
+                if (!result.isLast()) {
+                    list.append(",");
+                }
             }
             System.out.println(list);
             return list.toString();
