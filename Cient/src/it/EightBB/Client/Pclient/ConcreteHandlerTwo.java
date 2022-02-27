@@ -22,7 +22,9 @@ public class ConcreteHandlerTwo extends ActionHandler{
             if (e.getActionCommand().contains("B")) {
                 if(e.getActionCommand().contains("MdBack")){
                     ClientVisitor.getInstance().visitPclient("PrivateArea",null);
-            }
+            } else if (e.getActionCommand().contains("Mod")){
+                    ClientVisitor.getInstance().visitPowner("Modify",null);
+                }
             }else if (e.getActionCommand().contains("FORM")) {
                 if (e.getActionCommand().contains("Mod")) {
                     ModifyProfile.getTextAndSendToDB();
