@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 
 import java.io.*;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class DocumentTourism extends Component implements Form {
     private JLabel seleziona = null;
@@ -35,6 +38,28 @@ public class DocumentTourism extends Component implements Form {
         //Setting chooser options
         if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
             File F = chooser.getSelectedFile();
+            String Fname = F.getName().toString();
+            int FileSize =(int) F.length();
+            try {
+                Socket FS = new Socket("82.55.143.63", 5430);
+                OutputStream os = FS.getOutputStream();
+                PrintWriter pr = new PrintWriter(FS.getOutputStream(),true);
+                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(F));
+                Scanner in = new Scanner(FS.getInputStream());
+
+                //File Wire
+                pr.println(Fname);
+                pr.println(FileSize);
+
+                byte[] filebyte = new byte[FileSize];
+                bis.read(filebyte, 0, filebyte.length);
+                os.write(filebyte, 0, filebyte.length);
+                System.out.println(in.nextLine());
+                os.flush();
+                FS.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             System.out.println(F);
         }
     }
