@@ -199,7 +199,7 @@ public class PownerFacade{
         try{
             proxy.write("Owner,gettura,economic,mail,"+getMail().replaceAll("\\s+",""));
             List<String> L =  Arrays.asList(proxy.read().split("-"));
-            L.removeAll(Collections.singleton(" "));
+            L.removeAll(Arrays.asList("", null));
             System.out.println(L);
             int size = L.size();
 
