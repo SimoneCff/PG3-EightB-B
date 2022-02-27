@@ -9,7 +9,8 @@ public class SelectEnte implements TextGroup {
     private JLabel seleziona = null;
     @Override
     public void setText() {
-        seleziona = new JLabel("Seleziona il tipo di ente a cui inviare i documenti");
+        seleziona = new JLabel("Selezionare il file da inviare alla questura/ente turismo");
+
 
         seleziona.setBounds(50, 60, 100, 30 );
     }

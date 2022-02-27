@@ -118,15 +118,6 @@ public static void main (String[] args){
         JFrame SelEnt = new JFrame();
         TextGroup SelEntT = new SelectEnte();
 
-        Button Turismo = new SelectTourism();
-        Button Questura = new SelectQuesture();
-
-        Turismo.setButton();
-        Turismo.InitialiteButtonIntoFrame(SelEnt);
-
-        Questura.setButton();
-        Questura.InitialiteButtonIntoFrame(SelEnt);
-
         SelEntT.setText();
         SelEntT.InitialiteTextIntoFrame(SelEnt);
 
