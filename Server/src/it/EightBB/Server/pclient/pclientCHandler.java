@@ -25,6 +25,7 @@ public class pclientCHandler extends Handler {
             DatabaseOperations PC = new PclientDBOperations();
             switch (request.getRequest()){
                 case "Modify" : Req= PC.modifyQueryFromTable(request.getData().getTable(), request.getData());
+                case "PrenotOne" : Req = PC.getQuery(request.getData().getTable(), request.getData());
             }
         }else Req = successor.handlerRequest(request, socket);
         return Req;
