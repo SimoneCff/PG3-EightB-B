@@ -1,13 +1,7 @@
 package it.EightBB.Client;
 
 import it.EightBB.Client.Interface.Template.Button;
-import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
-import it.EightBB.Client.Pclient.Form.PaymentPage;
-import it.EightBB.Client.Powner.Button.SelectQuesture;
-import it.EightBB.Client.Powner.Button.SelectTourism;
-import it.EightBB.Client.Powner.Form.DocumentQuesture;
-import it.EightBB.Client.Powner.Form.RegClientLive;
 import it.EightBB.Client.Powner.TextArea.SelectEnte;
 
 import javax.swing.*;

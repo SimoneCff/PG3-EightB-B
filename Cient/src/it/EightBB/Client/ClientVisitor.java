@@ -11,9 +11,12 @@ import it.EightBB.Client.Powner.ConcreteHandlerThree;
 import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
+import java.io.File;
+import java.net.Socket;
 
 public class ClientVisitor implements visitor {
 private static visitor Instance;
+private SocketProxy FProxy;
 private JFrame F;
 
     public static visitor getInstance(){
@@ -58,11 +61,21 @@ private JFrame F;
     @Override
     public void visitProxy(String where) {
         SocketProxy Proxy = SocketProxy.getIstance();
+        FProxy = new SocketProxy();
         switch (where) {
-            case "Start" -> Proxy.settingUP("82.55.143.63",5432);
-            case "SendEnd" -> Proxy.SendEnd();
+            case "Start" -> {
+                Proxy.settingUP("82.55.143.63",5432);
+                FProxy.settingUP("82.55.143.63",5430);
+            }
+            case "SendEnd" -> {
+                Proxy.SendEnd();
+                FProxy.SendEnd();
+            }
         }
+    }
 
+    public SocketProxy getFProxy(){
+        return FProxy;
     }
 
     @Override
@@ -91,6 +104,7 @@ private JFrame F;
             case "RStructure" -> POF.RegNewStr();
             case "Client" -> POF.RegisteredStructure();
             case "Economic" -> POF.Economic();
+            case "File" -> POF.File();
         }
     }
 
