@@ -6,9 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PrenotationOne implements Form{
-    private JTextField research, n_adults, n_childrens = null;
-    private JDateChooser StartDate = null;
-    private JDateChooser EndDate = null;
+    private JTextField research, n_adults, n_childrens, StartDate, EndDate = null;
+
     private JLabel researchh, n_adultss, n_childrenss, StartDatee, EndDatee = null;
     private JButton ConfBt = null;
 
@@ -19,8 +18,8 @@ public class PrenotationOne implements Form{
         n_adults = new JTextField();
         n_childrens = new JTextField();
         //Date chooser
-        StartDate = new JDateChooser();
-        EndDate = new JDateChooser();
+        StartDate = new JTextField();
+        EndDate = new JTextField();
         //Confirm button
         ConfBt = new JButton("Conferma");
 
