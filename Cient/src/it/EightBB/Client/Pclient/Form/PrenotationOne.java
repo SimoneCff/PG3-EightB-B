@@ -104,7 +104,7 @@ public class PrenotationOne implements Form{
             } else {
                 List<String> L =  Arrays.asList(risp.split("-"));
                 int size = L.size();
-                JPanel panel = new JPanel();
+                JScrollPane scrollPane = new JScrollPane();
 
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
@@ -126,12 +126,12 @@ public class PrenotationOne implements Form{
 
                     regclient.setBounds(300, 70 + (50 * i), 120, 30);
 
-                    panel.add(name);
-                    panel.add(via);
-                    panel.add(telefono);
-                    panel.add(descrizione);
-                    panel.add(service);
-                    panel.add(regclient);
+                    scrollPane.add(name);
+                    scrollPane.add(via);
+                    scrollPane.add(telefono);
+                    scrollPane.add(descrizione);
+                    scrollPane.add(service);
+                    scrollPane.add(regclient);
 
                     regclient.addActionListener(new ActionListener() {
                         @Override
@@ -143,15 +143,11 @@ public class PrenotationOne implements Form{
                     });
 
                 }
-                panel.setBounds(F.getBounds());
-                panel.setBackground(new Color(225,204,204));
-
-                JScrollPane scrollPane = new JScrollPane(panel);
 
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-                F.add(panel);
+                F.getContentPane().add(scrollPane);
                 F.repaint();
             }
         } catch (IOException e) {
