@@ -5,6 +5,7 @@ import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Memento;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
 import it.EightBB.Client.Pclient.PclientFacade;
 
@@ -55,6 +56,9 @@ public class PrenotationOne implements Form{
         StartDate.setBounds(50,220,200,30);
         EndDate.setBounds(300,220,200,30);
         ConfBt.setBounds(50,280,200,30);
+
+        ConfBt.addActionListener(ConcreteHandlerTwo.getInstance());
+        ConfBt.setActionCommand("Client-FORM_Pone");
     }
     @Override
     public void InitialiateFormIntoFrame(JFrame F)

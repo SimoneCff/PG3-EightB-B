@@ -3,6 +3,7 @@ package it.EightBB.Client.Pclient;
 import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 import it.EightBB.Client.Pclient.Form.ModifyProfile;
+import it.EightBB.Client.Pclient.Form.PrenotationOne;
 
 import java.awt.event.ActionEvent;
 
@@ -30,6 +31,8 @@ public class ConcreteHandlerTwo extends ActionHandler{
             }else if (e.getActionCommand().contains("FORM")) {
                 if (e.getActionCommand().contains("Mod")) {
                     ModifyProfile.getTextAndSendToDB();
+                } else if (e.getActionCommand().contains("Pone")){
+                    PrenotationOne.getFormandSenditToDB();
                 }
             }
         } else {
