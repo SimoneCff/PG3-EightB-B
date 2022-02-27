@@ -14,7 +14,7 @@ public class FileThread extends Thread{
     }
 
     public void run() {
-        System.out.println("Thread" + Thread.currentThread().getName() + " Setted UP");
+        System.out.println("FThread" + Thread.currentThread().getName() + " Setted UP");
         try {
             Socket socket = proxy.getSocket();
             Scanner inp = new Scanner(socket.getInputStream());

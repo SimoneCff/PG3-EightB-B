@@ -16,7 +16,6 @@ import java.net.Socket;
 
 public class ClientVisitor implements visitor {
 private static visitor Instance;
-private SocketProxy FProxy;
 private JFrame F;
 
     public static visitor getInstance(){
@@ -61,23 +60,16 @@ private JFrame F;
     @Override
     public void visitProxy(String where) {
         SocketProxy Proxy = SocketProxy.getIstance();
-        FProxy = new SocketProxy();
         switch (where) {
             case "Start" -> {
                 Proxy.settingUP("82.55.143.63",5432);
-                FProxy.settingUP("82.55.143.63",5430);
             }
             case "SendEnd" -> {
                 Proxy.SendEnd();
-                FProxy.SendEnd();
             }
         }
     }
 
-    @Override
-    public SocketProxy getFProxy(){
-        return FProxy;
-    }
 
     @Override
     public void visitPclient(String where, String text) {

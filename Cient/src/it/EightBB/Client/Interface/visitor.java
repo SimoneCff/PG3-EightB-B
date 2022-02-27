@@ -12,6 +12,4 @@ public interface visitor {
     void visitPclient(String where, String text);
     void visitPowner(String where, String text);
     void setHandler();
-
-    SocketProxy getFProxy();
 }
