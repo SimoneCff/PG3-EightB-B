@@ -15,37 +15,33 @@ public class PclientDBOperations implements DatabaseOperations {
         Connection Q = DatabaseProxy.getInstance().getConnect();
         String rew = null;
         if (table.equals("booking")) {
-            String q = "select mail from booking where data_start = '"+query.getAttributes().get(1)+"' or data_end = '"
-                    + query.getAttributes().get(2) +"'";
+            String q = "select mail from booking where data_start = '" + query.getAttributes().get(1) + "' or data_end = '"
+                    + query.getAttributes().get(2) + "'";
             StringBuilder list = new StringBuilder();
             Statement statement = Q.createStatement();
             ResultSet result = statement.executeQuery(q);
-            while (result.next()){
+            while (result.next()) {
                 list.append(result.getString(1));
                 if (!result.isLast()) {
                     list.append(",");
                 }
-        }
-            if (list.isEmpty()){
-                return "False";
-            } else {
-                String[]bn = list.toString().split(",");
-                StringBuilder xq = new StringBuilder();
-                ResultSet ara = statement.executeQuery("select nome,via,telefono,descrizione,service from structure");
-                while (result.next()) {
-                    boolean azz = true;
-                    for(int z = 0; z<bn.length; z++){
-                        if (result.getString(1).equals(bn[z])){
-                            azz = false;
-                        }
+            }
+            String[] bn = list.toString().split(",");
+            StringBuilder xq = new StringBuilder();
+            ResultSet ara = statement.executeQuery("select nome,via,telefono,descrizione,service from structure");
+            while (result.next()) {
+                boolean azz = true;
+                for (int z = 0; z < bn.length; z++) {
+                    if (result.getString(1).equals(bn[z])) {
+                        azz = false;
                     }
+                }
                     if (azz){
                     xq.append(result.getString(1)+","+result.getString(2)+","+result.getString(3)
                             +","+result.getString(4)+","+result.getString(5));}
                     if (!result.isLast()) {
                         list.append(",");
                     }
-                   }
                 rew = xq.toString();
                 }
             } return rew;
