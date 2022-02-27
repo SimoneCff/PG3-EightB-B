@@ -78,7 +78,6 @@ public class PownerFacade{
         Button modifica =  POF.makeButton("Mod");
 
         Button strutture = POF.makeButton("AllOwnStruct");
-        Button registrazioneCliente = POF.makeButton("ClientReg");
         Button gestioneEco = POF.makeButton("Econm");
         Button entiNaz = POF.makeButton("PrivAreaEnt");
         Button registrazioneStruttura = POF.makeButton("RegStruct");
@@ -90,8 +89,6 @@ public class PownerFacade{
         strutture.setButton();
         strutture.InitialiteButtonIntoFrame(F);
         //Set registrazioneCliente button
-        registrazioneCliente.setButton();
-        registrazioneCliente.InitialiteButtonIntoFrame(F);
         //Set gestioneEco button
         gestioneEco.setButton();
         gestioneEco.InitialiteButtonIntoFrame(F);

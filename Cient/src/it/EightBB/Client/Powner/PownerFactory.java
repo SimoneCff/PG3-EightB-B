@@ -27,7 +27,6 @@ public class PownerFactory implements AbstractFactory {
     public Button makeButton(String type) {
         return switch (type){
             case "AllOwnStruct" -> new AllOwnerStructures();
-            case "ClientReg" -> new ClientRegistration();
             case "Econm" -> new EconomicManagement();
             case "Mod" -> new ModifyProfileO();
             case "PrivAreaEnt" -> new PrivateAreaEntities();
