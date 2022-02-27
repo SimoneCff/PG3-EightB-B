@@ -44,15 +44,10 @@ public class SocketInitial implements SocketInitialService {
     }
 
     @Override
-    public String Read() {
+    public String Read() throws IOException {
           String line;
-        try {
             line = brin.readLine();
             return line;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
     @Override
