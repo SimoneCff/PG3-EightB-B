@@ -217,6 +217,14 @@ public class PownerFacade{
     }
 
     public void File(){
+        F.getContentPane().removeAll();
+        F.repaint();
+        Form Doc = POF.makeForm("Doc");
+
+        //SocketProxy FP = ClientVisitor.getInstance().getFProxy();
+
+        Doc.setForm();
+        Doc.InitialiateFormIntoFrame(F);
 
     }
 

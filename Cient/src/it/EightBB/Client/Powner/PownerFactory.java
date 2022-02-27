@@ -5,10 +5,7 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
 import it.EightBB.Client.Powner.Button.*;
-import it.EightBB.Client.Powner.Form.ModifyProfile;
-import it.EightBB.Client.Powner.Form.ModifyRegisteredStructure;
-import it.EightBB.Client.Powner.Form.RegClientLive;
-import it.EightBB.Client.Powner.Form.RegisterNewStructure;
+import it.EightBB.Client.Powner.Form.*;
 import it.EightBB.Client.Powner.TextArea.PrivateOwner;
 
 public class PownerFactory implements AbstractFactory {
@@ -19,6 +16,7 @@ public class PownerFactory implements AbstractFactory {
             case "RegNewStr" -> new RegisterNewStructure();
             case "Mod" -> new ModifyProfile();
             case "Client" -> new RegClientLive();
+            case "Doc" -> new DocumentTourism();
             default -> null;
         };
     }

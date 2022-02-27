@@ -74,6 +74,7 @@ private JFrame F;
         }
     }
 
+    @Override
     public SocketProxy getFProxy(){
         return FProxy;
     }

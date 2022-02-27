@@ -1,5 +1,7 @@
 package it.EightBB.Client.Interface;
 
+import it.EightBB.Client.CEssentials.SocketProxy;
+
 import javax.swing.*;
 import java.io.File;
 
@@ -10,4 +12,6 @@ public interface visitor {
     void visitPclient(String where, String text);
     void visitPowner(String where, String text);
     void setHandler();
+
+    SocketProxy getFProxy();
 }
