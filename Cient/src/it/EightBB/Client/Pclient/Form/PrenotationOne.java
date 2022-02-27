@@ -7,7 +7,6 @@ import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
 import it.EightBB.Client.Pclient.PclientFacade;
-import jdk.internal.icu.text.UnicodeSet;
 
 import javax.swing.*;
 import java.awt.*;
