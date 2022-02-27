@@ -204,8 +204,8 @@ public class PownerFacade{
                 String[] label = L.get(i).split(",");
                 JLabel type = new JLabel(label[0]);
                 JLabel value = new JLabel(label[1]);
-                type.setBounds(50, 100, 100, 30);
-                value.setBounds(150, 100, 100, 30);
+                type.setBounds(50, 100+(50*i), 100, 30);
+                value.setBounds(150, 100+(50*i), 100, 30);
 
                 F.add(type);
                 F.add(value);
