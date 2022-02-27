@@ -6,6 +6,9 @@ import it.EightBB.Server.Database.QueryAdapter;
 import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Proxy.SocketInitial;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;

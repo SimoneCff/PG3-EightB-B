@@ -1,5 +1,7 @@
 package it.EightBB.Client.Powner.Form;
 
+import it.EightBB.Client.Client;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -40,27 +42,8 @@ public class DocumentTourism extends Component implements Form {
             File F = chooser.getSelectedFile();
             String Fname = F.getName().toString();
             int FileSize =(int) F.length();
-            try {
-                Socket FS = new Socket("82.55.143.63", 5430);
-                OutputStream os = FS.getOutputStream();
-                PrintWriter pr = new PrintWriter(FS.getOutputStream(),true);
-                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(F));
-                Scanner in = new Scanner(FS.getInputStream());
-
-                //File Wire
-                pr.println(Fname);
-                pr.println(FileSize);
-
-                byte[] filebyte = new byte[FileSize];
-                bis.read(filebyte, 0, filebyte.length);
-                os.write(filebyte, 0, filebyte.length);
-                System.out.println(in.nextLine());
-                os.flush();
-                FS.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            System.out.println(F);
+            System.out.println(Fname+FileSize);
+            ClientVisitor.getInstance().visitPowner("PrivateArea",null);
         }
     }
 }
