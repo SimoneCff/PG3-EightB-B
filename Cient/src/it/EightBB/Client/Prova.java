@@ -1,9 +1,14 @@
 package it.EightBB.Client;
 
+import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Interface.Template.TextGroup;
 import it.EightBB.Client.Pclient.Form.PaymentPage;
+import it.EightBB.Client.Powner.Button.SelectQuesture;
+import it.EightBB.Client.Powner.Button.SelectTourism;
 import it.EightBB.Client.Powner.Form.DocumentQuesture;
 import it.EightBB.Client.Powner.Form.RegClientLive;
+import it.EightBB.Client.Powner.TextArea.SelectEnte;
 
 import javax.swing.*;
 
@@ -103,6 +108,7 @@ public class Prova {
         docQuest.setVisible(true);
         docQuest.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }*/
+/**
 public static void main (String[] args){
     JFrame RegClient = new JFrame();
     Form RegForm = new RegClientLive();
@@ -113,7 +119,30 @@ public static void main (String[] args){
     RegClient.setLayout(null);
     RegClient.setVisible(true);
     RegClient.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-}
+}*/
+    public static void main (String[] args){
+        JFrame SelEnt = new JFrame();
+        TextGroup SelEntT = new SelectEnte();
+
+        Button Turismo = new SelectTourism();
+        Button Questura = new SelectQuesture();
+
+        Turismo.setButton();
+        Turismo.InitialiteButtonIntoFrame(SelEnt);
+
+        Questura.setButton();
+        Questura.InitialiteButtonIntoFrame(SelEnt);
+
+        SelEntT.setText();
+        SelEntT.InitialiteTextIntoFrame(SelEnt);
+
+
+        SelEnt.setLayout(null);
+        SelEnt.setVisible(true);
+        SelEnt.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+
+    }
 }
 
 
