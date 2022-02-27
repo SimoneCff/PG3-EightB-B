@@ -25,8 +25,8 @@ public class PownerChandler extends Handler {
             switch (request.getRequest()){
                 case "Modify" : Req= PO.modifyQueryFromTable(request.getData().getTable(), request.getData());
                 case "RegStruct" : Req = PO.AddQuery(request.getData().getTable(), request.getData());
-                case "gettura": Req = PO.getQuery(request.getData().getTable(), request.getData());
                 case "RegClient": Req = PO.AddQuery(request.getData().getTable(), request.getData());
+                case "gettura": Req = PO.getQuery(request.getData().getTable(), request.getData());
             }
 
         }else Req= "False";
