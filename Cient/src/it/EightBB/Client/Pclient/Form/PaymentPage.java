@@ -34,9 +34,15 @@ public class PaymentPage implements Form {
 
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
-        F.repaint();
+
+
 
         Card.addActionListener(e -> {
+            //Remove Comp from BankTransfer
+            F.remove(BankTransferHolder);
+            F.remove(BankTransferIban);
+            F.remove(BankTransferMotivation);
+
             //Fields
             propcard = new JTextField();
             cvv = new JTextField();
@@ -74,6 +80,7 @@ public class PaymentPage implements Form {
             F.add(cvvv);
             F.add(cardnumberr);
             F.add(scadenzaa);
+            F.repaint();
         });
 
         BankTransfer.addActionListener(e ->{
@@ -84,15 +91,11 @@ public class PaymentPage implements Form {
             BankTransferHolder.setBounds(50, 160, 100, 80);
             BankTransferIban.setBounds(50, 220, 100, 80);
             BankTransferMotivation.setBounds(50, 280, 100, 80);
-            F.repaint();
 
 
             F.add(BankTransferHolder);
             F.add(BankTransferIban);
-            F.add(BankTransferMotivation);
-
+            F.add(BankTransferMotivation); F.repaint();
         });
-
-
     }
 }
