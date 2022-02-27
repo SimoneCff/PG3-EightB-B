@@ -106,7 +106,7 @@ public class PrenotationOne implements Form{
                 int size = L.size();
 
                 JPanel x = new JPanel();
-                x.setBounds(300,200,400,400);
+                x.setBounds(500,100,700,400);
 
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
