@@ -70,4 +70,8 @@ public class PrenotationOne implements Form{
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
+    public static void getFormandSenditToDB(){
+        //String r = "Client,PrenotationOne,booking,mail"
+    }
+
 }

@@ -81,6 +81,7 @@ private JFrame F;
         switch(where){
             case "PrivateArea"-> PCF.PrivateArea();
             case "Modify" -> PCF.ModRegStr();
+            case "Prenota" -> PCF.Prenotation();
         }
 
     }

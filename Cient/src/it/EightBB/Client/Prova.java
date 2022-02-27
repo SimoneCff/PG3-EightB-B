@@ -6,22 +6,6 @@ import it.EightBB.Client.Interface.Template.TextGroup;
 import javax.swing.*;
 
 public class Prova {
-/**
- * PRENOTAZIONE BB CON SELEZIONE DATA ENTRATA E USCITA
- *
-  public static void main(String[] args){
-        JFrame prenotation = new JFrame();
-
-        Form prenotationForm = new PrenotationOne();
-
-      prenotationForm.setForm();
-      prenotationForm.InitialiateFormIntoFrame(prenotation);
-
-        prenotation.setLayout(null);
-        prenotation.setVisible(true);
-        prenotation.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-    }*/
 
 /**
  * AREA PRIVATA CLIENTE CON BOTTONI DI MODIFICA E USCITA INCLUSI

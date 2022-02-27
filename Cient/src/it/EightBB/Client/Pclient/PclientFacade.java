@@ -120,4 +120,14 @@ public class PclientFacade {
     public String getMail() {
         return text[1];
     }
+
+    public void Prenotation(){
+        F.getContentPane().removeAll();
+        F.repaint();
+
+        Form prenotationForm =PCF.makeForm("Prenot");
+
+        prenotationForm.setForm();
+        prenotationForm.InitialiateFormIntoFrame(F);
+    }
 }
