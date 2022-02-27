@@ -34,9 +34,9 @@ public class PaymentPage implements Form {
 
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
+        F.repaint();
 
         Card.addActionListener(e -> {
-
             //Fields
             propcard = new JTextField();
             cvv = new JTextField();
