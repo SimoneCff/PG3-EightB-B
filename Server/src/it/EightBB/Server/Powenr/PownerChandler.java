@@ -1,10 +1,9 @@
 package it.EightBB.Server.Powenr;
 
-import it.EightBB.Server.Authservice.AuthenticationChandler;
+
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
-import it.EightBB.Server.Proxy.SocketInitialService;
 
 import java.sql.SQLException;
 
@@ -18,7 +17,7 @@ public class PownerChandler extends Handler {
     }
 
     @Override
-    public String handlerRequest(Request request, SocketInitialService socket) throws SQLException {
+    public String handlerRequest(Request request) throws SQLException {
         String Req = null;
         if(request.getSubSys().equals("Owner")){
             DatabaseOperations PO = PownerDBOperations.getInstance();

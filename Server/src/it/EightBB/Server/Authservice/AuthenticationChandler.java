@@ -3,7 +3,6 @@ package it.EightBB.Server.Authservice;
 import it.EightBB.Server.Database.DatabaseOperations;
 import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.HandlingSubSystem.Request;
-import it.EightBB.Server.Proxy.SocketInitialService;
 
 import java.sql.SQLException;
 
@@ -17,7 +16,7 @@ public class AuthenticationChandler extends Handler {
     }
 
     @Override
-    public String handlerRequest(Request request, SocketInitialService socket) throws SQLException {
+    public String handlerRequest(Request request) throws SQLException {
         String Req = null;
         if (request.getSubSys().equals("Auth")) {
             DatabaseOperations ADB = AuthDBOperations.getInstance();
@@ -38,7 +37,7 @@ public class AuthenticationChandler extends Handler {
                     break;
             }
         } else {
-            Req = successor.handlerRequest(request, socket);
+            Req = successor.handlerRequest(request);
         }return Req;
     }
 }

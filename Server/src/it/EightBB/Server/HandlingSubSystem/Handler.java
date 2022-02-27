@@ -1,6 +1,5 @@
 package it.EightBB.Server.HandlingSubSystem;
 
-import it.EightBB.Server.Proxy.SocketInitialService;
 
 import java.sql.SQLException;
 
@@ -11,5 +10,5 @@ public abstract class Handler {
         this.successor = successor;
     }
 
-    public abstract String handlerRequest(Request request, SocketInitialService socket) throws SQLException;
+    public abstract String handlerRequest(Request request) throws SQLException;
 }
