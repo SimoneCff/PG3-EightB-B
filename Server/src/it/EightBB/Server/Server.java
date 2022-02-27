@@ -59,6 +59,7 @@ public class Server {
                                 //
                                 String table = rq.get(0);
                                 rq.remove(0);
+                                System.out.println(rq);
                                 Query a = QA.AdaptStringToQuery(rq);
                                 a.setTable(table);
                                 Request req = new Request(sub,riq,a);
@@ -77,6 +78,7 @@ public class Server {
                         }
                     }
                 };
+                t.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
