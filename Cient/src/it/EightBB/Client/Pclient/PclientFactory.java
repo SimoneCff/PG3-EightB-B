@@ -9,6 +9,7 @@ import it.EightBB.Client.Pclient.Button.GoBackC;
 import it.EightBB.Client.Pclient.Button.ModifyProfileC;
 import it.EightBB.Client.Pclient.Button.Prenota;
 import it.EightBB.Client.Pclient.Form.ModifyProfile;
+import it.EightBB.Client.Pclient.Form.PaymentPage;
 import it.EightBB.Client.Pclient.Form.PrenotationOne;
 import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 import it.EightBB.Client.Pclient.TextArea.PrivateClient;
@@ -22,6 +23,7 @@ public class PclientFactory implements AbstractFactory {
             case "Prenot" -> new PrenotationOne();
             case "Search" -> new RicercaLuogo();
             case "Mod" -> new ModifyProfile();
+            case "Payment" -> new PaymentPage();
             default -> null;
         };
     }

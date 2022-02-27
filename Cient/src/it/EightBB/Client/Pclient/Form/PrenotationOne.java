@@ -2,6 +2,7 @@ package it.EightBB.Client.Pclient.Form;
 
 import com.toedter.calendar.JDateChooser;
 import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Memento;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
@@ -11,6 +12,8 @@ import it.EightBB.Client.Pclient.PclientFacade;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -112,6 +115,7 @@ public class PrenotationOne implements Form{
                     JLabel service = new JLabel(label[4]);
 
                     JButton regclient = new JButton("Prenota");
+
                     name.setBounds(50, 100 + (50 * i), 70, 30);
                     via.setBounds(50, 120 + (50 * i), 70, 30);
                     telefono.setBounds(50, 140+ (50 * i), 70, 30);
@@ -126,6 +130,16 @@ public class PrenotationOne implements Form{
                     F.add(descrizione);
                     F.add(service);
                     F.add(regclient);
+
+                    regclient.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            Mori.setnome(label[0]);
+                            ClientVisitor.getInstance().setMeme(Mori);
+                            ClientVisitor.getInstance().visitPclient("Payment",null);
+                        }
+                    });
+
                 }
             }
         } catch (IOException e) {

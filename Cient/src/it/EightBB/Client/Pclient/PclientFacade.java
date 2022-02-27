@@ -130,4 +130,13 @@ public class PclientFacade {
         prenotationForm.setForm();
         prenotationForm.InitialiateFormIntoFrame(F);
     }
+
+    public void Payment() {
+        F.getContentPane().removeAll();
+        F.repaint();
+        Form PayForm = PCF.makeForm("Payment");
+
+        PayForm.setForm();
+        PayForm.InitialiateFormIntoFrame(F);
+    }
 }

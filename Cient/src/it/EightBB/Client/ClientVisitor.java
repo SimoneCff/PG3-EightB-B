@@ -5,6 +5,7 @@ import it.EightBB.Client.Authentication.ConcreteHanlderOne;
 import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Handler.Action.ActionHandler;
 import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
+import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
 import it.EightBB.Client.Pclient.PclientFacade;
 import it.EightBB.Client.Interface.visitor;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
@@ -15,6 +16,7 @@ import javax.swing.*;
 
 public class ClientVisitor implements visitor {
 private static visitor Instance;
+private PrenotationMemento Meme;
 private JFrame F;
 
     public static visitor getInstance(){
@@ -56,6 +58,14 @@ private JFrame F;
 
     }
 
+    public void setMeme(PrenotationMemento meme) {
+        Meme = meme;
+    }
+
+    public PrenotationMemento getMeme() {
+        return Meme;
+    }
+
     @Override
     public void visitProxy(String where) {
         SocketProxy Proxy = SocketProxy.getIstance();
@@ -81,6 +91,7 @@ private JFrame F;
             case "PrivateArea"-> PCF.PrivateArea();
             case "Modify" -> PCF.ModRegStr();
             case "Prenota" -> PCF.Prenotation();
+            case "Payment" -> PCF.Payment();
         }
 
     }
