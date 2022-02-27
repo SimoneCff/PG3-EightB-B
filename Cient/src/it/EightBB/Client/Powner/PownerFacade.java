@@ -3,17 +3,22 @@ package it.EightBB.Client.Powner;
 
 
 import it.EightBB.Client.CEssentials.FactoryMaker;
+import it.EightBB.Client.CEssentials.SocketProxy;
+import it.EightBB.Client.Client;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
-import it.EightBB.Client.Powner.Button.GoBackO;
-import it.EightBB.Client.Powner.Form.ModifyRegisteredStructure;
+import it.EightBB.Client.Powner.Form.RegClientLive;
 
 
 import javax.swing.*;
-import java.awt.*;
-import java.sql.Array;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class PownerFacade{
     private static PownerFacade Instance;
@@ -131,6 +136,45 @@ public class PownerFacade{
         RegisterStrForm.InitialiateFormIntoFrame(F);
 
 
+    }
+
+    public void RegisteredStructure(){
+        F.getContentPane().removeAll();
+        F.repaint();
+
+        SocketInterface proxy = SocketProxy.getIstance();
+        try{
+            proxy.write("Owner,gettura,structure,mail"+getMail());
+            List<String> L =  Arrays.asList(proxy.read().split(","));
+            int size = L.size();
+            for(int i = 0; i<size; i++){
+                JLabel name = new JLabel(L.get(i));
+                JButton regclient = new JButton();
+                name.setBounds(50, 100, 70, 30);
+                regclient.setBounds(250, 100, 70 ,30);
+
+                int finalI = i;
+                regclient.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        F.getContentPane().removeAll();
+                        F.repaint();
+
+                        RegClientLive cli = new RegClientLive();
+                        cli.setName(L.get(finalI));
+
+                        cli.setForm();
+                        cli.InitialiateFormIntoFrame(F);
+                    }
+                });
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Button Back = POF.makeButton("ModBack");
+        Back.setButton();
+        Back.InitialiteButtonIntoFrame(F);
     }
 
 }
