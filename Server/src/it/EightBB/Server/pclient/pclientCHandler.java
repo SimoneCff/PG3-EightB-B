@@ -26,7 +26,7 @@ public class pclientCHandler extends Handler {
             switch (request.getRequest()){
                 case "Modify" : Req= PC.modifyQueryFromTable(request.getData().getTable(), request.getData());
             }
-        }else Req= "False";
-        return  Req;
+        }else Req = successor.handlerRequest(request, socket);
+        return Req;
     }
 }

@@ -5,6 +5,7 @@ import it.EightBB.Server.Database.DatabaseProxy;
 import it.EightBB.Server.HandlingSubSystem.Handler;
 import it.EightBB.Server.Powenr.PownerChandler;
 import it.EightBB.Server.Proxy.SocketInitial;
+import it.EightBB.Server.pclient.pclientCHandler;
 
 public class Server {
     public static void main(String[] args) {
@@ -25,12 +26,13 @@ public class Server {
     public static void setHandler(){
 
         Handler Auth = AuthenticationChandler.getInstance();
+        Handler Pclient = pclientCHandler.getInstance();
         Handler Powenr = PownerChandler.getInstance();
         System.out.println(Auth);
         System.out.println(Powenr);
 
-        Auth.setSuccessor(Powenr);
-        Powenr.setSuccessor(null);
+        Auth.setSuccessor(Pclient);
+        Pclient.setSuccessor(Powenr);
     }
 
 }
