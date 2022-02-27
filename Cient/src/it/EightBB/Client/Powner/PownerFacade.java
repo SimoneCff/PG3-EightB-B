@@ -18,7 +18,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class PownerFacade{
@@ -197,6 +199,7 @@ public class PownerFacade{
         try{
             proxy.write("Owner,gettura,economic,mail,"+getMail().replaceAll("\\s+",""));
             List<String> L =  Arrays.asList(proxy.read().split("-"));
+            L.removeAll(Collections.singleton(" "));
             System.out.println(L);
             int size = L.size();
 
