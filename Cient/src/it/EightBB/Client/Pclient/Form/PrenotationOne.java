@@ -141,6 +141,7 @@ public class PrenotationOne implements Form{
                     });
 
                 }
+                F.repaint();
             }
         } catch (IOException e) {
             e.printStackTrace();
