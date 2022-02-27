@@ -152,7 +152,10 @@ public class PownerFacade{
                 JLabel name = new JLabel(L.get(i));
                 JButton regclient = new JButton();
                 name.setBounds(50, 100, 70, 30);
-                regclient.setBounds(250, 100, 70 ,30);
+                regclient.setBounds(250, 100+i, 70 ,30);
+
+                F.add(name);
+                F.add(regclient);
 
                 int finalI = i;
                 regclient.addActionListener(new ActionListener() {
