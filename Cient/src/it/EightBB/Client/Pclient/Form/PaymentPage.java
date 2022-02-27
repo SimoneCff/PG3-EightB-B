@@ -12,6 +12,7 @@ public class PaymentPage implements Form {
     private JTextField propcard, cvv, cardnumber, scadenza = null;
     private JLabel propcardd, cvvv, cardnumberr, scadenzaa, selectMethodPayment, BankTransferHolder, BankTransferIban, BankTransferMotivation = null;
     private JButton Card, BankTransfer = null;
+    private boolean choose_p, choose_b = false;
 
     @Override
     public void setForm() {
@@ -27,11 +28,13 @@ public class PaymentPage implements Form {
 
     @Override
     public void InitialiateFormIntoFrame(JFrame F) {
-        //Buttons
-        F.add(Card);
-        F.add(BankTransfer);
-        F.add(selectMethodPayment);
+        if (choose_b){
+            F.add(Card);
+            F.add(BankTransfer);
+            F.add(selectMethodPayment);
+        } else choose_p = true;
 
+        //Buttons
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
 
@@ -84,6 +87,20 @@ public class PaymentPage implements Form {
         });
 
         BankTransfer.addActionListener(e ->{
+            if(choose_p){
+                //Fields
+                F.remove(propcard);
+                F.remove(cvv);
+                F.remove(cardnumber);
+                F.remove(scadenza);
+
+                //Labels
+                F.remove(propcardd);
+                F.remove(cvvv);
+                F.remove(cardnumberr);
+                F.remove(scadenzaa);
+            } else choose_b = true;
+
             BankTransferHolder = new JLabel("<html>Nome e Cognome intestario:<br />Nome Struttura</html>");
             BankTransferIban = new JLabel("<html>IBAN:<br />IT00WASD1234567890</html>");
             BankTransferMotivation = new JLabel("<html>Motivazione:<br />Soggiorno Nome Cognome Cliente</html>");
