@@ -11,11 +11,13 @@ import java.awt.event.ActionListener;
 public class PaymentPage implements Form {
     private JTextField propcard, cvv, cardnumber, scadenza = null;
     private JLabel propcardd, cvvv, cardnumberr, scadenzaa, selectMethodPayment, BankTransferHolder, BankTransferIban, BankTransferMotivation = null;
-    private JButton Card, BankTransfer = null;
-    private boolean choose_p, choose_b = false;
+    private JButton Card, BankTransfer, ConfirmP, ConfirmB  = null;
+    private boolean choose_p, choose_b;
 
     @Override
     public void setForm() {
+        choose_p = false;
+        choose_b = false;
         selectMethodPayment = new JLabel("Seleziona metodo di pagamento");
         //Buttons
         Card = new JButton("Carta");
@@ -24,27 +26,51 @@ public class PaymentPage implements Form {
         //SetButtons
         Card.setBounds(250, 100, 70, 30);
         BankTransfer.setBounds(350, 100, 100, 30);
+
+        //set text
+        selectMethodPayment.setBounds(50, 100, 200, 30);
     }
 
     @Override
     public void InitialiateFormIntoFrame(JFrame F) {
-        if (choose_b){
+
             F.add(Card);
             F.add(BankTransfer);
             F.add(selectMethodPayment);
-        } else choose_p = true;
+
 
         //Buttons
         F.setSize(1366, 768);
         F.getContentPane().setBackground(new Color(225,204,204));
 
-
-
         Card.addActionListener(e -> {
             //Remove Comp from BankTransfer
+        if (choose_b){
             F.remove(BankTransferHolder);
             F.remove(BankTransferIban);
             F.remove(BankTransferMotivation);
+            F.remove(ConfirmB);
+            F.repaint();
+        }
+            if(choose_p){
+                //Fields
+                F.remove(propcard);
+                F.remove(cvv);
+                F.remove(cardnumber);
+                F.remove(scadenza);
+
+                //Labels
+                F.remove(propcardd);
+                F.remove(cvvv);
+                F.remove(cardnumberr);
+                F.remove(scadenzaa);
+
+                //
+                F.remove(ConfirmP);
+
+                F.repaint();
+            }
+        choose_p = true;
 
             //Fields
             propcard = new JTextField();
@@ -69,8 +95,10 @@ public class PaymentPage implements Form {
             cvvv.setBounds(50, 200, 70, 30);
             cardnumberr.setBounds(50, 260, 70, 30);
             scadenzaa.setBounds(50, 320, 70, 30);
-            selectMethodPayment.setBounds(50, 100, 200, 30);
 
+            //Button
+            ConfirmP = new JButton("Conferma");
+            ConfirmP.setBounds(70,350,70,30);
 
             //Fields
             F.add(propcard);
@@ -83,6 +111,10 @@ public class PaymentPage implements Form {
             F.add(cvvv);
             F.add(cardnumberr);
             F.add(scadenzaa);
+
+            //Button
+            F.add(ConfirmP);
+
             F.repaint();
         });
 
@@ -99,7 +131,19 @@ public class PaymentPage implements Form {
                 F.remove(cvvv);
                 F.remove(cardnumberr);
                 F.remove(scadenzaa);
-            } else choose_b = true;
+
+                F.remove(ConfirmP);
+
+                F.repaint();
+            }
+            if (choose_b){
+                F.remove(BankTransferHolder);
+                F.remove(BankTransferIban);
+                F.remove(BankTransferMotivation);
+                F.remove(ConfirmB);
+                F.repaint();
+            }
+            choose_b = true;
 
             BankTransferHolder = new JLabel("<html>Nome e Cognome intestario:<br />Nome Struttura</html>");
             BankTransferIban = new JLabel("<html>IBAN:<br />IT00WASD1234567890</html>");
@@ -109,10 +153,14 @@ public class PaymentPage implements Form {
             BankTransferIban.setBounds(50, 220, 100, 80);
             BankTransferMotivation.setBounds(50, 280, 100, 80);
 
+            ConfirmB = new JButton("Conferma");
+            ConfirmB.setBounds(70,350,70,30);
 
             F.add(BankTransferHolder);
             F.add(BankTransferIban);
-            F.add(BankTransferMotivation); F.repaint();
+            F.add(BankTransferMotivation);
+            F.add(ConfirmB);
+            F.repaint();
         });
     }
 }
