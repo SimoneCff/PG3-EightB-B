@@ -25,6 +25,7 @@ public class PownerDBOperations implements DatabaseOperations {
                 if (!result.isLast()) {
                     list.append(",");
                 }
+                return "True";
             }
             System.out.println(list);
             return list.toString();
