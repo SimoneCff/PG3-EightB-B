@@ -18,6 +18,7 @@ public class PclientFactory implements AbstractFactory {
         return switch(type) {
             case "Prenot" -> new PrenotationOne();
             case "Search" -> new RicercaLuogo();
+            case "Mod" -> new ModifyProfile();
             default -> null;
         };
     }

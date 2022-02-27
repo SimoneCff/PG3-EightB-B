@@ -37,46 +37,27 @@ public class PclientFacade {
     }
 
 
-    void Prenot(){
+    public void Prenot(){
         F.getContentPane().removeAll();
         F.repaint();
 
-        JFrame prenotation = new JFrame();
 
         Form prenotationForm = new PrenotationOne();
 
         prenotationForm.setForm();
-        prenotationForm.InitialiateFormIntoFrame(prenotation);
-
-        prenotation.setLayout(null);
-        prenotation.setVisible(true);
-        prenotation.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        prenotationForm.InitialiateFormIntoFrame(F);
     }
 
-    void Search(){
+    public void Search(){
         F.getContentPane().removeAll();
         F.repaint();
 
-        JFrame AreaRicerca = new JFrame();
         Form ricerca = new RicercaLuogo();
         //  Button BenvenutoUser =new WelcomeUser(); DA IMPLEMENTARE
 
-        JLabel immagine = new JLabel();
-        immagine.setIcon(new ImageIcon("C:\\Users\\Giuse\\IdeaProjects\\PG3-EightB-B\\foto_80x80.jpeg"));
-        immagine.setBounds(1000,18,80 ,80);
-        immagine.setVisible(true);
-
-
-        //  BenvenutoUser.setButton();
-        //  BenvenutoUser.InitialiteButtonIntoFrame(AreaRicerca);
 
         ricerca.setForm();
-        ricerca.InitialiateFormIntoFrame(AreaRicerca);
-
-        AreaRicerca.setLayout(null);
-        AreaRicerca.setVisible(true);
-        AreaRicerca.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        AreaRicerca.add(immagine);
+        ricerca.InitialiateFormIntoFrame(F);
     }
 
     public void PrivateArea() {
@@ -119,5 +100,20 @@ public class PclientFacade {
         modifica.InitialiteButtonIntoFrame(F);
         prenota.InitialiteButtonIntoFrame(F);
         booked.InitialiteButtonIntoFrame(F);
+    }
+
+    public void ModRegStr() {
+        F.getContentPane().removeAll();
+        F.repaint();
+
+        Form ModifyStrForm = PCF.makeForm("Mod");
+        Button Annulla = PCF.makeButton("ModBack");
+
+        ModifyStrForm.setForm();
+        ModifyStrForm.InitialiateFormIntoFrame(F);
+
+        Annulla.setButton();
+        Annulla.InitialiteButtonIntoFrame(F);
+
     }
 }
