@@ -104,7 +104,9 @@ public class PrenotationOne implements Form{
             } else {
                 List<String> L =  Arrays.asList(risp.split("-"));
                 int size = L.size();
-                JScrollPane scrollPane = new JScrollPane();
+
+                JPanel x = new JPanel();
+                x.setBounds(300,200,200,40);
 
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
@@ -118,20 +120,20 @@ public class PrenotationOne implements Form{
 
                     JButton regclient = new JButton("Prenota");
 
-                    name.setBounds(300, 70 + (50 * i), 70, 30);
-                    via.setBounds(300, 70 + (50 * i), 70, 30);
-                    telefono.setBounds(300, 70+ (50 * i), 70, 30);
-                    descrizione.setBounds(300, 70 + (50 * i), 70, 30);
-                    service.setBounds(300, 70 + (50 * i), 70, 30);
+                    name.setBounds(0, 70 + (50 * i), 70, 30);
+                    via.setBounds(0, 70 + (50 * i), 70, 30);
+                    telefono.setBounds(0, 70+ (50 * i), 70, 30);
+                    descrizione.setBounds(0, 70 + (50 * i), 70, 30);
+                    service.setBounds(0, 70 + (50 * i), 70, 30);
 
-                    regclient.setBounds(300, 70 + (50 * i), 120, 30);
+                    regclient.setBounds(0, 70 + (50 * i), 120, 30);
 
-                    scrollPane.add(name);
-                    scrollPane.add(via);
-                    scrollPane.add(telefono);
-                    scrollPane.add(descrizione);
-                    scrollPane.add(service);
-                    scrollPane.add(regclient);
+                    x.add(name);
+                    x.add(via);
+                    x.add(telefono);
+                    x.add(descrizione);
+                    x.add(service);
+                    x.add(regclient);
 
                     regclient.addActionListener(new ActionListener() {
                         @Override
@@ -143,9 +145,11 @@ public class PrenotationOne implements Form{
                     });
 
                 }
+                JScrollPane scrollPane = new JScrollPane();
 
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                scrollPane.setViewportView(x);
 
                 F.add(scrollPane);
                 F.repaint();
