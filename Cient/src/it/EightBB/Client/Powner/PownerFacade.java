@@ -195,7 +195,7 @@ public class PownerFacade{
 
         SocketInterface proxy = SocketProxy.getIstance();
         try{
-            proxy.write("Owner,gettura,structure,mail,"+getMail().replaceAll("\\s+",""));
+            proxy.write("Owner,gettura,economic,mail,"+getMail().replaceAll("\\s+",""));
             List<String> L =  Arrays.asList(proxy.read().split("-"));
             System.out.println(L);
             int size = L.size();
