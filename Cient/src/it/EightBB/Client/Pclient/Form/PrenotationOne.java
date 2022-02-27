@@ -100,7 +100,7 @@ public class PrenotationOne implements Form{
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione nona avvenuta", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 List<String> L =  Arrays.asList(risp.split("-"));
-                System.out.println(L);
+                System.out.println(L.get(0)+" "+L.get(1)+L.get(2));
                 int size = L.size();
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
