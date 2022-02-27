@@ -11,6 +11,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/**
+ * implementazione del form di registrazione di una struttura.
+ * il proprietario, accedendo alla sua pagina personale, puo' aggiungere una struttura
+ *inserendo i dati della struttura, come il nome, la posizione, i contatti, e tutti i servizi offerti.
+ * {@param RegisterNewStructure}
+ */
 public class RegisterNewStructure implements Form {
     private static JTextField Name, Address,n_room, telephone, services, description = null;
     private JLabel Namee, Addresss, n_roomm, telephonee, servicess, descriptionn = null;

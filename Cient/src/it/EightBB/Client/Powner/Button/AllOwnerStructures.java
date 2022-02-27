@@ -6,6 +6,11 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
+
+/**
+ * implementazione del tasto di visualizzazione di tutte le strutture appartenenti ad un proprietario
+ * {@param AllOwnerStructures}
+ */
 public class AllOwnerStructures implements Button{
     private JButton AllStructures=null;
     public void setButton(){

@@ -11,7 +11,12 @@ import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
-
+/**
+ * implementazione del form per l'invio dei documenti realativi alla struttura.
+ * I documenti sono destinati alla questura e all'ente del turismo.
+ * {@param DocumentTourism}
+ *
+ */
 public class DocumentTourism extends Component implements Form {
     private JLabel seleziona = null;
     private JButton selezionaFile = null;
@@ -35,6 +40,7 @@ public class DocumentTourism extends Component implements Form {
         F.getContentPane().setBackground(new Color(225,204,204));
 
     }
+    
     public void selezionaFile(){
         JFileChooser chooser = new JFileChooser();
         //Setting chooser options

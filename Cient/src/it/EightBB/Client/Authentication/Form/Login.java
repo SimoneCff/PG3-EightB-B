@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- *Implementazione della fase di Login per accedere al sistema
+ *implementazione della fase di Login per accedere al sistema
  * {@param Login}
  */
 

@@ -5,6 +5,12 @@ import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
 
+/**
+ * implementazione del tasto di Modifica Profilo dell'utente proprietario
+ * il tasto e' presente nella pagine personale dell'utente proprietario
+ * consente di modificare i dati personali del proprietario
+ * {@param ModifyProfileO}
+ */
 public class ModifyProfileO implements Button{
     private JButton ModifyP = null;
     @Override

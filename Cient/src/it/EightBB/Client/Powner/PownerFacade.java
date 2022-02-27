@@ -23,6 +23,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * facade del PClient. gestisce e maschera le complessita' del sistema
+ * esso si interfaccia col visitor
+ * {@param PownerFacade}
+ */
 public class PownerFacade{
     private static PownerFacade Instance;
     private JFrame F;

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Implementazione della fase di registrazione dell'utente Cliente nel sistema
+ * implementazione della fase di registrazione dell'utente Cliente nel sistema
  * {@param Register}
  */
 public class Register implements Form, Cloneable {

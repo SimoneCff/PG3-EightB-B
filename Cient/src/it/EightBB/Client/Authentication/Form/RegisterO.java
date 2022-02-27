@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 /**
  * implementazione della fase di registrazione dell'utente Proprietario nel sistema
- * {@param Register0)
+ * {@param RegisterO}
  */
 public class RegisterO extends Register {
     private static JTextField Cf, Piva = null;

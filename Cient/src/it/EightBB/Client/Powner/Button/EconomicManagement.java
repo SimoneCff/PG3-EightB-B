@@ -6,6 +6,13 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
+
+/**
+ * implementazione del tasto di visualizzazione della pagina della gestione economica di una struttura
+ * utilizzando il tasto, il proprietario verra' indirizzato in questa nuova pagina
+ * verra' visualizzato il saldo di entrate ed uscite di quella determinata struttura
+ * {@param EconomicManagement}
+ */
 public class EconomicManagement implements Button{
     private JButton ManageEconomy=null;
     public void setButton(){

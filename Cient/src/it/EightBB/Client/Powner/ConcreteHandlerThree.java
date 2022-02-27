@@ -9,6 +9,11 @@ import it.EightBB.Client.Powner.Form.RegisterNewStructure;
 
 import java.awt.event.ActionEvent;
 
+/**
+ * handler del sottosistema di Powner. viene utilizzato per gli Action Event riguardante javaswing.
+ * viene utilizzato per i bottoni e per i form.
+ * {@param ConcreteHandlerThree}
+ */
 public class ConcreteHandlerThree extends ActionHandler {
     private static ActionHandler Instance;
 

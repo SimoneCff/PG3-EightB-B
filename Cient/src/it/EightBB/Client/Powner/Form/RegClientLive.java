@@ -10,6 +10,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/**
+ * implementazione del form di Registrazione del cliente all'arrivo in struttura.
+ * il proprietario, nella pagina dedicata, immette i dati del cliente, e procede,
+ * alla comparazione e verifica dei dati, affinche' risultino uguali a quelli della prenotazione.
+ * {@param RegisterClientLive}
+ */
 public class RegClientLive implements Form {
     private static JTextField Name, Surname, Cf = null;
     private JLabel Namee, Surnamee, Cff = null;

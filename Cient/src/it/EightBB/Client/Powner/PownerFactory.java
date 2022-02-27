@@ -8,6 +8,10 @@ import it.EightBB.Client.Powner.Button.*;
 import it.EightBB.Client.Powner.Form.*;
 import it.EightBB.Client.Powner.TextArea.PrivateOwner;
 
+/**
+ * classe factory di AbstractFactory che viene utilizzato per creare le componenti del client.
+ * {@param PownerFactory}
+ */
 public class PownerFactory implements AbstractFactory {
     @Override
     public Form makeForm(String type) {
@@ -21,6 +25,10 @@ public class PownerFactory implements AbstractFactory {
         };
     }
 
+    /**
+     * {@param type}
+     * @return Creazione della classe richiesta.
+     */
     @Override
     public Button makeButton(String type) {
         return switch (type){
@@ -35,6 +43,10 @@ public class PownerFactory implements AbstractFactory {
 
     }
 
+    /**
+     * {@param type}
+     * @return Creazione della classe richiesta
+     */
     @Override
     public TextGroup makeText(String type) {
         return switch (type){

@@ -5,6 +5,12 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
+
+/**
+ * implementazione del tasto di accesso alla sezione di gestione documenti per gli enti nazionali.
+ * il tasto e' presente nell'area privata del proprietario.
+ * {@param PrivateAreaEntities}
+ */
 public class PrivateAreaEntities implements Button{
     private JButton PrivateEntities=null;
     public void setButton(){

@@ -7,6 +7,13 @@ import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * implementazione del form che consente di modifcare i dati di una determinata struttura
+ * l'utente Proprietario, accede alla sua pagina personale e seleziona il button Modifica Profilo
+ * una volta nella pagina di modifica, il proprietario puo' modificare i dati della struttura
+ * come nome, indirizo, servizi offerti, e la descrizione della struttura.
+ * {@param ModifyRegisteredStructure}
+ */
 public class ModifyRegisteredStructure implements Form {
     private JTextField Name, Address, n_room, telephone, services, description = null;
     private JLabel Namee, Addresss, n_roomm, telephonee, servicess, descriptionn = null;
