@@ -150,9 +150,9 @@ public class PownerFacade{
             int size = L.size();
             for(int i = 0; i<size; i++){
                 JLabel name = new JLabel(L.get(i));
-                JButton regclient = new JButton();
-                name.setBounds(50, 100, 70, 30);
-                regclient.setBounds(250, 100+i, 70 ,30);
+                JButton regclient = new JButton("Registra cliente");
+                name.setBounds(50, 100+(50*i), 70, 30);
+                regclient.setBounds(250, 100+(50*i), 120 ,30);
 
                 F.add(name);
                 F.add(regclient);
