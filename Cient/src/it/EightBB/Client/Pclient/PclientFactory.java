@@ -5,6 +5,7 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
 import it.EightBB.Client.Pclient.Button.BookedStructures;
+import it.EightBB.Client.Pclient.Button.GoBackC;
 import it.EightBB.Client.Pclient.Button.ModifyProfileC;
 import it.EightBB.Client.Pclient.Button.Prenota;
 import it.EightBB.Client.Pclient.Form.ModifyProfile;
@@ -31,7 +32,7 @@ public class PclientFactory implements AbstractFactory {
             case "Mod" -> new ModifyProfileC();
             case "Prenota" -> new Prenota();
             case "Booked" -> new BookedStructures();
-            case "ModBack" -> new GoBackO();
+            case "ModBack" -> new GoBackC();
             default -> null;
         };
     }

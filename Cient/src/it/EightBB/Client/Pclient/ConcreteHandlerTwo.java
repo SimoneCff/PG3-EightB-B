@@ -21,7 +21,6 @@ public class ConcreteHandlerTwo extends ActionHandler{
         if (e.getActionCommand().contains("Client")){
             if (e.getActionCommand().contains("B")) {
                 if(e.getActionCommand().contains("MdBack")){
-                    System.out.println("ao");
                     ClientVisitor.getInstance().visitPclient("PrivateArea",null);
             } else if (e.getActionCommand().contains("Mod")){
                     ClientVisitor.getInstance().visitPclient("Modify",null);
