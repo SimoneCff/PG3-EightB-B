@@ -44,7 +44,7 @@ public class RegClientLive implements Form {
         Conf.setBounds(50, 280, 100, 30);
 
         Conf.addActionListener(ConcreteHandlerThree.getInstance());
-        Conf.setActionCommand("Owner-BFORM-Client");
+        Conf.setActionCommand("Owner-FORM-Client");
     }
 
     @Override
