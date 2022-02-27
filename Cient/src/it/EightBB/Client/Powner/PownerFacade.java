@@ -198,19 +198,14 @@ public class PownerFacade{
         SocketInterface proxy = SocketProxy.getIstance();
         try{
             proxy.write("Owner,gettura,economic,mail,"+getMail().replaceAll("\\s+",""));
-            List<String> L =  Arrays.asList(proxy.read().split("-"));
-            for (int j = 0; j<L.size(); j++){
-                if (L.get(j).isBlank()){
-                    L.remove(j);
-                }
-            }
-            System.out.println(L);
+            List<String> L =  Arrays.asList(proxy.read().split("-"));;
             int size = L.size();
 
             for(int i = 0; i<size; i++) {
-                String[] label = L.get(i).split(",");
-                JLabel type = new JLabel(label[0]);
-                JLabel value = new JLabel(label[1]);
+                List<String> label = List.of(L.get(i).split(","));
+                System.out.println(label);
+                JLabel type = new JLabel(label.get(0));
+                JLabel value = new JLabel(label.get(1));
                 type.setBounds(50, 100+(50*i), 100, 30);
                 value.setBounds(150, 100+(50*i), 100, 30);
 
