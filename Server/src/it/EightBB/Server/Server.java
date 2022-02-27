@@ -10,14 +10,21 @@ public class Server {
     public static void main(String[] args) {
         DatabaseProxy DB = DatabaseProxy.getInstance();
         DB.connect();
+        //Setting Socket DB
         SocketInitial Proxy = null;
         Proxy = new SocketInitial(5432);
+        //Setting Socket for File Transfer
+        SocketInitial ProxF = new SocketInitial(5430);
         setHandler();
         //Setting Hanlder
 
         while(true){
-            Proxy.setSocket();
-            new EchoThread(Proxy).start();
+            if (Proxy.setSocket()){
+                new EchoThread(Proxy).start();
+            }
+            if (ProxF.setSocket()){
+                new FileThread(Proxy).start();
+            }
         }
     }
 
