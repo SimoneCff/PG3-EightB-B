@@ -99,7 +99,7 @@ public class PrenotationOne implements Form{
             if (risp.equals("False")){
                 JOptionPane.showMessageDialog(new JFrame(), "Error, Registrazione nona avvenuta", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                List<String> L =  Arrays.asList(risp.split(","));
+                List<String> L =  Arrays.asList(risp.split("-"));
                 System.out.println(L);
                 int size = L.size();
                 for(int i = 0; i<size; i++) {

@@ -29,21 +29,22 @@ public class PclientDBOperations implements DatabaseOperations {
             String[] bn = list.toString().split(",");
             StringBuilder xq = new StringBuilder();
             ResultSet ara = statement.executeQuery("select nome,via,telefono,descrizione,service from structure");
-            while (result.next()) {
+            while (ara.next()) {
                 boolean azz = true;
                 for (int z = 0; z < bn.length; z++) {
-                    if (result.getString(1).equals(bn[z])) {
+                    if (ara.getString(1).equals(bn[z])) {
                         azz = false;
                     }
                 }
                     if (azz){
-                    xq.append(result.getString(1)+","+result.getString(2)+","+result.getString(3)
-                            +","+result.getString(4)+","+result.getString(5));}
-                    if (!result.isLast()) {
-                        list.append(",");
+                    xq.append(ara.getString(1)+","+ara.getString(2)+","+ara.getString(3)
+                            +","+ara.getString(4)+","+ara.getString(5));}
+                    if (!ara.isLast()) {
+                        list.append("-");
                     }
                 rew = xq.toString();
                 }
+            System.out.println(rew);
             } return rew;
     }
 
