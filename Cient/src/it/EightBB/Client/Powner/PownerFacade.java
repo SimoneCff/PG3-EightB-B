@@ -5,6 +5,7 @@ package it.EightBB.Client.Powner;
 import it.EightBB.Client.CEssentials.FactoryMaker;
 import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Client;
+import it.EightBB.Client.ClientVisitor;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Button;
@@ -165,6 +166,15 @@ public class PownerFacade{
                         F.repaint();
 
                         RegClientLive cli = new RegClientLive();
+                        JButton Back = new JButton("Indietro");
+                        Back.setBounds(250,250,100,20);
+                        F.add(Back);
+                        Back.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                ClientVisitor.getInstance().visitPowner("Client",null);
+                            }
+                        });
                         cli.setName(L.get(finalI));
 
                         cli.setForm();
