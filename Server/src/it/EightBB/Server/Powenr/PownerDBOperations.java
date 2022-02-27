@@ -16,13 +16,14 @@ public class PownerDBOperations implements DatabaseOperations {
     public String getQuery(String table, Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();
         try {
-            String q = "select nome from structure where mail = '"+query.getAttributes().get(1)+"'";
+            String q = "select nome from structure where mail = '"+query.getAttributes().get(0)+"'";
             StringBuilder list = new StringBuilder();
             Statement statement = Q.createStatement();
             ResultSet result = statement.executeQuery(q);
             while (result.next()){
                 list.append(result.getString(1));
             }
+            System.out.println(list);
             return list.toString();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
