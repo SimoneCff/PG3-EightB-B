@@ -161,7 +161,6 @@ public class PownerFacade{
                     public void actionPerformed(ActionEvent e) {
                         F.getContentPane().removeAll();
                         F.repaint();
-
                         RegClientLive cli = new RegClientLive();
                         JButton Back = new JButton("Indietro");
                         Back.setBounds(250,300,100,20);

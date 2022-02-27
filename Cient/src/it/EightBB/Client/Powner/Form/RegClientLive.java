@@ -70,7 +70,7 @@ public class RegClientLive implements Form {
     public static void getTextAndSendToDB() {
         SocketInterface SP = SocketProxy.getIstance();
         try {
-            String req="Owner,RegCleint,client_live,nome,"+name+",name_p,"+Name.getText()+",surname_p,"
+            String req="Owner,RegClient,client_live,nome,"+name+",name_p,"+Name.getText()+",surname_p,"
                     +Surname.getText()+",CF,"+Cf.getText();
             SP.write(req);
             String res =SP.read();
