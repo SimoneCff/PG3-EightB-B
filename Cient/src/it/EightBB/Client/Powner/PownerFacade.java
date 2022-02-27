@@ -198,9 +198,9 @@ public class PownerFacade{
         SocketInterface proxy = SocketProxy.getIstance();
         try{
             proxy.write("Owner,gettura,economic,mail,"+getMail().replaceAll("\\s+",""));
-            List<String> L =  Arrays.asList(proxy.read().split("-"));;
+            List<String> L = Collections.singletonList(" ," + Arrays.asList(proxy.read().split("-")));;
             int size = L.size();
-            L.add(0," ,");
+
 
             for(int i = 0; i<size; i++) {
                 List<String> label = List.of(L.get(i).split(","));
