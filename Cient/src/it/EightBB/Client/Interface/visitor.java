@@ -13,6 +13,7 @@ public interface visitor {
     void visitPclient(String where, String text);
     void visitPowner(String where, String text);
     void setHandler();
+    public PrenotationMemento getMeme();
 
     void setMeme(PrenotationMemento mori);
 }

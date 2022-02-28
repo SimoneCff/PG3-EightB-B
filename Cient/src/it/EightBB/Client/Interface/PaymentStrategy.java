@@ -4,5 +4,5 @@ import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
 
 public interface PaymentStrategy {
     public void CollectMemento(PrenotationMemento mem);
-    public void SetpayToDB();
+    public String SetpayToDB(String payment);
 }

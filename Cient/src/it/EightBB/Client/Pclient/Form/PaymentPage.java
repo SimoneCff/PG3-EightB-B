@@ -1,7 +1,12 @@
 package it.EightBB.Client.Pclient.Form;
 
 import it.EightBB.Client.Authentication.ConcreteHanlderOne;
+import it.EightBB.Client.ClientVisitor;
+import it.EightBB.Client.Interface.PaymentStrategy;
 import it.EightBB.Client.Interface.Template.Form;
+import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
+import it.EightBB.Client.Pclient.PclientFacade;
+import it.EightBB.Client.Pclient.Strategy.PayCardStrategy;
 
 import javax.swing.*;
 import java.awt.*;
@@ -102,12 +107,19 @@ public class PaymentPage implements Form {
             ConfirmP.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
+                    PrenotationMemento mem = ClientVisitor.getInstance().getMeme();
+                    PaymentStrategy cardS = new PayCardStrategy();
+                    cardS.CollectMemento(mem);
+                    String res = cardS.SetpayToDB(propcard.getText()+" "+cvv.getText()+" "+cardnumber.getText()
+                            +" "+scadenza.getText());
+                    if (res.equals("False")){
+                        JOptionPane.showMessageDialog(new JFrame(), "Error, Pagamento non riuscito", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Fatto!, Pagamento Effettuato", "Success",JOptionPane.INFORMATION_MESSAGE);
+                        ClientVisitor.getInstance().visitPclient("PrivateArea",null);
+                    }
                 }
             });
-
-
-
             //Fields
             F.add(propcard);
             F.add(cvv);
@@ -163,6 +175,23 @@ public class PaymentPage implements Form {
 
             ConfirmB = new JButton("Conferma");
             ConfirmB.setBounds(70,350,70,30);
+
+            ConfirmB.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    PrenotationMemento mem = ClientVisitor.getInstance().getMeme();
+                    PaymentStrategy cardS = new PayCardStrategy();
+                    cardS.CollectMemento(mem);
+                    String res = cardS.SetpayToDB("ITXPROVA");
+                    if (res.equals("False")){
+                        JOptionPane.showMessageDialog(new JFrame(), "Error, Pagamento non riuscito", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Fatto!, Pagamento Effettuato", "Success",JOptionPane.INFORMATION_MESSAGE);
+                        ClientVisitor.getInstance().visitPclient("PrivateArea",null);
+                    }
+                }
+            });
+
 
             F.add(BankTransferHolder);
             F.add(BankTransferIban);

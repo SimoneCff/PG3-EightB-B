@@ -25,7 +25,8 @@ public class PrenotationMemento implements Memento {
     }
 
     @Override
-    public void restoreState() {
-
+    public String restoreState() {
+        return "name,"+nome+",mail,"+mail+",n_person,"+n_persone+",n_children,"+n_children+"data_start"+data_start+
+                ",data_end,"+data_end+",";
     }
 }
