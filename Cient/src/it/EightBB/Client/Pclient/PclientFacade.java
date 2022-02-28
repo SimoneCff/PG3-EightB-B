@@ -154,7 +154,7 @@ public class PclientFacade {
 
         SocketInterface proxy = SocketProxy.getIstance();
         try{
-            proxy.write("Client,getk,booking,mail,"+getMail().trim());
+            proxy.write("Client,getk,booking1,mail,"+getMail().trim());
             String q =" ," + proxy.read();
             List<String> L = List.of(q.split("-"));
             int size = L.size();

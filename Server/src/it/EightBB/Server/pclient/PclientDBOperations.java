@@ -54,6 +54,18 @@ public class PclientDBOperations implements DatabaseOperations {
                 list.append(result.getString(1));
                 list.append(",");
                 list.append(result.getString(2));
+                list.append(",");
+                list.append(result.getString(3));
+                list.append(",");
+                list.append(result.getString(4));
+                list.append(",");
+                list.append(result.getString(5));
+                list.append(",");
+                list.append(result.getString(6));
+                list.append(",");
+                list.append(result.getString(7));
+                list.append(",");
+                list.append(result.getString(8));
                 if (!result.isLast()) {
                     list.append("-,");
                 }
