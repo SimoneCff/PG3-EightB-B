@@ -45,12 +45,60 @@ public class PclientDBOperations implements DatabaseOperations {
                 rew = xq.toString();
                 }
             System.out.println(rew);
-            } return rew;
+            } else {
+            String q = "select * from booking where mail ='"+query.getAttributes().get(0)+"'";
+            StringBuilder list = new StringBuilder();
+            Statement statement = Q.createStatement();
+            ResultSet result = statement.executeQuery(q);
+            while (result.next()){
+                list.append(result.getString(1));
+                list.append(",");
+                list.append(result.getString(2));
+                list.append(",");
+                list.append(result.getString(3));
+                list.append(",");
+                list.append(result.getString(4));
+                list.append(",");
+                list.append(result.getString(5));
+                list.append(",");
+                list.append(result.getString(6));
+                list.append(",");
+                list.append(result.getString(7));
+                list.append(",");
+                list.append(result.getString(8));
+                if (!result.isLast()) {
+                    list.append("-,");
+                }
+            }
+            System.out.println(list);
+            rew = list.toString();
+        }
+        return rew;
     }
 
     @Override
     public String AddQuery(String table, Query query) throws SQLException {
-        return null;
+        Connection Q = DatabaseProxy.getInstance().getConnect();
+        try {
+            StringBuilder q;
+            q = new StringBuilder("insert into " + table + " values ('" + query.getAttributes().get(0) + "',");
+            for (int i = 1; i < query.getAttributes().size(); i++) {
+                q.append("'");
+                q.append(query.getAttributes().get(i));
+                q.append("'");
+                if (i < query.getAttributes().size() - 1) {
+                    q.append(",");
+                }
+            }
+            q.append(");");
+            System.out.println(q.toString());
+            Statement statement = Q.createStatement();
+            statement.executeUpdate(q.toString());
+            return "True";
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return "False";
+        }
     }
 
     @Override

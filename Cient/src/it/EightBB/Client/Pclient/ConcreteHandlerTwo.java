@@ -27,6 +27,8 @@ public class ConcreteHandlerTwo extends ActionHandler{
                     ClientVisitor.getInstance().visitPclient("Modify",null);
                 } else if (e.getActionCommand().contains("Prenota")){
                     ClientVisitor.getInstance().visitPclient("Prenota",null);
+                } else if (e.getActionCommand().contains("Booked")){
+                    ClientVisitor.getInstance().visitPclient("Booked",null);
                 }
             }else if (e.getActionCommand().contains("FORM")) {
                 if (e.getActionCommand().contains("Mod")) {

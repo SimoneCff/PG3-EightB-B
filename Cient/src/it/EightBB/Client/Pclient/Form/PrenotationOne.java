@@ -19,9 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PrenotationOne implements Form{
-    private JTextField research, n_adults, n_childrens = null;
-    private JTextField StartDate = null;
-    private JTextField EndDate = null;
+    private JTextField research;
+    private static JTextField n_adults;
+    private static JTextField n_childrens = null;
+    private static JTextField StartDate = null;
+    private static JTextField EndDate = null;
     private static JLabel researchh, n_adultss, n_childrenss, StartDatee, EndDatee = null;
     private JButton ConfBt = null;
     private static JFrame F;
@@ -85,16 +87,16 @@ public class PrenotationOne implements Form{
         F.add(EndDatee);
 
         F.add(ConfBt);
-        F.setSize(1366, 768);
+        F.setSize(1920, 700);
         F.getContentPane().setBackground(new Color(225,204,204));
     }
 
     public static void getFormandSenditToDB(){
         PrenotationMemento Mori = PrenotationMemento.getIstance();
-        Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adultss.getText(), n_childrenss.getText(),
-               StartDatee.getText(), EndDatee.getText());
+        Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adults.getText(), n_childrens.getText(),
+               StartDate.getText(), EndDate.getText());
         try {
-            String req = "Client,PrenotOne,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
+            String req = "Client,One,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
                     StartDatee.getText() + ",date_end," + EndDatee.getText();
             SocketInterface SP = SocketProxy.getIstance();
             SP.write(req);
@@ -104,6 +106,10 @@ public class PrenotationOne implements Form{
             } else {
                 List<String> L =  Arrays.asList(risp.split("-"));
                 int size = L.size();
+
+                JPanel x = new JPanel();
+                x.setBounds(600,100,1300,450);
+
                 for(int i = 0; i<size; i++) {
                     String[] label = L.get(i).split(",");
                     System.out.println(Arrays.toString(label));
@@ -116,20 +122,20 @@ public class PrenotationOne implements Form{
 
                     JButton regclient = new JButton("Prenota");
 
-                    name.setBounds(50, 100 + (50 * i), 70, 30);
-                    via.setBounds(50, 120 + (50 * i), 70, 30);
-                    telefono.setBounds(50, 140+ (50 * i), 70, 30);
-                    descrizione.setBounds(50, 160 + (50 * i), 70, 30);
-                    service.setBounds(50, 180 + (50 * i), 70, 30);
+                    name.setBounds(150, 70 + (50 * i), 110, 30);
+                    via.setBounds(350, 70 + (50 * i), 120, 30);
+                    telefono.setBounds(500, 70+ (50 * i), 70, 30);
+                    descrizione.setBounds(650, 70 + (50 * i), 200, 30);
+                    service.setBounds(1100, 70 + (50 * i), 200, 30);
 
-                    regclient.setBounds(250, 200 + (50 * i), 120, 30);
+                    regclient.setBounds(0, 70 + (50 * i), 120, 30);
 
-                    F.add(name);
-                    F.add(via);
-                    F.add(telefono);
-                    F.add(descrizione);
-                    F.add(service);
-                    F.add(regclient);
+                    x.add(name);
+                    x.add(via);
+                    x.add(telefono);
+                    x.add(descrizione);
+                    x.add(service);
+                    x.add(regclient);
 
                     regclient.addActionListener(new ActionListener() {
                         @Override
@@ -141,6 +147,13 @@ public class PrenotationOne implements Form{
                     });
 
                 }
+                x.repaint();
+                JScrollPane scrollPane = new JScrollPane(x,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                scrollPane.setPreferredSize(x.getPreferredSize());
+
+                F.add(scrollPane);
+                F.add(x);
+                F.repaint();
             }
         } catch (IOException e) {
             e.printStackTrace();

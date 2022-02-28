@@ -1,7 +1,9 @@
 package it.EightBB.Client.Pclient;
 
 import it.EightBB.Client.CEssentials.FactoryMaker;
+import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.Interface.Factory.AbstractFactory;
+import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Interface.Template.TextGroup;
@@ -9,6 +11,8 @@ import it.EightBB.Client.Pclient.Form.PrenotationOne;
 import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 
 import javax.swing.*;
+import java.io.IOException;
+import java.util.List;
 
 public class PclientFacade {
     private static PclientFacade Instance;
@@ -138,5 +142,54 @@ public class PclientFacade {
 
         PayForm.setForm();
         PayForm.InitialiateFormIntoFrame(F);
+    }
+
+    public void Booked() {
+        F.getContentPane().removeAll();
+        F.repaint();
+        Button Annulla = PCF.makeButton("ModBack");
+
+        Annulla.setButton();
+        Annulla.InitialiteButtonIntoFrame(F);
+
+        SocketInterface proxy = SocketProxy.getIstance();
+        try{
+            proxy.write("Client,getk,booking1,mail,"+getMail().trim());
+            String q =" ," + proxy.read();
+            List<String> L = List.of(q.split("-"));
+            int size = L.size();
+            for(int i = 0; i<size; i++) {
+                String[] label = L.get(i).split(",");
+
+                JLabel name = new JLabel(label[1]);
+                JLabel n_person = new JLabel(label[2]);
+                JLabel n_child = new JLabel(label[3]);
+                JLabel date_start = new JLabel(label[4]);
+                JLabel date_end = new JLabel(label[5]);
+                JLabel pay_type = new JLabel(label[6]);
+                JLabel  pay_data = new JLabel(label[7]);
+
+                name.setBounds(50, 100+(50*i), 100, 30);
+                n_person.setBounds(150, 100+(50*i), 100, 30);
+                n_child.setBounds(250, 100+(50*i), 100, 30);
+                date_start.setBounds(350, 100+(50*i), 100, 30);
+                date_end.setBounds(450, 100+(50*i), 100, 30);
+                pay_type.setBounds(550, 100+(50*i), 100, 30);
+                pay_data.setBounds(650, 100+(50*i), 100, 30);
+
+                F.add(name);
+                F.add(n_person);
+                F.add(n_person);
+                F.add(n_child);
+                F.add(date_start);
+                F.add(date_end);
+                F.add(pay_type);
+                F.add(pay_data);
+            }
+
+            F.repaint();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

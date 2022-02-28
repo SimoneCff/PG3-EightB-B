@@ -62,6 +62,7 @@ private JFrame F;
         Meme = meme;
     }
 
+    @Override
     public PrenotationMemento getMeme() {
         return Meme;
     }
@@ -80,6 +81,8 @@ private JFrame F;
     }
 
 
+
+
     @Override
     public void visitPclient(String where, String text) {
         PclientFacade PCF = PclientFacade.getInstance();
@@ -92,6 +95,7 @@ private JFrame F;
             case "Modify" -> PCF.ModRegStr();
             case "Prenota" -> PCF.Prenotation();
             case "Payment" -> PCF.Payment();
+            case "Booked" -> PCF.Booked();
         }
 
     }
