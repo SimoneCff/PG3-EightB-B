@@ -7,6 +7,11 @@ import it.EightBB.Server.Proxy.SocketInitialService;
 
 import java.sql.SQLException;
 
+/**
+ * implementazione dell'handler del chain of responsability
+ * si occupa delle operazioni di database
+ * {@param AuthenticationChandler}
+ */
 public class AuthenticationChandler extends Handler {
     private static Handler instance;
 
@@ -16,6 +21,13 @@ public class AuthenticationChandler extends Handler {
         } return instance;
     }
 
+    /**
+     *
+     * @param request richiesta dell'handler basato sul socket
+     * @param socket gestione delle operazioni del database
+     * @return si ottiene il risultato della richiesta al database
+     * @throws SQLException Eccezzione riguardante l'imput inserito ed il suo eventuale output
+     */
     @Override
     public String handlerRequest(Request request, SocketInitialService socket) throws SQLException {
         String Req = null;

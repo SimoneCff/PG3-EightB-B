@@ -9,9 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * implementazione del sottosistema Authentication
+ * permette il collegamente al database per l'autenticazione dell'utente
+ * {@param AuthDBOperation}
+ */
 public class AuthDBOperations implements DatabaseOperations {
     private static AuthDBOperations Instance;
 
+    /**
+     * @return Instance Inizializzazione dell'autenticazione
+     */
     public static DatabaseOperations getInstance(){
         if (Instance == null) {
             Instance = new AuthDBOperations();
@@ -19,6 +27,11 @@ public class AuthDBOperations implements DatabaseOperations {
         return Instance;
     }
 
+    /**
+     * @param table tabella di riferimento del database
+     * @param query query da efffuttare nel database
+     * @return Ritorno al client in funzione se il return sia true o false, o in alternativa produce una lista
+     */
     @Override
     public String getQuery(String table, Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();
@@ -62,6 +75,12 @@ public class AuthDBOperations implements DatabaseOperations {
         return null;
     }
 
+    /**
+     *
+     * @param table tabella di riferimento del database
+     * @param query query da effettuare nel database
+     * @return Ritorno al client in funzione se il return sia true o false, o in alternativa produce una lista
+     */
     @Override
     public String AddQuery  (String table,Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();
@@ -98,6 +117,11 @@ public class AuthDBOperations implements DatabaseOperations {
 
     }
 
+    /**
+     * @param table tabella di riferimento nel database
+     * @param id id di riferimento per l'autenticazione nel database
+     * @return Ritorno al client in funzione se il return sia true o false
+     */
     @Deprecated
     public boolean deleteQueryFromTable(String table, String id) {
         return false;
