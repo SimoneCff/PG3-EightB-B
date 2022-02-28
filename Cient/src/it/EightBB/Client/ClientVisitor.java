@@ -95,6 +95,7 @@ private JFrame F;
             case "Modify" -> PCF.ModRegStr();
             case "Prenota" -> PCF.Prenotation();
             case "Payment" -> PCF.Payment();
+            case "Booked" -> PCF.Booked();
         }
 
     }

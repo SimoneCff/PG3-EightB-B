@@ -1,6 +1,7 @@
 /** Bottone per visualizzare le prenotazioni effettuate dal cliente*/
 package it.EightBB.Client.Pclient.Button;
 import it.EightBB.Client.Interface.Template.Button;
+import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 
 import javax.swing.*;
 public class BookedStructures implements Button{
@@ -13,6 +14,8 @@ public class BookedStructures implements Button{
 
         //set pos
         Bookedstr.setBounds(50,295,100,30);
+        Bookedstr.setActionCommand("Client-B-Booked");
+        Bookedstr.addActionListener(ConcreteHandlerTwo.getInstance());
     }
 
     @Override
