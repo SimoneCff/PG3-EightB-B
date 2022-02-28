@@ -13,7 +13,7 @@ public class PrenotationMemento implements Memento {
     }
 
     public void setPrenotationMemento(String mail, String n_persone, String n_children, String data_start, String date_end){
-        this.mail = mail;
+        this.mail = mail.trim();
         this.n_persone = n_persone;
         this.n_children = n_children;
         this.data_start = data_start;
