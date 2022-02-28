@@ -101,10 +101,6 @@ public class PclientDBOperations implements DatabaseOperations {
         }
     }
 
-    @Override
-    public boolean deleteQueryFromTable(String table, String id) {
-        return false;
-    }
 
     public String modifyQueryFromTable(String table, Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();

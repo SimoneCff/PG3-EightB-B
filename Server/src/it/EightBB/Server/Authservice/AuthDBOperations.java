@@ -117,15 +117,6 @@ public class AuthDBOperations implements DatabaseOperations {
 
     }
 
-    /**
-     * @param table tabella di riferimento nel database
-     * @param id id di riferimento per l'autenticazione nel database
-     * @return Ritorno al client in funzione se il return sia true o false
-     */
-    @Deprecated
-    public boolean deleteQueryFromTable(String table, String id) {
-        return false;
-    }
 
     @Deprecated
     public String modifyQueryFromTable(String table, Query query) {

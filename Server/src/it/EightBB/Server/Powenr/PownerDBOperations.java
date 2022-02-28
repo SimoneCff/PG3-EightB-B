@@ -76,11 +76,6 @@ public class PownerDBOperations implements DatabaseOperations {
         }
     }
 
-    @Deprecated
-    public boolean deleteQueryFromTable(String table, String id) {
-        return false;
-    }
-
     @Override
     public String modifyQueryFromTable(String table, Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();

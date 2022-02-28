@@ -9,6 +9,8 @@ import it.EightBB.Server.HandlingSubSystem.Request;
 import it.EightBB.Server.Powenr.PownerChandler;
 import it.EightBB.Server.pclient.pclientCHandler;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,9 +18,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Server {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         DatabaseProxy DB = DatabaseProxy.getInstance();
         DB.connect();
         //Setting Socket DB
@@ -84,6 +87,7 @@ public class Server {
             e.printStackTrace();
             return;
         }
+
     }
 
     public static void setHandler(){
@@ -99,5 +103,4 @@ public class Server {
     }
 
 }
-
 
