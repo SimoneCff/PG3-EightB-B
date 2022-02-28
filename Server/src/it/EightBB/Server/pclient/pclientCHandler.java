@@ -23,6 +23,9 @@ public class pclientCHandler extends Handler {
            if (request.getRequest().equals("Modify")){Req= PC.modifyQueryFromTable(request.getData().getTable(), request.getData());}
            else if (request.getRequest().equals("One")) {Req = PC.getQuery(request.getData().getTable(), request.getData());}
            else if(request.getRequest().equals("Prenot")){Req = PC.AddQuery(request.getData().getTable(), request.getData());}
+           else if (request.getRequest().equals("getk")){
+               Req = PC.getQuery(request.getData().getTable(), request.getData());
+           }
         }else Req = successor.handlerRequest(request);
         return Req;
     }

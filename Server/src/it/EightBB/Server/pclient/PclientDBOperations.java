@@ -45,7 +45,23 @@ public class PclientDBOperations implements DatabaseOperations {
                 rew = xq.toString();
                 }
             System.out.println(rew);
-            } return rew;
+            } else {
+            String q = "select * from booking where mail ='"+query.getAttributes().get(0)+"'";
+            StringBuilder list = new StringBuilder();
+            Statement statement = Q.createStatement();
+            ResultSet result = statement.executeQuery(q);
+            while (result.next()){
+                list.append(result.getString(1));
+                list.append(",");
+                list.append(result.getString(2));
+                if (!result.isLast()) {
+                    list.append("-,");
+                }
+            }
+            System.out.println(list);
+            rew = list.toString();
+        }
+        return rew;
     }
 
     @Override
