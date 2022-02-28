@@ -12,7 +12,7 @@ import java.awt.*;
 /**
  * classe del sottosistema Facade che implementa
  * le funzioni di Visitors per l'accesso al sottosistema Authentication
- * {@param AuthFacade}
+ * {@param AuthFacade} parametro di implementazione per la classe AuthFacade
  */
 public class AuthFacade {
     private static AuthFacade Instance;

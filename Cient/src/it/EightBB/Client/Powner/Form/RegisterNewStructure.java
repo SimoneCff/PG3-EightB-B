@@ -15,7 +15,7 @@ import java.io.IOException;
  * implementazione del form di registrazione di una struttura.
  * il proprietario, accedendo alla sua pagina personale, puo' aggiungere una struttura
  *inserendo i dati della struttura, come il nome, la posizione, i contatti, e tutti i servizi offerti.
- * {@param RegisterNewStructure}
+ * {@param RegisterNewStructure} parametro che implementa il form di registrazione di una nuova struttura
  */
 public class RegisterNewStructure implements Form {
     private static JTextField Name, Address,n_room, telephone, services, description = null;

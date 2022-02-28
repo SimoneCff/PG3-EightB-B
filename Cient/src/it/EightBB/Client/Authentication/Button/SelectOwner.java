@@ -8,7 +8,7 @@ import javax.swing.*;
 
 /**
  * implementazione del tasto che permette di selezionare una registrazione di tipo Proprietario
- *{@param SelectOwner}
+ *{@param SelectOwner} parametro per la selezione del button dell'utente di tipo proprietario
  */
 public class SelectOwner implements Button {
     private JButton SelectOwner = null;

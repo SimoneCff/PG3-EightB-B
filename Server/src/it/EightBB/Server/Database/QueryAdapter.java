@@ -4,9 +4,18 @@ package it.EightBB.Server.Database;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * adapter per fare le string nelle query per il database
+ * {@param QueryAdapter} metodo per le implementazioni delle stringhe nelle query
+ */
 public class QueryAdapter extends Query {
     Query q = new Query();
 
+    /**
+     *
+     * @param s parametro che descrive la stringa
+     * @return visualizzazione della query cerata
+     */
     public Query AdaptStringToQuery(ArrayList<String> s) {
         //Extractor
         //Add datas from temp to other

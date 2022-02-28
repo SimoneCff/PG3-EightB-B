@@ -8,7 +8,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * implementazione delle operazioni da effettuare all'interno del database per l'utente proprietario
+ * <p>
+ * {@param PownerDBOperation} metodo che implementa le operazioni nel databse
+ */
 public class PownerDBOperations implements DatabaseOperations {
     private static DatabaseOperations Instance;
 
@@ -51,6 +55,11 @@ public class PownerDBOperations implements DatabaseOperations {
 
     }
 
+    /**
+     * @param table tabella di riferimento del database
+     * @param query query da effettuare nel database
+     * @return eventuale implementazione della query
+     */
     @Override
     public String AddQuery(String table, Query query) {
         Connection Q = DatabaseProxy.getInstance().getConnect();

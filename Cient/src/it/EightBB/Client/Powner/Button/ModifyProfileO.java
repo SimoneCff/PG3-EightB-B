@@ -9,7 +9,7 @@ import javax.swing.*;
  * implementazione del tasto di Modifica Profilo dell'utente proprietario
  * il tasto e' presente nella pagine personale dell'utente proprietario
  * consente di modificare i dati personali del proprietario
- * {@param ModifyProfileO}
+ * {@param ModifyProfileO} parametro che implementa il button per la modifica del profilo
  */
 public class ModifyProfileO implements Button{
     private JButton ModifyP = null;

@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  * implementazione del tasto di registrazione Utente
- * {@param RegistrationB}
+ * {@param RegistrationB} paramentro della classe che implementa il button di registrazione
  */
 
 public class RegistrationB implements Button {

@@ -9,7 +9,7 @@ import javax.swing.*;
 
 /**
  * implementazione del tasto di visualizzazione di tutte le strutture appartenenti ad un proprietario
- * {@param AllOwnerStructures}
+ * {@param AllOwnerStructures} parametro che implementa il button per la visualizzazione delle strutture
  */
 public class AllOwnerStructures implements Button{
     private JButton AllStructures=null;

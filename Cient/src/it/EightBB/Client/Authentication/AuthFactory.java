@@ -13,7 +13,7 @@ import it.EightBB.Client.Interface.Template.TextGroup;
 /**
  *classe che va ad implementare una Concrete Factory che va ad implementare Abstract Factory
  * La classe è responsabile di tutti i form bottoni del sottosistema Authentication
- * {@param AuthFactory}
+ * {@param AuthFactory} parametro di implementazione di AbstractFactory
  */
 public class AuthFactory implements AbstractFactory {
 
@@ -27,6 +27,11 @@ public class AuthFactory implements AbstractFactory {
         };
     }
 
+    /**
+     *
+     * @param Type tipo di stringa per il Button
+     * @return ritorno alla selezione del tipo di registrazione o al login
+     */
     @Override
     public Button makeButton(String Type) {
 
@@ -40,6 +45,11 @@ public class AuthFactory implements AbstractFactory {
         };
     }
 
+    /**
+     *
+     * @param type tipo di stringa per il button
+     * @return ritorno alla scelta del tipo di registrazione
+     */
     @Override
     public TextGroup makeText(String type) {
         return switch (type){
@@ -47,6 +57,5 @@ public class AuthFactory implements AbstractFactory {
             default -> null;
         };
     }
-
 
 }

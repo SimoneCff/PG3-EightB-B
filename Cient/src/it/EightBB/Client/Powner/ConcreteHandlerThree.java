@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 /**
  * handler del sottosistema di Powner. viene utilizzato per gli Action Event riguardante javaswing.
  * viene utilizzato per i bottoni e per i form.
- * {@param ConcreteHandlerThree}
+ * {@param ConcreteHandlerThree} parametro di estensione dell'handler
  */
 public class ConcreteHandlerThree extends ActionHandler {
     private static ActionHandler Instance;
@@ -21,8 +21,13 @@ public class ConcreteHandlerThree extends ActionHandler {
         if(Instance == null){
             Instance = new ConcreteHandlerThree();
         } return Instance;
+        
     }
 
+    /**
+     *
+     * @param e parametro di evento
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("One :"+e.getActionCommand());

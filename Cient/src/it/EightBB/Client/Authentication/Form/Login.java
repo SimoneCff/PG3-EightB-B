@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 /**
  *implementazione della fase di Login per accedere al sistema
- * {@param Login}
+ * {@param Login} parametro che implementa il form per l'accesso al sistema
  */
 
 public class Login implements Form {
