@@ -94,7 +94,7 @@ public class PrenotationOne implements Form{
         Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adultss.getText(), n_childrenss.getText(),
                StartDatee.getText(), EndDatee.getText());
         try {
-            String req = "Client,PrenotOne,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
+            String req = "Client,One,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
                     StartDatee.getText() + ",date_end," + EndDatee.getText();
             SocketInterface SP = SocketProxy.getIstance();
             SP.write(req);

@@ -50,7 +50,27 @@ public class PclientDBOperations implements DatabaseOperations {
 
     @Override
     public String AddQuery(String table, Query query) throws SQLException {
-        return null;
+        Connection Q = DatabaseProxy.getInstance().getConnect();
+        try {
+            StringBuilder q;
+            q = new StringBuilder("insert into " + table + " values ('" + query.getAttributes().get(0) + "',");
+            for (int i = 1; i < query.getAttributes().size(); i++) {
+                q.append("'");
+                q.append(query.getAttributes().get(i));
+                q.append("'");
+                if (i < query.getAttributes().size() - 1) {
+                    q.append(",");
+                }
+            }
+            q.append(");");
+            System.out.println(q.toString());
+            Statement statement = Q.createStatement();
+            statement.executeUpdate(q.toString());
+            return "True";
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return "False";
+        }
     }
 
     @Override
