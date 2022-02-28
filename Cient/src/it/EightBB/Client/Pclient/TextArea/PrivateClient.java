@@ -4,6 +4,10 @@ import it.EightBB.Client.Interface.Template.TextGroup;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Visualizzazione dei dati personali registrati dall'utente cliente
+ * {@param PrivateClient} metodo che implementa la gestione dei dati personali del cliente
+ */
 public class PrivateClient implements TextGroup {
     private JLabel Name, Surname, BirthDate, Mail, Pass = null;
 
@@ -24,6 +28,10 @@ public class PrivateClient implements TextGroup {
 
     }
 
+    /**
+     *
+     * @param F parametro di JFrame del form
+     */
     @Override
     public void InitialiteTextIntoFrame(JFrame F) {
         F.add(Name);

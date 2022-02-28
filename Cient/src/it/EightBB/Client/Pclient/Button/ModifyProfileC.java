@@ -5,6 +5,12 @@ import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 import it.EightBB.Client.Pclient.Form.ModifyProfile;
 
 import javax.swing.*;
+/**
+ * implementazione del tasto di Modifica Profilo dell'utente cliente
+ * il tasto e' presente nella pagine personale dell'utente cliente
+ * consente di modificare i dati personali del cliente
+ * {@param ModifyProfileO} parametro che implementa il button per la modifica del profilo
+ */
 public class ModifyProfileC implements Button{
     private JButton ModifyP = null;
     @Override

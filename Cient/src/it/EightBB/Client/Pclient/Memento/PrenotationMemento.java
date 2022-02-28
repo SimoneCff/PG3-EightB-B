@@ -2,6 +2,12 @@ package it.EightBB.Client.Pclient.Memento;
 
 import it.EightBB.Client.Interface.Memento;
 
+/**
+ * Pattern utilizzato per conservare temporaneamente i dati presi
+ * utilizzato durante la fase di prenotazione di una struttura e nel caso di prenotazione,
+ * i dati vengono inviati al database
+ * {@param PrenotationMemento} implementa il pattern Memento
+ */
 public class PrenotationMemento implements Memento {
     private String mail, nome, n_persone, n_children, data_start, data_end = null;
     private static PrenotationMemento Instance;
@@ -24,6 +30,9 @@ public class PrenotationMemento implements Memento {
         this.nome= nome;
     }
 
+    /**
+     * @return invio dei dati al database nel caso di prenotazione.
+     */
     @Override
     public String restoreState() {
         return "name,"+nome+",mail,"+mail+",n_person,"+n_persone+",n_children,"+n_children+",data_start,"+data_start+

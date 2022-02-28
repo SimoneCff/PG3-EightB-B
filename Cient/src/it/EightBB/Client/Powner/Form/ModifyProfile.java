@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * implementazione del form per la modifica del profilo dell'utente Cliente.
- * il form permette all'utente Cliente di modificare il suo profilo utente e di modificare i suoi dati personali.
+ * implementazione del form per la modifica del profilo dell'utente Proprietario.
+ * il form permette all'utente Proprietario di modificare il suo profilo utente e di modificare i suoi dati personali.
  * {@param ModifyProfile} parametro che implementa il form della modifica profilo
  */
 public class ModifyProfile implements Form {

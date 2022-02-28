@@ -13,7 +13,11 @@ import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
-
+/**
+ * facade del PClient. gestisce e maschera le complessita' del sistema
+ * esso si interfaccia col visitor
+ * {@param PownerFacade} parametro per l'implementazione del facade
+ */
 public class PclientFacade {
     private static PclientFacade Instance;
     private JFrame F;

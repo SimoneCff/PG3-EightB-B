@@ -4,6 +4,11 @@ import it.EightBB.Client.Interface.Template.Button;
 import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 
 import javax.swing.*;
+
+/**
+ * bottone per la vsaulizzazione delle strutture prenotae
+ * {@param BookedStructures} parametro che implementa il button per la visualizzazione delle strutture prenotate
+ */
 public class BookedStructures implements Button{
     private JButton Bookedstr = null;
 

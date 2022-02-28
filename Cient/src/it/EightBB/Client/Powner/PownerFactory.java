@@ -9,7 +9,7 @@ import it.EightBB.Client.Powner.Form.*;
 import it.EightBB.Client.Powner.TextArea.PrivateOwner;
 
 /**
- * classe factory di AbstractFactory che viene utilizzato per creare le componenti del client.
+ * classe factory di AbstractFactory che viene utilizzato per creare le componenti del proprietario.
  * {@param PownerFactory} parametro di implementazione della classe factory
  */
 public class PownerFactory implements AbstractFactory {

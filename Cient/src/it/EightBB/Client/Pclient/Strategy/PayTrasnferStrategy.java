@@ -6,7 +6,11 @@ import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Pclient.Memento.PrenotationMemento;
 
 import java.io.IOException;
-
+/**
+ * Design pattern di strategy, utilizzato per gestire le modalità di pagamento.
+ * Viene utilizzato quando si effettua un pagamento tramite una Bonifico Bancario
+ * {@param PayTransfertrategy} metodo che implementa il pattern di strategy per il pagamaneto con Bonifico Bancario.
+ */
 public class PayTrasnferStrategy implements PaymentStrategy {
     private PrenotationMemento mem;
 
@@ -15,6 +19,11 @@ public class PayTrasnferStrategy implements PaymentStrategy {
         this.mem = mem;
     }
 
+    /**
+     *
+     * @param payment parametro che descrive il pagamento
+     * @return prenotazione avvenuta con pagamento tramite Bonifico Bancario.
+     */
     @Override
     public String SetpayToDB(String payment) {
         String res = "False";
