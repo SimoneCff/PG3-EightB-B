@@ -161,7 +161,7 @@ public class PclientFacade {
             for(int i = 0; i<size; i++) {
                 String[] label = L.get(i).split(",");
 
-                JLabel name = new JLabel(label[0]);
+                JLabel name = new JLabel(label[1]);
                 JLabel n_person = new JLabel(label[2]);
                 JLabel n_child = new JLabel(label[3]);
                 JLabel date_start = new JLabel(label[4]);
@@ -170,12 +170,12 @@ public class PclientFacade {
                 JLabel  pay_data = new JLabel(label[7]);
 
                 name.setBounds(50, 100+(50*i), 100, 30);
-                n_person.setBounds(80, 100+(50*i), 100, 30);
-                n_child.setBounds(110, 100+(50*i), 100, 30);
-                date_start.setBounds(140, 100+(50*i), 100, 30);
-                date_end.setBounds(170, 100+(50*i), 100, 30);
-                pay_type.setBounds(200, 100+(50*i), 100, 30);
-                pay_data.setBounds(230, 100+(50*i), 100, 30);
+                n_person.setBounds(150, 100+(50*i), 100, 30);
+                n_child.setBounds(250, 100+(50*i), 100, 30);
+                date_start.setBounds(350, 100+(50*i), 100, 30);
+                date_end.setBounds(450, 100+(50*i), 100, 30);
+                pay_type.setBounds(550, 100+(50*i), 100, 30);
+                pay_data.setBounds(650, 100+(50*i), 100, 30);
 
                 F.add(name);
                 F.add(n_person);
