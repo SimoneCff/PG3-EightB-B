@@ -19,9 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PrenotationOne implements Form{
-    private JTextField research, n_adults, n_childrens = null;
-    private JTextField StartDate = null;
-    private JTextField EndDate = null;
+    private JTextField research;
+    private static JTextField n_adults;
+    private static JTextField n_childrens = null;
+    private static JTextField StartDate = null;
+    private static JTextField EndDate = null;
     private static JLabel researchh, n_adultss, n_childrenss, StartDatee, EndDatee = null;
     private JButton ConfBt = null;
     private static JFrame F;
@@ -91,8 +93,8 @@ public class PrenotationOne implements Form{
 
     public static void getFormandSenditToDB(){
         PrenotationMemento Mori = PrenotationMemento.getIstance();
-        Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adultss.getText(), n_childrenss.getText(),
-               StartDatee.getText(), EndDatee.getText());
+        Mori.setPrenotationMemento(PclientFacade.getInstance().getMail(), n_adults.getText(), n_childrens.getText(),
+               StartDate.getText(), EndDate.getText());
         try {
             String req = "Client,One,booking,mail," + PclientFacade.getInstance().getMail() + ",date_start," +
                     StartDatee.getText() + ",date_end," + EndDatee.getText();
