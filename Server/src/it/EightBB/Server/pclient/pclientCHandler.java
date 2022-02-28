@@ -20,11 +20,9 @@ public class pclientCHandler extends Handler {
         String Req = null;
         if(request.getSubSys().equals("Client")){
             DatabaseOperations PC = new PclientDBOperations();
-            switch (request.getRequest()){
-                case "Modify" : Req= PC.modifyQueryFromTable(request.getData().getTable(), request.getData());
-                case "One" : Req = PC.getQuery(request.getData().getTable(), request.getData());
-                case "Prenot" : Req = PC.AddQuery(request.getData().getTable(), request.getData());
-            }
+           if (request.getRequest().equals("Modify")){Req= PC.modifyQueryFromTable(request.getData().getTable(), request.getData());}
+           else if (request.getRequest().equals("One")) {Req = PC.getQuery(request.getData().getTable(), request.getData());}
+           else if(request.getRequest().equals("Prenot")){Req = PC.AddQuery(request.getData().getTable(), request.getData());}
         }else Req = successor.handlerRequest(request);
         return Req;
     }
