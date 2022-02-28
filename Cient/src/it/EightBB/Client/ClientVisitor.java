@@ -72,7 +72,7 @@ private JFrame F;
         SocketProxy Proxy = SocketProxy.getIstance();
         switch (where) {
             case "Start" -> {
-                Proxy.settingUP("82.55.143.63",5432);
+                Proxy.settingUP("localhost",5432);
             }
             case "SendEnd" -> {
                 Proxy.SendEnd();
