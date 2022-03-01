@@ -37,8 +37,6 @@ public class ConcreteHandlerTwo extends ActionHandler{
                     PrenotationOne.getFormandSenditToDB();
                 }
             }
-        } else {
-            successor.actionPerformed(e);
         }
     }
 }
