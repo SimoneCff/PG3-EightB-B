@@ -10,7 +10,7 @@ import javax.swing.*;
 /**
  * implementazione del tasto di registrazione di una struttura.
  * il tasto e' presente nel form di registrazione di una struttura.
- * {@param RegisterStructure}
+ * {@param RegisterStructure} parametro che implemetna il button per la registrazione di una struttura
  */
 public class RegisterStructure implements Button{
     private JButton RegisterStruct=null;

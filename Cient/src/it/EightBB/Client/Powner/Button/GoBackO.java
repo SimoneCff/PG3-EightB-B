@@ -10,7 +10,7 @@ import javax.swing.*;
  * implementazione del tasto di Annulla
  * il tasto permette al proprietario di tornare alla pagina precedente
  * o di annullare una determinata scelta o selezione
- * {@param GobackO}
+ * {@param GobackO} parametro che implementa il button per tornare indietro
  */
 public class GoBackO implements Button {
 

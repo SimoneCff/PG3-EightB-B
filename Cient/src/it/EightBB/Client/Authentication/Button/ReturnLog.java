@@ -7,6 +7,7 @@ import javax.swing.*;
 
 /**
  * implementazione del tasto Return che consente di tornare indietro alla fase di Login
+ * {@param ReturnLog} parametro della classe che implementa il button
 
  */
 public class ReturnLog implements Button {

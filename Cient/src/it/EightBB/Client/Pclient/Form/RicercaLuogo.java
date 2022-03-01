@@ -7,9 +7,14 @@ import it.EightBB.Client.Interface.Template.Form;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * form per l'implementazione della ricerca di un luogo per un'eventuale struttura da prenotare
+ * {@param RicercaLuogo} metodo che implementa la ricerca di un luogo
+ */
 public class RicercaLuogo implements Form {
     private JTextField search= null;
     private JLabel searchh = null;
+
 
     @Override
     public void setForm() {
@@ -19,6 +24,10 @@ public class RicercaLuogo implements Form {
         searchh.setBounds(400,130,100,30);
     }
 
+    /**
+     *
+     * @param F parametro di Jframe del Form
+     */
     @Override
     public void InitialiateFormIntoFrame(JFrame F) {
         F.add(search);

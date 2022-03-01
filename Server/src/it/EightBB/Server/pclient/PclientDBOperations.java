@@ -9,7 +9,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * implementazione delle operazioni da effettuare all'interno del database per l'utente cliente
+ * <p></p>
+ * {@param PclientDBOperation} metodo che implementa le operazioni nel databse
+ */
 public class PclientDBOperations implements DatabaseOperations {
+    /**
+     *
+     * @param table tabella di riferimento del databse
+     * @param query query da effettuare nel database
+     * @return visualizazione della stringa di riferimento
+     * @throws SQLException Eccezzione riguardante l'imput inserito ed il suo eventuale output
+     */
     @Override
     public String getQuery(String table, Query query) throws SQLException {
         Connection Q = DatabaseProxy.getInstance().getConnect();
@@ -76,6 +88,13 @@ public class PclientDBOperations implements DatabaseOperations {
         return rew;
     }
 
+    /**
+     *
+     * @param table tabella di riferimento del database
+     * @param query query da effettuare nel database
+     * @return eventuale implementazione della query
+     * @throws SQLException Eccezzione riguardante l'imput inserito ed il suo eventuale output
+     */
     @Override
     public String AddQuery(String table, Query query) throws SQLException {
         Connection Q = DatabaseProxy.getInstance().getConnect();
@@ -136,6 +155,7 @@ public class PclientDBOperations implements DatabaseOperations {
         }
     }
 
+    
     @Override
     public String checkInsideDB(String table, Query query) {
         return null;

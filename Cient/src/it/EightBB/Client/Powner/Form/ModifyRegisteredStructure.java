@@ -12,7 +12,7 @@ import java.awt.*;
  * l'utente Proprietario, accede alla sua pagina personale e seleziona il button Modifica Profilo
  * una volta nella pagina di modifica, il proprietario puo' modificare i dati della struttura
  * come nome, indirizo, servizi offerti, e la descrizione della struttura.
- * {@param ModifyRegisteredStructure}
+ * {@param ModifyRegisteredStructure} parametro che implementa il form per la modifica di una struttura registrata.
  */
 public class ModifyRegisteredStructure implements Form {
     private JTextField Name, Address, n_room, telephone, services, description = null;

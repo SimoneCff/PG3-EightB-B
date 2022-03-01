@@ -4,6 +4,10 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implementazione delle query per il databse
+ * {@param Query} metodo per le query per il databse
+ */
 public class Query {
     private String table;
     private final ArrayList<String> attributes;

@@ -14,7 +14,7 @@ import java.util.Scanner;
 /**
  * implementazione del form per l'invio dei documenti realativi alla struttura.
  * I documenti sono destinati alla questura e all'ente del turismo.
- * {@param DocumentTourism}
+ * {@param DocumentTourism} parametro che implementa il form per la gestione dei documenti per gli enti
  *
  */
 public class DocumentTourism extends Component implements Form {

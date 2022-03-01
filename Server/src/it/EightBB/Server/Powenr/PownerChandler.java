@@ -7,6 +7,10 @@ import it.EightBB.Server.HandlingSubSystem.Request;
 
 import java.sql.SQLException;
 
+/**
+ * handler del chain of responsability che si occupa della pagina privata del proprietario
+ * {@param PownerChandler} metodo che estende l'handler per la parte privata del proprietario
+ */
 public class PownerChandler extends Handler {
     private static Handler instance;
 
@@ -16,6 +20,12 @@ public class PownerChandler extends Handler {
         } return instance;
     }
 
+    /**
+     *
+     * @param request richiesta dell'handler basato sul socket
+     * @return visualizzazione della parte privata del proprietario
+     * @throws SQLException Eccezzione riguardante l'imput inserito ed il suo eventuale output
+     */
     @Override
     public String handlerRequest(Request request) throws SQLException {
         String Req = null;

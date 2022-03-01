@@ -12,7 +12,7 @@ import java.sql.Statement;
 /**
  * implementazione del sottosistema Authentication
  * permette il collegamente al database per l'autenticazione dell'utente
- * {@param AuthDBOperation}
+ * {@param AuthDBOperation} parametro di implementazione per l'autenticazione
  */
 public class AuthDBOperations implements DatabaseOperations {
     private static AuthDBOperations Instance;

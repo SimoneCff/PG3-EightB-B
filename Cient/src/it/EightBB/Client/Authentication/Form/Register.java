@@ -12,7 +12,8 @@ import java.util.Arrays;
 
 /**
  * implementazione della fase di registrazione dell'utente Cliente nel sistema
- * {@param Register}
+ * <p></p>
+ * {@param Register} parametro di implementazione del form di registrazione al sistema
  */
 public class Register implements Form, Cloneable {
     private static JTextField Name, Sur, Us = null;
@@ -82,7 +83,6 @@ public class Register implements Form, Cloneable {
     }
 
     /**
-     *
      * @return La stringa di riferimento ai dati di registrazione
      */
     public static String getUserFromForm(){

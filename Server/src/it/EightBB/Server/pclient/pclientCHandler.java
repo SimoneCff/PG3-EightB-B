@@ -6,6 +6,10 @@ import it.EightBB.Server.HandlingSubSystem.Request;
 
 import java.sql.SQLException;
 
+/**
+ * handler del chain of responsability che si occupa della pagina privata del cliente
+ * {@param pclientCHandler} metodo che implementa la parte privata
+ */
 public class pclientCHandler extends Handler {
     private static Handler instance;
 
@@ -15,6 +19,12 @@ public class pclientCHandler extends Handler {
         } return instance;
     }
 
+    /**
+     *
+     * @param request richiesta dell'handler basato sul socket
+     * @return visualizzazione della parte privata del cliente
+     * @throws SQLException Eccezzione riguardante l'imput inserito ed il suo eventuale output
+     */
     @Override
     public String handlerRequest(Request request) throws SQLException {
         String Req = null;

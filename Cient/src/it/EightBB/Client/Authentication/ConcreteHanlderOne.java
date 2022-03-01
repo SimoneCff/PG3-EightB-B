@@ -22,6 +22,10 @@ public class ConcreteHanlderOne extends ActionHandler {
         } return Instance;
     }
 
+    /**
+
+     * @param e parametro di evento
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("One :"+e.getActionCommand());

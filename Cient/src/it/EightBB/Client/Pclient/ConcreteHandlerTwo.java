@@ -6,6 +6,11 @@ import it.EightBB.Client.Pclient.Form.ModifyProfile;
 import it.EightBB.Client.Pclient.Form.PrenotationOne;
 
 import java.awt.event.ActionEvent;
+/**
+ * classe principale del sottosistema Authenticate
+ * Gestisce gli Handler Event della classe Authentication
+ * {@param ConcreteHandlerTwo}
+ */
 
 public class ConcreteHandlerTwo extends ActionHandler{
     private static ActionHandler Instance;
@@ -16,7 +21,10 @@ public class ConcreteHandlerTwo extends ActionHandler{
         } return Instance;
     }
 
-
+    /**
+     *
+     * @param e parametro di evento
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().contains("Client")){

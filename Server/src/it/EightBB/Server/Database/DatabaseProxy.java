@@ -2,6 +2,10 @@ package it.EightBB.Server.Database;
 
 import java.sql.*;
 
+/**
+ *implementazione del proxy per la connessione con il databse
+ * {@param Databseproxy} implementazione della connessione
+ */
 public class DatabaseProxy implements DatabaseConnect {
     protected String url = "jdbc:mysql://localhost/eightbb";
     protected String user = "root";
@@ -19,6 +23,9 @@ public class DatabaseProxy implements DatabaseConnect {
         }
     }
 
+    /**
+     * @return verifica della connessione al server SQL
+     */
     @Override
 
     public Connection getConnect(){
@@ -33,6 +40,9 @@ public class DatabaseProxy implements DatabaseConnect {
         }
     }
 
+    /**
+     * @return instanza di connessione
+     */
     public static DatabaseProxy getInstance() {
         if (Instance == null) {
             Instance = new DatabaseProxy();

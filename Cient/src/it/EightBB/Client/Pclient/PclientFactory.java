@@ -14,9 +14,16 @@ import it.EightBB.Client.Pclient.Form.PrenotationOne;
 import it.EightBB.Client.Pclient.Form.RicercaLuogo;
 import it.EightBB.Client.Pclient.TextArea.PrivateClient;
 import it.EightBB.Client.Powner.Button.GoBackO;
-
+/**
+ * classe factory di AbstractFactory che viene utilizzato per creare le componenti del cliente.
+ * {@param PclientFactory} parametro di implementazione della classe factory
+ */
 public class PclientFactory implements AbstractFactory {
-
+    /**
+     *
+     * @param type parametro per il bottone
+     * @return creazione della classe richiesta
+     */
     @Override
     public Form makeForm(String type) {
         return switch(type) {
@@ -28,6 +35,11 @@ public class PclientFactory implements AbstractFactory {
         };
     }
 
+    /**
+     *
+     * @param type parametro per il bottone
+     * @return creazione della classe richiesta
+     */
     @Override
     public Button makeButton(String type) {
         return switch(type) {
@@ -39,6 +51,11 @@ public class PclientFactory implements AbstractFactory {
         };
     }
 
+    /**
+     *
+     * @param type parametro per il bottone
+     * @return creazione della classe richiesta
+     */
     @Override
     public TextGroup makeText(String type) {
         return  switch (type){

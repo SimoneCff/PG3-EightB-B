@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * facade del PClient. gestisce e maschera le complessita' del sistema
  * esso si interfaccia col visitor
- * {@param PownerFacade}
+ * {@param PownerFacade} parametro per l'implementazione del facade
  */
 public class PownerFacade{
     private static PownerFacade Instance;

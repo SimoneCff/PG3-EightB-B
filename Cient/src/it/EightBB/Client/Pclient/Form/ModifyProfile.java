@@ -11,7 +11,11 @@ import it.EightBB.Client.Powner.PownerFacade;
 
 import javax.swing.*;
 import java.io.IOException;
-
+/**
+ * implementazione del form per la modifica del profilo dell'utente Cliente.
+ * il form permette all'utente Cliente di modificare il suo profilo utente e di modificare i suoi dati personali.
+ * {@param ModifyProfile} parametro che implementa il form della modifica profilo
+ */
 public class ModifyProfile implements Form {
     private static JButton RegConfBt = null;
     private static JTextField Name, Sur = null;

@@ -1,9 +1,7 @@
 package it.EightBB.Client.Pclient.Form;
 
-import com.toedter.calendar.JDateChooser;
 import it.EightBB.Client.CEssentials.SocketProxy;
 import it.EightBB.Client.ClientVisitor;
-import it.EightBB.Client.Interface.Memento;
 import it.EightBB.Client.Interface.SocketInterface;
 import it.EightBB.Client.Interface.Template.Form;
 import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
@@ -18,6 +16,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * form di implementazione che gestisce la ricerca delle strutture
+ * {@param PrenotationOne} parametro che implemta la pagina di ricerca
+ */
 public class PrenotationOne implements Form{
     private JTextField research;
     private static JTextField n_adults;
@@ -65,6 +67,11 @@ public class PrenotationOne implements Form{
         ConfBt.addActionListener(ConcreteHandlerTwo.getInstance());
         ConfBt.setActionCommand("Client-FORM_Pone");
     }
+
+    /**
+     *
+     * @param F Parametro Jframe del form
+     */
     @Override
     public void InitialiateFormIntoFrame(JFrame F)
     {
@@ -138,6 +145,9 @@ public class PrenotationOne implements Form{
                     x.add(regclient);
 
                     regclient.addActionListener(new ActionListener() {
+                        /**
+                         * @param e Parametro di evento
+                         */
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             Mori.setnome(label[0]);

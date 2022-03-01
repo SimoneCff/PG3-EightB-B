@@ -13,6 +13,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * implementazione del form della gestione del pagamento
+ * {@param PaymentPage} Metodo che implementa la visualizzazione del pagamento
+ */
 public class PaymentPage implements Form {
     private JTextField propcard, cvv, cardnumber, scadenza = null;
     private JLabel propcardd, cvvv, cardnumberr, scadenzaa, selectMethodPayment, BankTransferHolder, BankTransferIban, BankTransferMotivation = null;

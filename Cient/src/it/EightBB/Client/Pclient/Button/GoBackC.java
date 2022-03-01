@@ -5,7 +5,12 @@ import it.EightBB.Client.Pclient.ConcreteHandlerTwo;
 import it.EightBB.Client.Powner.ConcreteHandlerThree;
 
 import javax.swing.*;
-
+/**
+ * implementazione del tasto di Annulla
+ * il tasto permette al cliente di tornare alla pagina precedente
+ * o di annullare una determinata scelta o selezione
+ * {@param GobackC} parametro che implementa il button per tornare indietro
+ */
 public class GoBackC implements Button {
 
     private JButton GoBack=null;

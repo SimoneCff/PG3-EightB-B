@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * implementazione del tasto di accesso alla sezione di gestione documenti per gli enti nazionali.
  * il tasto e' presente nell'area privata del proprietario.
- * {@param PrivateAreaEntities}
+ * {@param PrivateAreaEntities} parametro che implementa il button per l'area privata dell'utente proprietario
  */
 public class PrivateAreaEntities implements Button{
     private JButton PrivateEntities=null;
