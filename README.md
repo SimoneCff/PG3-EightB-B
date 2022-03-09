@@ -19,11 +19,12 @@ Il nostro progetto si basa su una piattaforma Java distribuita tra Client e Serv
 ## Pattern Utilizzati:
 - Abstract Factory
 - Factory
+----------------------------
 - Chain of Responsability
 - Strategy
 - Memento
 - Visitor
-- Template
+----------------------------
 - Adapter
 - Proxy
 - Facade
