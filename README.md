@@ -17,6 +17,7 @@ Il nostro progetto si basa su una piattaforma Java distribuita tra Client e Serv
 - IntelliJ
 - MySQL WorkBench
 ## Pattern Utilizzati:
+- Singleton
 - Abstract Factory
 - Factory
 ----------------------------
