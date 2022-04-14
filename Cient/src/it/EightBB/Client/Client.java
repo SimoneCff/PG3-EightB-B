@@ -8,10 +8,14 @@ public class Client {
     public static void main(String[] args){
         //Setting UP
         visitor Visitor = ClientVisitor.getInstance();
-        Visitor.visitProxy("Start");
+        ImplementationFacade IF = ImplementationFacade.getInstance();
         //Setting Login Frame (Default Frame);
-        Visitor.setFrame(new JFrame("EightBB"));
-        Visitor.setHandler();
+        IF.setFrame(new JFrame("EightBB"));
+        //Setting Handler
+        IF.setHandler();
+        //Setting Proxy
+        IF.visitProxy("Start");
+        //Visit Auth
         Visitor.visitAuth("Login");
     }
 }

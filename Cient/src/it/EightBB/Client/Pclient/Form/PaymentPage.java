@@ -111,7 +111,7 @@ public class PaymentPage implements Form {
             ConfirmP.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    PrenotationMemento mem = ClientVisitor.getInstance().getMeme();
+                    PrenotationMemento mem =PrenotationMemento.getIstance();
                     PaymentStrategy cardS = new PayCardStrategy();
                     cardS.CollectMemento(mem);
                     String res = cardS.SetpayToDB(propcard.getText()+" "+cvv.getText()+" "+cardnumber.getText()
@@ -183,7 +183,7 @@ public class PaymentPage implements Form {
             ConfirmB.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    PrenotationMemento mem = ClientVisitor.getInstance().getMeme();
+                    PrenotationMemento mem = PrenotationMemento.getIstance();
                     PaymentStrategy cardS = new PayCardStrategy();
                     cardS.CollectMemento(mem);
                     String res = cardS.SetpayToDB("ITXPROVA");
