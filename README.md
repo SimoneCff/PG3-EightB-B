@@ -19,7 +19,7 @@ Il nostro progetto si basa su una piattaforma Java distribuita tra Client e Serv
 ## Pattern Utilizzati:
 - Singleton
 - Abstract Factory
-- Factory
+- Factory Pattern (Factory Maker)
 ----------------------------
 - Chain of Responsability
 - Strategy
